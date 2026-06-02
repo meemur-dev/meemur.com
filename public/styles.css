@@ -1,0 +1,94 @@
+/* meemur.com — coming soon
+   Brand: teal #00a9b8 + charcoal #3c3c3d, Montserrat */
+
+:root {
+  --brand: #00a9b8;
+  --ink: #3c3c3d;
+  --bg: #fafafa;
+  --muted: #6b6b6e;
+  --font: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-block-size: 100dvb;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+.stage {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  text-align: center;
+  gap: clamp(1rem, 3vw, 1.75rem);
+  padding: clamp(1.5rem, 5vw, 4rem);
+  max-inline-size: 42rem;
+  margin-inline: auto;
+}
+
+.logo {
+  inline-size: clamp(180px, 40vw, 320px);
+  block-size: auto;
+  animation: rise 0.7s ease both;
+}
+
+.headline {
+  margin: 0;
+  font-size: clamp(1.75rem, 1rem + 4vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.tagline {
+  margin: 0;
+  font-size: clamp(1rem, 0.9rem + 0.6vw, 1.25rem);
+  color: var(--muted);
+  text-wrap: pretty;
+  max-inline-size: 34rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.footer {
+  text-align: center;
+  padding-block: 1.5rem;
+  color: var(--muted);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

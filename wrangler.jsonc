@@ -1,0 +1,7 @@
+{
+  // Cloudflare Pages project config — https://developers.cloudflare.com/pages/
+  "name": "meemur-com",
+  "compatibility_date": "2025-03-07",
+  // Folder of static assets Pages serves
+  "pages_build_output_dir": "./public"
+}

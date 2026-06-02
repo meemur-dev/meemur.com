@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>meemur — Coming Soon</title>
+    <meta
+      name="description"
+      content="meemur is a digital agency crafting headless e-commerce storefronts and advanced analytics. Something great is on the way."
+    />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
+
+    <!-- Brand typeface: Montserrat via Google Fonts CSS2 (v2) API -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    />
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:title" content="meemur — Coming Soon" />
+    <meta
+      property="og:description"
+      content="A digital agency for headless commerce & analytics. Launching soon."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://meemur.com" />
+
+    <meta name="theme-color" content="#00a9b8" />
+
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="stage">
+      <img
+        class="logo"
+        src="/logo.svg"
+        alt="meemur"
+        width="350"
+        height="200"
+        fetchpriority="high"
+      />
+
+      <h1 class="headline">Something great is on the way.</h1>
+
+      <p class="tagline">
+        We craft headless e-commerce storefronts and advanced analytics.
+        Our new home is under construction.
+      </p>
+    </main>
+
+    <footer class="footer">
+      <small>&copy; <span id="year">2026</span> meemur</small>
+    </footer>
+
+    <script>
+      // Keep the copyright year current without a build step.
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

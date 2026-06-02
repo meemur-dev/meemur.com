@@ -1,0 +1,13 @@
+{
+  "name": "meemur-com",
+  "version": "0.1.0",
+  "private": true,
+  "description": "meemur.com — coming soon page",
+  "scripts": {
+    "dev": "wrangler pages dev ./public",
+    "deploy": "wrangler pages deploy ./public --project-name meemur-com"
+  },
+  "devDependencies": {
+    "wrangler": "^4.96.0"
+  }
+}
