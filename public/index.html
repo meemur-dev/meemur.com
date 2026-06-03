@@ -8,6 +8,8 @@
       name="description"
       content="meemur is a digital agency that elevates your entire web presence — from design and performance to analytics and growth. Something great is on the way."
     />
+    <meta name="author" content="Onur Yanar" />
+    <link rel="canonical" href="https://meemur.com/" />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
@@ -24,9 +26,72 @@
       content="A digital agency that elevates your entire web presence. Launching soon."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://meemur.com" />
+    <meta property="og:url" content="https://meemur.com/" />
+    <meta property="og:site_name" content="meemur" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="meemur — Coming Soon" />
+    <meta
+      name="twitter:description"
+      content="A digital agency that elevates your entire web presence. Launching soon."
+    />
 
     <meta name="theme-color" content="#00a9b8" />
+
+    <!-- Structured data: Organization + WebSite (schema.org / JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://meemur.com/#organization",
+            "name": "meemur",
+            "alternateName": "meemur Digital Agency",
+            "url": "https://meemur.com/",
+            "logo": "https://meemur.com/logo.svg",
+            "description": "A digital agency that elevates your entire web presence — from design and performance to analytics and growth.",
+            "slogan": "We make the web work for you.",
+            "email": "onur@meemur.com",
+            "foundingDate": "2026",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "onur@meemur.com",
+              "availableLanguage": ["en", "tr"]
+            },
+            "sameAs": ["https://github.com/meemur-dev"],
+            "founder": { "@id": "https://meemur.com/#onur" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://meemur.com/#onur",
+            "name": "Onur Yanar",
+            "url": "https://onuryanar.com/",
+            "jobTitle": "Founder",
+            "email": "onur@meemur.com",
+            "worksFor": { "@id": "https://meemur.com/#organization" },
+            "sameAs": [
+              "https://onuryanar.com/",
+              "https://www.linkedin.com/in/oyanar",
+              "https://github.com/onurstats"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://meemur.com/#website",
+            "url": "https://meemur.com/",
+            "name": "meemur",
+            "description": "A digital agency that elevates your entire web presence — from design and performance to analytics and growth.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://meemur.com/#organization" },
+            "creator": { "@id": "https://meemur.com/#onur" }
+          }
+        ]
+      }
+    </script>
 
     <link rel="stylesheet" href="/styles.css" />
   </head>
@@ -59,12 +124,20 @@
     </main>
 
     <footer class="footer">
-      <small>&copy; <span id="year">2026</span> meemur</small>
+      <small>
+        &copy; <span id="year">2026</span> meemur. All rights reserved.
+      </small>
     </footer>
 
     <script>
-      // Keep the copyright year current without a build step.
-      document.getElementById("year").textContent = new Date().getFullYear();
+      // Copyright year: shows the founding year, expanding to a range
+      // (e.g. "2026–2027") once the current year advances. No build step.
+      (function () {
+        var founded = 2026;
+        var now = new Date().getFullYear();
+        document.getElementById("year").textContent =
+          now > founded ? founded + "–" + now : String(founded);
+      })();
     </script>
   </body>
 </html>

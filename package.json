@@ -2,6 +2,7 @@
   "name": "meemur-com",
   "version": "0.1.0",
   "private": true,
+  "license": "UNLICENSED",
   "description": "meemur.com — coming soon page",
   "scripts": {
     "dev": "wrangler pages dev ./public",
