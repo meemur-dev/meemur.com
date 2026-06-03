@@ -1,4 +1,9 @@
 import { test, expect } from "@playwright/test";
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 // SEO / metadata smoke tests. Simple presence checks that act as regression
 // indicators for the head metadata, structured data, and crawler files.
@@ -41,5 +46,19 @@ test.describe("seo metadata", () => {
     const res = await request.get(`${baseURL}/robots.txt`);
     expect(res.status()).toBe(200);
     expect(await res.text()).toContain("User-agent:");
+  });
+
+  test("version marker matches package.json (no drift)", async ({ page, request, baseURL }) => {
+    const pkg = JSON.parse(readFileSync(join(ROOT, "package.json"), "utf8"));
+    // /version.json
+    const res = await request.get(`${baseURL}/version.json`);
+    expect(res.status()).toBe(200);
+    expect((await res.json()).version).toBe(pkg.version);
+    // <meta name="version">
+    await page.goto("/");
+    await expect(page.locator('meta[name="version"]')).toHaveAttribute(
+      "content",
+      pkg.version,
+    );
   });
 });

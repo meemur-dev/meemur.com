@@ -6,7 +6,10 @@
   "description": "meemur.com — coming soon page",
   "scripts": {
     "dev": "wrangler pages dev ./public",
+    "predev": "node scripts/build-version.mjs",
     "deploy": "wrangler pages deploy ./public --project-name meemur-com",
+    "stamp": "node scripts/build-version.mjs",
+    "pretest": "node scripts/build-version.mjs",
     "test": "playwright test"
   },
   "devDependencies": {
