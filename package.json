@@ -5,9 +5,11 @@
   "description": "meemur.com — coming soon page",
   "scripts": {
     "dev": "wrangler pages dev ./public",
-    "deploy": "wrangler pages deploy ./public --project-name meemur-com"
+    "deploy": "wrangler pages deploy ./public --project-name meemur-com",
+    "test": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "wrangler": "^4.96.0"
   }
 }

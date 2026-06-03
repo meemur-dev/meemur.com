@@ -1,5 +1,9 @@
 node_modules/
 .wrangler/
+tests/screenshots/
+test-results/
+playwright-report/
+blob-report/
 .dev.vars
 .DS_Store
 *.log

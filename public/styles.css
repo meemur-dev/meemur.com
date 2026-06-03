@@ -68,8 +68,10 @@ body {
 
 .blob--2 {
   background: radial-gradient(circle at 30% 30%, var(--accent), transparent 70%);
-  inset-block-end: -12%;
-  inset-inline-end: -8%;
+  inline-size: clamp(340px, 52vw, 660px);
+  filter: blur(90px);
+  inset-block-end: -22%;
+  inset-inline-end: -18%;
   animation: drift2 22s ease-in-out infinite;
 }
 
@@ -105,11 +107,12 @@ body {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--brand);
+  text-wrap: balance;
 }
 
 .headline {
   margin: 0;
-  font-size: clamp(1.75rem, 1rem + 4vw, 3.25rem);
+  font-size: clamp(1.75rem, 1rem + 4.5vw, 4.25rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
