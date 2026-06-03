@@ -3,9 +3,12 @@
 
 :root {
   --brand: #00a9b8;
+  --brand-bright: #1fd6c4;
+  --accent: #6c5ce7;
   --ink: #3c3c3d;
-  --bg: #fafafa;
+  --bg: #f5f7fa;
   --muted: #6b6b6e;
+  --grid: rgba(60, 60, 61, 0.05);
   --font: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -28,6 +31,54 @@ body {
   color: var(--ink);
   background: var(--bg);
   line-height: 1.5;
+  position: relative;
+  overflow-x: clip;
+}
+
+/* Animated background layer */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  /* Faint tech grid drawn over the blobs */
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.blob {
+  position: absolute;
+  inline-size: clamp(280px, 45vw, 560px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  will-change: transform;
+  mix-blend-mode: multiply;
+}
+
+.blob--1 {
+  background: radial-gradient(circle at 30% 30%, var(--brand-bright), transparent 70%);
+  inset-block-start: -8%;
+  inset-inline-start: -6%;
+  animation: drift1 18s ease-in-out infinite;
+}
+
+.blob--2 {
+  background: radial-gradient(circle at 30% 30%, var(--accent), transparent 70%);
+  inset-block-end: -12%;
+  inset-inline-end: -8%;
+  animation: drift2 22s ease-in-out infinite;
+}
+
+.blob--3 {
+  background: radial-gradient(circle at 30% 30%, var(--brand), transparent 70%);
+  inset-block-start: 35%;
+  inset-inline-start: 45%;
+  opacity: 0.4;
+  animation: drift3 26s ease-in-out infinite;
 }
 
 .stage {
@@ -83,6 +134,27 @@ body {
   }
 }
 
+@keyframes drift1 {
+  50% {
+    transform: translate(18vw, 12vh) scale(1.15);
+  }
+}
+
+@keyframes drift2 {
+  50% {
+    transform: translate(-16vw, -14vh) scale(1.2);
+  }
+}
+
+@keyframes drift3 {
+  33% {
+    transform: translate(-12vw, 8vh) scale(0.85);
+  }
+  66% {
+    transform: translate(10vw, -10vh) scale(1.1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -90,5 +162,9 @@ body {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+  }
+
+  .blob {
+    animation: none !important;
   }
 }
