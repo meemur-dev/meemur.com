@@ -1,15 +1,52 @@
 /* meemur.com — coming soon
    Brand: teal #00a9b8 + charcoal #3c3c3d, Montserrat */
 
+/* Self-hosted Montserrat (Latin subset) — see /fonts, preloaded in <head>. */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/montserrat-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/montserrat-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/montserrat-700.woff2") format("woff2");
+}
+/* Metric-matched fallback (Arial, adjusted to Montserrat's metrics) so text
+   occupies identical space before the webfont loads — prevents layout shift.
+   Overrides computed from the actual font metrics. */
+@font-face {
+  font-family: "Montserrat Fallback";
+  src: local("Arial");
+  size-adjust: 114.061%;
+  ascent-override: 84.8668%;
+  descent-override: 22.0058%;
+  line-gap-override: 0%;
+}
+
 :root {
   --brand: #00a9b8;
   --brand-bright: #1fd6c4;
+  /* Darker teal for text on light backgrounds — meets WCAG AA (~4.8:1).
+     Plain --brand is reserved for graphics/focus rings (contrast-exempt). */
+  --brand-strong: #00798a;
   --accent: #6c5ce7;
   --ink: #3c3c3d;
   --bg: #f5f7fa;
   --muted: #6b6b6e;
   --grid: rgba(60, 60, 61, 0.05);
-  --font: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font: "Montserrat", "Montserrat Fallback", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
 *,
@@ -88,14 +125,14 @@ body {
   place-content: center;
   justify-items: center;
   text-align: center;
-  gap: clamp(1rem, 3vw, 1.75rem);
-  padding: clamp(1.5rem, 5vw, 4rem);
-  max-inline-size: 42rem;
+  gap: clamp(0.85rem, 2.2vw, 1.4rem);
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  max-inline-size: 52rem;
   margin-inline: auto;
 }
 
 .logo {
-  inline-size: clamp(180px, 40vw, 320px);
+  inline-size: clamp(180px, 40vw, 400px);
   block-size: auto;
   animation: rise 0.7s ease both;
 }
@@ -106,17 +143,18 @@ body {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--brand);
+  color: var(--brand-strong);
   text-wrap: balance;
 }
 
 .headline {
   margin: 0;
-  font-size: clamp(1.75rem, 1rem + 4.5vw, 4.25rem);
+  font-size: clamp(1.75rem, 1rem + 4vw, 3.75rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
   text-wrap: balance;
+  max-inline-size: 16ch;
 }
 
 .tagline {
