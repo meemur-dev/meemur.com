@@ -1,0 +1,262 @@
+/* meemur.com — /brand press & media kit
+   Layout-only styles. Brand tokens, fonts, focus + reduced-motion rules are
+   inherited from /styles.css. */
+
+/* This page scrolls (unlike the pinned coming-soon hero), so let the body
+   grow with its content while keeping the footer at the bottom. */
+.brand {
+  overflow-x: hidden;
+}
+
+.kit {
+  inline-size: min(100% - 2.5rem, 60rem);
+  margin-inline: auto;
+  padding-block: clamp(2.5rem, 6vw, 4.5rem);
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* ---- Header ---- */
+.kit__head {
+  display: grid;
+  justify-items: start;
+  gap: 0.85rem;
+}
+
+.kit__logo {
+  inline-size: clamp(160px, 30vw, 280px);
+  block-size: auto;
+}
+
+.kit__eyebrow {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-strong);
+}
+
+.kit__title {
+  margin: 0;
+  font-size: clamp(1.6rem, 1rem + 3vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  max-inline-size: 18ch;
+}
+
+.kit__lede {
+  margin: 0;
+  font-size: clamp(1rem, 0.92rem + 0.4vw, 1.15rem);
+  color: var(--muted);
+  text-wrap: pretty;
+  max-inline-size: 46ch;
+}
+
+/* ---- Sections ---- */
+.section {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.section__title {
+  margin: 0;
+  font-size: clamp(1.2rem, 1rem + 1vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  padding-block-end: 0.6rem;
+  border-block-end: 1px solid rgba(60, 60, 61, 0.12);
+}
+
+.section__note {
+  margin: 0;
+  color: var(--muted);
+  max-inline-size: 60ch;
+}
+
+/* ---- Boilerplate copy ---- */
+.copyblock {
+  border: 1px solid rgba(60, 60, 61, 0.12);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  background: #fff;
+}
+
+.copyblock__label {
+  margin: 0 0 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-strong);
+}
+
+.copyblock__text {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.facts {
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.facts__row {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.facts__row dt {
+  font-weight: 600;
+  color: var(--brand-strong);
+}
+
+.facts__row dd {
+  margin: 0;
+}
+
+/* ---- Logo assets ---- */
+.assets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.asset {
+  margin: 0;
+  border: 1px solid rgba(60, 60, 61, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.asset__preview {
+  display: grid;
+  place-items: center;
+  min-block-size: 180px;
+  padding: 1.5rem;
+}
+
+.asset__preview--light {
+  background: var(--bg);
+}
+
+.asset__preview--mark {
+  background: var(--bg);
+}
+
+.asset__preview img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+.asset__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.1rem;
+  border-block-start: 1px solid rgba(60, 60, 61, 0.12);
+}
+
+.asset__name {
+  font-weight: 600;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  background: var(--brand-strong);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--brand);
+}
+
+/* ---- Color swatches ---- */
+.swatches {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.swatch {
+  inline-size: 100%;
+  display: grid;
+  gap: 0.15rem;
+  padding: 0;
+  border: 1px solid rgba(60, 60, 61, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+
+.swatch__chip {
+  display: block;
+  block-size: 84px;
+  background: var(--c);
+}
+
+.swatch__name {
+  padding-inline: 0.85rem;
+  padding-block-start: 0.6rem;
+  font-weight: 600;
+}
+
+.swatch__hex {
+  padding-inline: 0.85rem;
+  padding-block-end: 0.7rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.swatch__status {
+  margin: 0;
+  min-block-size: 1.2em;
+  font-size: 0.85rem;
+  color: var(--brand-strong);
+  font-weight: 600;
+}
+
+/* ---- Typography specimen ---- */
+.type-specimen {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.type-specimen__line {
+  margin: 0;
+  font-size: clamp(1.05rem, 0.9rem + 1vw, 1.5rem);
+  line-height: 1.3;
+}
+
+/* ---- Contact ---- */
+.contact {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.contact a {
+  color: var(--brand-strong);
+}

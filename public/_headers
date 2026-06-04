@@ -1,0 +1,7 @@
+# Cloudflare Pages custom headers — https://developers.cloudflare.com/pages/configuration/headers/
+
+# Hidden press kit: keep it out of search indexes even if the URL leaks.
+/brand
+  X-Robots-Tag: noindex, nofollow
+/brand/*
+  X-Robots-Tag: noindex, nofollow

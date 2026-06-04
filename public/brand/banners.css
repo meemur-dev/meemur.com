@@ -1,0 +1,260 @@
+/* meemur.com — social banner render sheet (/brand/banners.html)
+   Each .banner is sized to its platform's exact pixel dimensions so it can be
+   screenshotted 1:1 to a PNG. Brand tokens, fonts, focus + reduced-motion rules
+   come from /styles.css. */
+
+/* Render-sheet chrome (not part of any banner) */
+.sheet {
+  margin: 0;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: #20232a;
+  color: #e7e9ee;
+  font-family: var(--font);
+  min-block-size: 100dvb;
+}
+
+.sheet__intro {
+  max-inline-size: 60rem;
+  margin: 0 0 2.5rem;
+}
+
+.sheet__intro h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.sheet__intro p {
+  margin: 0;
+  color: #aab0bd;
+}
+
+.sheet__item {
+  max-inline-size: max-content;
+  margin: 0 0 3rem;
+}
+
+.sheet__cap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: baseline;
+  margin-block-end: 0.75rem;
+  color: #aab0bd;
+  font-size: 0.9rem;
+}
+
+/* Download button under each banner */
+.sheet__dl {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-block-start: 0.85rem;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  background: var(--brand);
+  color: #062a2e;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.sheet__dl:hover {
+  background: var(--brand-bright);
+}
+
+.sheet__cap b {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.sheet__cap code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  color: var(--brand-bright);
+}
+
+/* The banner is the snap target — keep a hairline ring so its edges are visible
+   on the dark sheet (the ring is outside the box, so it never lands in a PNG). */
+.banner {
+  position: relative;
+  overflow: hidden;
+  outline: 1px solid rgba(255, 255, 255, 0.15);
+  background:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+    var(--bg);
+  background-size: 48px 48px, 48px 48px, auto;
+  display: grid;
+  font-family: var(--font);
+  color: var(--ink);
+}
+
+/* Drifting gradient blobs — static (no animation) for deterministic snaps. */
+.banner__blob {
+  position: absolute;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  filter: blur(70px);
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+  z-index: 0;
+}
+
+.banner__blob--bright {
+  inline-size: 520px;
+  opacity: 0.48;
+  background: radial-gradient(circle at 30% 30%, var(--brand-bright), transparent 70%);
+  inset-block-start: -45%;
+  inset-inline-start: -4%;
+}
+
+.banner__blob--accent {
+  inline-size: 620px;
+  filter: blur(90px);
+  opacity: 0.42;
+  background: radial-gradient(circle at 30% 30%, var(--accent), transparent 70%);
+  inset-block-end: -90%;
+  inset-inline-end: -8%;
+}
+
+.banner__blob--teal {
+  inline-size: 520px;
+  opacity: 0.4;
+  background: radial-gradient(circle at 30% 30%, var(--brand), transparent 70%);
+  inset-block-start: 10%;
+  inset-inline-start: 42%;
+}
+
+.banner__content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 0.6rem;
+}
+
+.banner__logo {
+  display: block;
+  block-size: auto;
+}
+
+.banner__slogan {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-strong);
+}
+
+/* Optional safe-zone guides — shown on the sheet for review, hidden before a
+   clean snap (toggle by removing the `guides` class on <body>). */
+.banner__guide {
+  position: absolute;
+  z-index: 2;
+  border: 2px dashed rgba(220, 38, 38, 0.7);
+  border-radius: 6px;
+  display: none;
+}
+
+.guides .banner__guide {
+  display: block;
+}
+
+.banner__guide span {
+  position: absolute;
+  inset-block-end: 4px;
+  inset-inline-start: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #dc2626;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+/* ----- Platform sizes & placement ----- */
+
+/* LinkedIn personal: 1584×396, 4:1. Bottom-left 568×264 is hidden by the
+   profile photo (524px wide on mobile) — keep the logo center-right. */
+.banner--li-personal {
+  inline-size: 1584px;
+  block-size: 396px;
+  place-content: center end;
+}
+.banner--li-personal .banner__content {
+  padding-inline-end: 150px;
+}
+.banner--li-personal .banner__logo {
+  block-size: 150px;
+}
+.banner--li-personal .banner__slogan {
+  font-size: 20px;
+}
+.banner--li-personal .banner__guide {
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inline-size: 568px;
+  block-size: 264px;
+}
+
+/* LinkedIn company: 1128×191. Short cover; centered logo reads safely. */
+.banner--li-company {
+  inline-size: 1128px;
+  block-size: 191px;
+  place-content: center;
+}
+.banner--li-company .banner__logo {
+  block-size: 118px;
+}
+/* Shorter canvas — shrink the blobs so they don't wash out the mark. */
+.banner--li-company .banner__blob {
+  filter: blur(55px);
+}
+.banner--li-company .banner__blob--bright {
+  inline-size: 360px;
+  opacity: 0.45;
+  inset-block-start: -120%;
+}
+.banner--li-company .banner__blob--accent {
+  inline-size: 440px;
+  filter: blur(65px);
+  opacity: 0.4;
+}
+.banner--li-company .banner__blob--teal {
+  inline-size: 320px;
+  opacity: 0.3;
+}
+
+/* X / Twitter header: 1500×500. Avatar + handle overlay the lower-left; keep
+   the composition centered and nudged up. */
+.banner--x {
+  inline-size: 1500px;
+  block-size: 500px;
+  place-content: center;
+}
+.banner--x .banner__content {
+  padding-block-end: 60px;
+}
+.banner--x .banner__logo {
+  block-size: 190px;
+}
+.banner--x .banner__slogan {
+  font-size: 24px;
+}
+
+/* Open Graph share card: 1200×630. Fully visible — a centered mini hero. */
+.banner--og {
+  inline-size: 1200px;
+  block-size: 630px;
+  place-content: center;
+}
+.banner--og .banner__content {
+  padding-block-start: 28px;
+}
+.banner--og .banner__logo {
+  block-size: 210px;
+}
+.banner--og .banner__slogan {
+  font-size: 26px;
+}

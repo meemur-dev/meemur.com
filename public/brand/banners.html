@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>meemur — Banner Render Sheet</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <link rel="preload" href="/fonts/montserrat-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/montserrat-600.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/brand/banners.css" />
+  </head>
+  <!-- `guides` shows the safe-zone overlays for review. Remove the class (or run
+       document.body.classList.remove('guides')) before snapping clean PNGs. -->
+  <body class="sheet guides">
+    <div class="sheet__intro">
+      <h1>Banner render sheet</h1>
+      <p>
+        Each banner is drawn at its exact pixel size so it can be screenshotted
+        1:1 to a PNG. Red dashed boxes mark zones hidden by profile photos/overlays
+        — hide them before exporting. Hidden page (noindex), not linked publicly.
+      </p>
+    </div>
+
+    <!-- LinkedIn personal -->
+    <figure class="sheet__item">
+      <figcaption class="sheet__cap">
+        <b>LinkedIn — personal cover</b>
+        <code>1584 × 396</code>
+        <span>logo center-right, clear of the profile photo</span>
+      </figcaption>
+      <div class="banner banner--li-personal" data-snap="banner-linkedin-personal" role="img" aria-label="meemur LinkedIn personal cover banner">
+        <span class="banner__blob banner__blob--bright"></span>
+        <span class="banner__blob banner__blob--accent"></span>
+        <span class="banner__blob banner__blob--teal"></span>
+        <div class="banner__content">
+          <img class="banner__logo" src="/logo.svg" alt="meemur" />
+          <p class="banner__slogan">We make the web work for you.</p>
+        </div>
+        <div class="banner__guide"><span>profile photo / overlay</span></div>
+      </div>
+      <a class="sheet__dl" href="/brand/banner-linkedin-personal-1x.png" download>↓ PNG @1x · 1584×396</a>
+      <a class="sheet__dl" href="/brand/banner-linkedin-personal-2x.png" download>↓ PNG @2x · 3168×792</a>
+    </figure>
+
+    <!-- LinkedIn company -->
+    <figure class="sheet__item">
+      <figcaption class="sheet__cap">
+        <b>LinkedIn — company cover</b>
+        <code>1128 × 191</code>
+        <span>for the future meemur company page</span>
+      </figcaption>
+      <div class="banner banner--li-company" data-snap="banner-linkedin-company" role="img" aria-label="meemur LinkedIn company cover banner">
+        <span class="banner__blob banner__blob--bright"></span>
+        <span class="banner__blob banner__blob--accent"></span>
+        <span class="banner__blob banner__blob--teal"></span>
+        <div class="banner__content">
+          <img class="banner__logo" src="/logo.svg" alt="meemur" />
+        </div>
+      </div>
+      <a class="sheet__dl" href="/brand/banner-linkedin-company-1x.png" download>↓ PNG @1x · 1128×191</a>
+      <a class="sheet__dl" href="/brand/banner-linkedin-company-2x.png" download>↓ PNG @2x · 2256×382</a>
+    </figure>
+
+    <!-- X / Twitter header -->
+    <figure class="sheet__item">
+      <figcaption class="sheet__cap">
+        <b>X / Twitter — header</b>
+        <code>1500 × 500</code>
+        <span>centered, nudged up past the avatar</span>
+      </figcaption>
+      <div class="banner banner--x" data-snap="banner-x-header" role="img" aria-label="meemur X / Twitter header banner">
+        <span class="banner__blob banner__blob--bright"></span>
+        <span class="banner__blob banner__blob--accent"></span>
+        <span class="banner__blob banner__blob--teal"></span>
+        <div class="banner__content">
+          <img class="banner__logo" src="/logo.svg" alt="meemur" />
+          <p class="banner__slogan">We make the web work for you.</p>
+        </div>
+      </div>
+      <a class="sheet__dl" href="/brand/banner-x-header-1x.png" download>↓ PNG @1x · 1500×500</a>
+      <a class="sheet__dl" href="/brand/banner-x-header-2x.png" download>↓ PNG @2x · 3000×1000</a>
+    </figure>
+
+    <!-- Open Graph share card -->
+    <figure class="sheet__item">
+      <figcaption class="sheet__cap">
+        <b>Open Graph — share card</b>
+        <code>1200 × 630</code>
+        <span>used when meemur.com links are shared</span>
+      </figcaption>
+      <div class="banner banner--og" data-snap="banner-og" role="img" aria-label="meemur Open Graph share card banner">
+        <span class="banner__blob banner__blob--bright"></span>
+        <span class="banner__blob banner__blob--accent"></span>
+        <span class="banner__blob banner__blob--teal"></span>
+        <div class="banner__content">
+          <img class="banner__logo" src="/logo.svg" alt="meemur" />
+          <p class="banner__slogan">We make the web work for you.</p>
+        </div>
+      </div>
+      <a class="sheet__dl" href="/brand/banner-og-1x.png" download>↓ PNG @1x · 1200×630</a>
+      <a class="sheet__dl" href="/brand/banner-og-2x.png" download>↓ PNG @2x · 2400×1260</a>
+    </figure>
+  </body>
+</html>
