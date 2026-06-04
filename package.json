@@ -1,6 +1,6 @@
 {
   "name": "meemur-com",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "license": "UNLICENSED",
   "description": "meemur.com — coming soon page",
@@ -9,6 +9,8 @@
     "predev": "node scripts/build-version.mjs",
     "deploy": "wrangler pages deploy ./public --project-name meemur-com",
     "stamp": "node scripts/build-version.mjs",
+    "release": "node scripts/release.mjs",
+    "check:version": "node scripts/check-version.mjs",
     "pretest": "node scripts/build-version.mjs",
     "test": "playwright test"
   },
