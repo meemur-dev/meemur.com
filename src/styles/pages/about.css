@@ -1,0 +1,165 @@
+/* About + Contact page (body.page-about) */
+
+.about-founder__inner {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+}
+
+@media (min-width: 860px) {
+  .about-founder__inner {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.about-founder__text {
+  display: grid;
+  gap: 1rem;
+  max-inline-size: 42rem;
+}
+
+.about-founder__text h2 {
+  font-size: clamp(1.7rem, 1.3rem + 1.6vw, 2.5rem);
+}
+
+.about-founder__text p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.about-links {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.about-links a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.values {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.value {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.value h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.3rem;
+}
+
+.value p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Contact */
+.contact__inner {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+  scroll-margin-top: 6rem;
+}
+
+@media (min-width: 860px) {
+  .contact__inner {
+    grid-template-columns: 1fr 1.1fr;
+  }
+}
+
+.contact__intro {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  max-inline-size: 32rem;
+}
+
+.contact__intro h2 {
+  font-size: clamp(1.7rem, 1.3rem + 1.6vw, 2.5rem);
+}
+
+.contact__intro p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.contact-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  gap: 1.1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.field input,
+.field textarea {
+  font: inherit;
+  color: var(--ink);
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+/* Honeypot — kept out of view and out of the tab order. */
+.hp {
+  position: absolute;
+  inset-inline-start: -9999px;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+}
+
+.contact-form .btn {
+  justify-self: start;
+}
+
+.form-status {
+  margin: 0;
+  font-size: 0.95rem;
+  min-block-size: 1.2em;
+}
+
+.form-status--ok {
+  color: var(--brand-strong);
+  font-weight: 600;
+}
+
+.form-status--error {
+  color: #c0392b;
+  font-weight: 600;
+}

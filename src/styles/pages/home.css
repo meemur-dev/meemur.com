@@ -1,0 +1,242 @@
+/* Home page (body.page-home) */
+
+/* Hero */
+.hero {
+  padding-block: clamp(3.5rem, 9vw, 7.5rem);
+}
+
+.hero__inner {
+  display: grid;
+  gap: 1.5rem;
+  max-inline-size: 46rem;
+}
+
+.hero__eyebrow {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand-strong);
+}
+
+.hero__title {
+  font-size: clamp(2.4rem, 1.4rem + 5vw, 4.75rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.hero__title span {
+  color: var(--brand-strong);
+}
+
+.hero__lead {
+  font-size: clamp(1.1rem, 1rem + 0.7vw, 1.4rem);
+  color: var(--muted);
+  margin: 0;
+  max-inline-size: 38rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-block-start: 0.75rem;
+}
+
+/* Cards (services overview) */
+/* Flex + center so the 5 cards balance as 3 + 2 (centered) instead of
+   leaving a lone card stranded on a second row. The max width caps card
+   size so both rows match. */
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.card {
+  flex: 1 1 18rem;
+  max-inline-size: 23rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: color-mix(in srgb, var(--brand) 40%, var(--border));
+}
+
+.card__icon {
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: var(--brand-strong);
+  background: color-mix(in srgb, var(--brand) 12%, transparent);
+}
+
+.card__icon svg {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+}
+
+.card__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.card__text {
+  margin: 0;
+  color: var(--muted);
+}
+
+.card__link {
+  margin-block-start: 0.3rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--brand-strong);
+}
+
+.card__link::after {
+  content: " →";
+}
+
+/* Approach steps */
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  counter-reset: step;
+}
+
+.step {
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+  padding-block-start: 1rem;
+  border-block-start: 2px solid color-mix(in srgb, var(--brand) 35%, var(--border));
+}
+
+.step__num {
+  font-weight: 700;
+  color: var(--brand-strong);
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+}
+
+.step__title {
+  font-size: 1.15rem;
+}
+
+.step__text {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Why + stats */
+.why__inner {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .why__inner {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}
+
+.why__text {
+  display: grid;
+  gap: 1rem;
+  max-inline-size: 38rem;
+}
+
+.why__text h2 {
+  font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem);
+}
+
+.why__text p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.why__text .btn {
+  justify-self: start;
+  margin-block-start: 0.5rem;
+}
+
+.stats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.stat__num {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--brand-strong);
+}
+
+.stat__label {
+  color: var(--muted);
+}
+
+/* CTA band */
+.cta {
+  text-align: center;
+  /* On-brand teal gradient, kept dark enough for AA-contrast white text
+     (the purple accent only belongs in the faint background blobs). */
+  background: linear-gradient(135deg, var(--brand-strong), #015c6a);
+  color: #fff;
+  border-radius: calc(var(--radius) + 6px);
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 3rem);
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  box-shadow: var(--shadow-md);
+}
+
+.cta__title {
+  font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.6rem);
+}
+
+.cta__text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  max-inline-size: 36rem;
+}
+
+.cta .btn--primary {
+  --btn-bg: #fff;
+  --btn-fg: var(--brand-strong);
+}

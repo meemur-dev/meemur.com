@@ -36,9 +36,10 @@ writeFileSync(
   ) + "\n",
 );
 
-// Keep the page's <meta name="version"> aligned with the semver (no-op when
-// unchanged, so it never creates spurious git diffs).
-const indexPath = join(ROOT, "public/index.html");
+// Keep the home page's <meta name="version"> aligned with the semver (no-op
+// when unchanged, so it never creates spurious git diffs). This is the Vite
+// entry at the repo root, copied into dist/ during the build.
+const indexPath = join(ROOT, "index.html");
 const html = readFileSync(indexPath, "utf8");
 writeFileSync(
   indexPath,

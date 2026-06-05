@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>meemur — Digital agency for web, e-commerce &amp; analytics</title>
+    <meta
+      name="description"
+      content="meemur is a boutique digital agency that designs, builds, and measures high-performing web and e-commerce experiences — then grows them with analytics, CRO, and paid social."
+    />
+    <meta name="author" content="Onur Yanar" />
+    <meta name="version" content="0.2.0" />
+    <link rel="canonical" href="https://meemur.com/" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Brand typeface: self-hosted Montserrat (Latin subset). -->
+    <link rel="preload" href="/fonts/montserrat-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/montserrat-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/montserrat-600.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:title" content="meemur — Digital agency for web, e-commerce &amp; analytics" />
+    <meta
+      property="og:description"
+      content="A boutique digital agency that builds high-performing web &amp; e-commerce, then grows it with data."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://meemur.com/" />
+    <meta property="og:site_name" content="meemur" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://meemur.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="meemur — Digital agency for web, e-commerce &amp; analytics" />
+    <meta
+      name="twitter:description"
+      content="A boutique digital agency that builds high-performing web &amp; e-commerce, then grows it with data."
+    />
+    <meta name="twitter:image" content="https://meemur.com/og-image.png" />
+
+    <meta name="theme-color" content="#00a9b8" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-ND4VP7H4");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Structured data: Organization + WebSite (schema.org / JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://meemur.com/#organization",
+            "name": "meemur",
+            "alternateName": "meemur Digital Agency",
+            "url": "https://meemur.com/",
+            "logo": "https://meemur.com/logo.svg",
+            "description": "A digital agency that elevates your entire web presence — from design and performance to analytics and growth.",
+            "slogan": "We make the web work for you.",
+            "email": "onur@meemur.com",
+            "foundingDate": "2026",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "onur@meemur.com",
+              "availableLanguage": ["en", "tr"]
+            },
+            "sameAs": ["https://github.com/meemur-dev"],
+            "founder": { "@id": "https://meemur.com/#onur" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://meemur.com/#onur",
+            "name": "Onur Yanar",
+            "url": "https://onuryanar.com/",
+            "jobTitle": "Founder",
+            "email": "onur@meemur.com",
+            "worksFor": { "@id": "https://meemur.com/#organization" },
+            "sameAs": [
+              "https://onuryanar.com/",
+              "https://www.linkedin.com/in/oyanar",
+              "https://github.com/onurstats"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://meemur.com/#website",
+            "url": "https://meemur.com/",
+            "name": "meemur",
+            "description": "A digital agency that elevates your entire web presence — from design and performance to analytics and growth.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://meemur.com/#organization" },
+            "creator": { "@id": "https://meemur.com/#onur" }
+          }
+        ]
+      }
+    </script>
+
+    <script type="module" src="/src/scripts/main.ts"></script>
+  </head>
+  <body class="page-home">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-ND4VP7H4"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="bg" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+    </div>
+
+    <!--#header active="home"-->
+
+    <main id="main">
+      <section class="hero">
+        <div class="container hero__inner">
+          <p class="hero__eyebrow">Digital agency · e-commerce &amp; analytics</p>
+          <h1 class="hero__title">We make the web <span>work for you.</span></h1>
+          <p class="hero__lead">
+            We design, build, and grow the websites, online stores, and apps that win customers —
+            and keep them coming back.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="/about#contact">Start a project</a>
+            <a class="btn btn--ghost" href="/services">Explore services</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section services-overview">
+        <div class="container">
+          <div class="section__head">
+            <p class="eyebrow">What we do</p>
+            <h2>Everything your brand needs to win online</h2>
+            <p class="lead">
+              Six capabilities that take a site from launch to measurable results.
+            </p>
+          </div>
+
+          <ul class="cards" role="list">
+            <li class="card">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                  <path d="M3 6h18" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+              </span>
+              <h3 class="card__title">Web &amp; E-commerce</h3>
+              <p class="card__text">
+                Beautiful, lightning-fast websites and online stores that turn browsers into buyers
+                — effortless on every screen.
+              </p>
+              <a class="card__link" href="/services#ecommerce">Learn more</a>
+            </li>
+            <li class="card">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="2" width="14" height="20" rx="2.5" />
+                  <path d="M11 18h2" />
+                </svg>
+              </span>
+              <h3 class="card__title">Cross-platform Apps</h3>
+              <p class="card__text">
+                Put your brand in your customers' pocket with sleek apps for iPhone and Android —
+                built once, launched everywhere.
+              </p>
+              <a class="card__link" href="/services#apps">Learn more</a>
+            </li>
+            <li class="card">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 3v16a2 2 0 0 0 2 2h16" />
+                  <rect x="7" y="11" width="3" height="6" rx="1" />
+                  <rect x="13" y="7" width="3" height="10" rx="1" />
+                </svg>
+              </span>
+              <h3 class="card__title">Analytics &amp; Measurement</h3>
+              <p class="card__text">
+                Finally know what's working. We turn your data into clear answers and reports you
+                can actually trust.
+              </p>
+              <a class="card__link" href="/services#analytics">Learn more</a>
+            </li>
+            <li class="card">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                  <polyline points="16 7 22 7 22 13" />
+                </svg>
+              </span>
+              <h3 class="card__title">CRO &amp; Experimentation</h3>
+              <p class="card__text">
+                Get more sales from the visitors you already have. We test, learn, and fine-tune
+                until the numbers climb.
+              </p>
+              <a class="card__link" href="/services#cro">Learn more</a>
+            </li>
+            <li class="card">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 14 16 10" />
+                  <path d="M3.34 19a10 10 0 1 1 17.32 0" />
+                </svg>
+              </span>
+              <h3 class="card__title">Accessibility &amp; Performance</h3>
+              <p class="card__text">
+                Faster pages, happier visitors, higher rankings — experiences that load in a blink
+                and welcome everyone.
+              </p>
+              <a class="card__link" href="/services#performance">Learn more</a>
+            </li>
+            <li class="card">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m3 11 18-5v12L3 14v-3z" />
+                  <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
+                </svg>
+              </span>
+              <h3 class="card__title">Social Media Ads</h3>
+              <p class="card__text">
+                Reach the right people and watch it pay off — scroll-stopping campaigns with every
+                dollar accounted for.
+              </p>
+              <a class="card__link" href="/services#ads">Learn more</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section approach">
+        <div class="container">
+          <div class="section__head">
+            <p class="eyebrow">How we work</p>
+            <h2>Design, build, measure, optimize</h2>
+            <p class="lead">
+              A simple, proven way of working — and we don't stop at launch.
+            </p>
+          </div>
+          <ol class="steps" role="list">
+            <li class="step">
+              <span class="step__num">01</span>
+              <h3 class="step__title">Discover</h3>
+              <p class="step__text">We get to know your goals, your customers, and what winning really looks like.</p>
+            </li>
+            <li class="step">
+              <span class="step__num">02</span>
+              <h3 class="step__title">Build</h3>
+              <p class="step__text">We craft a fast, beautiful experience your audience will love to use.</p>
+            </li>
+            <li class="step">
+              <span class="step__num">03</span>
+              <h3 class="step__title">Measure</h3>
+              <p class="step__text">We track the right things, so you always know what's working.</p>
+            </li>
+            <li class="step">
+              <span class="step__num">04</span>
+              <h3 class="step__title">Optimize</h3>
+              <p class="step__text">We keep refining — turning good results into great ones, month after month.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section why">
+        <div class="container why__inner">
+          <div class="why__text">
+            <p class="eyebrow">Why meemur</p>
+            <h2>Boutique focus, senior hands on every project</h2>
+            <p>
+              meemur is founder-led by Onur Yanar. With 10+ years and 60+ brands behind him, you
+              get senior expertise on every project — and you work directly with the person doing
+              the work, never an account manager.
+            </p>
+            <a class="btn btn--ghost" href="/about">Meet the founder</a>
+          </div>
+          <ul class="stats" role="list">
+            <li class="stat"><span class="stat__num">10+</span><span class="stat__label">Years of experience</span></li>
+            <li class="stat"><span class="stat__num">60+</span><span class="stat__label">Storefronts shipped</span></li>
+            <li class="stat"><span class="stat__num">100%</span><span class="stat__label">Founder-led delivery</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container cta">
+          <h2 class="cta__title">Have a project in mind?</h2>
+          <p class="cta__text">
+            Tell us what you're building. We'll reply within one business day.
+          </p>
+          <a class="btn btn--primary" href="/about#contact">Get in touch</a>
+        </div>
+      </section>
+    </main>
+
+    <!--#footer-->
+  </body>
+</html>
