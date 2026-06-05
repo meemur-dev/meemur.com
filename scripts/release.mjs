@@ -4,10 +4,10 @@
 // `git flow release finish <version>`.
 //
 // Usage (inside `git flow release start 0.2.0`):
-//   npm run release                 # infers 0.2.0 from the branch name
-//   npm run release -- minor        # or bump major|minor|patch
-//   npm run release -- 0.2.0        # or pin an explicit version
-//   npm run release -- --dry-run    # preview without writing
+//   bun run release                 # infers 0.2.0 from the branch name
+//   bun run release -- minor        # or bump major|minor|patch
+//   bun run release -- 0.2.0        # or pin an explicit version
+//   bun run release -- --dry-run    # preview without writing
 import { readFileSync, writeFileSync } from "node:fs";
 import { execSync } from "node:child_process";
 import { join } from "node:path";
@@ -69,7 +69,7 @@ const spec = args.find((a) => !a.startsWith("--")) ?? branchVersion();
 if (!spec) {
   console.error(
     "No version given and not on a release/hotfix branch.\n" +
-      "  Usage: npm run release -- <major|minor|patch|x.y.z>",
+      "  Usage: bun run release -- <major|minor|patch|x.y.z>",
   );
   process.exit(1);
 }

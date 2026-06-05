@@ -56,7 +56,7 @@ export function checkDrift() {
   if (cmpSemver(pkg, tag) < 0) {
     errors.push(
       `package.json version (${pkg}) is behind the latest release tag (${tag}). ` +
-        `Bump it during the release branch with \`npm run release\`.`,
+        `Bump it during the release branch with \`bun run release\`.`,
     );
   }
   if (!changelogHasVersion(tag)) {

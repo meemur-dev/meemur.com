@@ -8,26 +8,26 @@ git tags and `version.json` derive from it.
 
 ```bash
 git flow release start 0.2.0     # branch off develop (use the real next version)
-npm run release                  # infers 0.2.0 from the branch name; bumps
+bun run release                  # infers 0.2.0 from the branch name; bumps
                                  # package.json, rolls CHANGELOG [Unreleased]
                                  # → [0.2.0], re-stamps version.json, and commits
 git flow release finish 0.2.0    # merges to main + develop and creates tag 0.2.0
 git push origin main develop --tags
 ```
 
-`npm run release` also accepts an explicit bump or version, and a preview:
+`bun run release` also accepts an explicit bump or version, and a preview:
 
 ```bash
-npm run release -- minor     # or major | patch
-npm run release -- 0.2.0     # pin a version
-npm run release -- --dry-run # show the bump without writing
+bun run release -- minor     # or major | patch
+bun run release -- 0.2.0     # pin a version
+bun run release -- --dry-run # show the bump without writing
 ```
 
 Hotfixes work the same way with `git flow hotfix start <x.y.z>`.
 
 ## What keeps it honest
 
-- **`npm run check:version`** (and `tests/version.spec.mjs`, run by `npm test`)
+- **`bun run check:version`** (and `tests/version.spec.mjs`, run by `bun run test`)
   fail if `package.json` is behind the latest git tag, or if the CHANGELOG has no
   section for that tag. This is the check that would have caught `0.1.1`
   shipping while `package.json` still said `0.1.0`.

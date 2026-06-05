@@ -2,7 +2,7 @@ import { defineConfig } from "@playwright/test";
 
 // Self-contained: Playwright starts its own wrangler dev server and tears it
 // down when the run finishes. Point at a deployed site instead with BASE_URL,
-// e.g. BASE_URL=https://meemur.com npm test (skips the local server).
+// e.g. BASE_URL=https://meemur.com bun run test (skips the local server).
 const PORT = process.env.PORT ?? "8790";
 const BASE_URL = process.env.BASE_URL ?? `http://localhost:${PORT}`;
 
@@ -32,7 +32,7 @@ export default defineConfig({
   webServer: process.env.BASE_URL
     ? undefined
     : {
-        command: `npx wrangler pages dev ./public --port ${PORT} --ip 127.0.0.1`,
+        command: `bunx wrangler pages dev ./dist --port ${PORT} --ip 127.0.0.1`,
         url: BASE_URL,
         timeout: 60_000,
         reuseExistingServer: !process.env.CI,

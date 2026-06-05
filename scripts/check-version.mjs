@@ -1,6 +1,6 @@
 // CLI guard: fail (exit 1) when package.json / git tag / CHANGELOG drift apart.
-// Run manually (`npm run check:version`) or in CI. The same check runs as a
-// Playwright test (tests/version.spec.mjs) so a normal `npm test` catches it.
+// Run manually (`bun run check:version`) or in CI. The same check runs as a
+// Playwright test (tests/version.spec.mjs) so a normal `bun run test` catches it.
 import { checkDrift } from "./version-utils.mjs";
 
 const { pkg, tag, errors, skipped } = checkDrift();

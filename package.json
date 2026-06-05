@@ -3,19 +3,20 @@
   "version": "0.2.0",
   "private": true,
   "type": "module",
+  "packageManager": "bun@1.3.14",
   "license": "UNLICENSED",
   "description": "meemur.com — digital agency website",
   "scripts": {
     "dev": "vite",
     "predev": "node scripts/build-version.mjs",
     "build": "node scripts/build-version.mjs && vite build",
-    "preview": "npm run build && wrangler pages dev ./dist",
-    "deploy": "npm run build && wrangler pages deploy ./dist --project-name meemur-com",
+    "preview": "bun run build && wrangler pages dev ./dist",
+    "deploy": "bun run build && wrangler pages deploy ./dist --project-name meemur-com",
     "stamp": "node scripts/build-version.mjs",
     "release": "node scripts/release.mjs",
     "check:version": "node scripts/check-version.mjs",
     "design:lint": "designmd lint DESIGN.md",
-    "pretest": "npm run build",
+    "pretest": "bun run build",
     "test": "playwright test"
   },
   "devDependencies": {
