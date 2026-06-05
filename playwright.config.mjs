@@ -6,16 +6,6 @@ import { defineConfig } from "@playwright/test";
 const PORT = process.env.PORT ?? "8790";
 const BASE_URL = process.env.BASE_URL ?? `http://localhost:${PORT}`;
 
-// Viewports we verify the page against. Each becomes a Playwright "project",
-// so every test runs across all of them.
-const VIEWPORTS = {
-  "mobile-360": { width: 360, height: 740 },   // small Android
-  "mobile-390": { width: 390, height: 844 },   // iPhone 14/15
-  "tablet-768": { width: 768, height: 1024 },  // iPad portrait
-  "laptop-1366": { width: 1366, height: 768 }, // common laptop
-  "desktop-1920": { width: 1920, height: 1080 },
-};
-
 export default defineConfig({
   testDir: "./tests",
   fullyParallel: true,
@@ -38,8 +28,29 @@ export default defineConfig({
         reuseExistingServer: !process.env.CI,
       },
 
-  projects: Object.entries(VIEWPORTS).map(([name, viewport]) => ({
-    name,
-    use: { viewport },
-  })),
+  // Content/SEO/behaviour is viewport-agnostic, so functional specs run ONCE on
+  // desktop instead of across every viewport. Only the responsive spec (mobile
+  // nav) needs a phone viewport, and screenshots capture just mobile + desktop.
+  projects: [
+    {
+      name: "desktop",
+      use: { viewport: { width: 1280, height: 800 } },
+      testIgnore: ["**/responsive.spec.mjs", "**/screenshots.spec.mjs"],
+    },
+    {
+      name: "mobile",
+      use: { viewport: { width: 390, height: 844 } },
+      testMatch: "**/responsive.spec.mjs",
+    },
+    {
+      name: "shot-mobile",
+      use: { viewport: { width: 390, height: 844 } },
+      testMatch: "**/screenshots.spec.mjs",
+    },
+    {
+      name: "shot-desktop",
+      use: { viewport: { width: 1440, height: 900 } },
+      testMatch: "**/screenshots.spec.mjs",
+    },
+  ],
 });

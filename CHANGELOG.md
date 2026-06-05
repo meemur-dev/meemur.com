@@ -23,6 +23,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   shared OG image; Organization + Person + WebSite JSON-LD on the home page.
 - `DESIGN.md` design-system spec (google-labs-code/design.md format), plus a
   `bun run design:lint` script backed by the `@google/design.md` linter.
+- Playwright suite rewritten for the multi-page site (home, services, about,
+  and the contact form, with a mobile-nav check) and restructured so functional
+  specs run once on desktop — keeping the run fast on a static site.
 
 ### Changed
 

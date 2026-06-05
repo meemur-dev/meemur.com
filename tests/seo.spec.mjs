@@ -19,15 +19,29 @@ test.describe("seo metadata", () => {
     );
   });
 
-  test("declares Open Graph site name and Twitter card", async ({ page }) => {
+  test("declares Open Graph site name, image, and Twitter card", async ({ page }) => {
     await expect(page.locator('meta[property="og:site_name"]')).toHaveAttribute(
       "content",
       "meemur",
+    );
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+      "content",
+      /og-image\.png$/,
     );
     await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute(
       "content",
       /summary/,
     );
+  });
+
+  test("each page has its own canonical URL", async ({ page }) => {
+    for (const [path, canonical] of [
+      ["/services", "https://meemur.com/services"],
+      ["/about", "https://meemur.com/about"],
+    ]) {
+      await page.goto(path);
+      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", canonical);
+    }
   });
 
   test("includes valid Organization + WebSite structured data", async ({ page }) => {
