@@ -7,6 +7,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Multi-page marketing site replacing the coming-soon page: Home (`/`),
+  Services (`/services`), and About + Contact (`/about`), built with Vite
+  (multi-page) + TypeScript + vanilla CSS.
+- Shared header (sticky, with a mobile nav toggle) and footer, inlined at build
+  time via a Vite partials plugin from `src/layout/*.ts`.
+- Six service offerings — Web & E-commerce, Cross-platform Apps, Analytics &
+  Measurement, CRO & Experimentation, Accessibility & Performance, and Social
+  Media Ads — with line (SVG) icons and benefit-led copy.
+- Contact form posting to a Cloudflare Pages Function (`functions/api/contact.ts`)
+  with a honeypot + Cloudflare Turnstile spam check and Resend email delivery.
+- Per-page SEO (titles, descriptions, canonical, Open Graph / Twitter) with a
+  shared OG image; Organization + Person + WebSite JSON-LD on the home page.
+- `DESIGN.md` design-system spec (google-labs-code/design.md format), plus a
+  `bun run design:lint` script backed by the `@google/design.md` linter.
+
+### Changed
+
+- Build now runs Vite (`bun run build`); output moved from `public/` to `dist/`
+  for Cloudflare Pages, with `public/` as Vite's static passthrough (fonts,
+  favicon, robots, `_headers`, and the `/brand` kit).
+- Migrated the package manager from npm to Bun: dropped `package-lock.json`,
+  added `bun.lock`, pinned `packageManager: bun@1.3.14`, and switched scripts
+  and docs to `bun run`.
+- Version stamping and the release script now target the root `index.html`.
+
+### Removed
+
+- The single-page coming-soon `public/index.html`, superseded by the multi-page
+  site.
+
 ## [0.2.0] - 2026-06-04
 
 ### Added
