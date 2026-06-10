@@ -17,8 +17,14 @@ const PAGES = [
 for (const { name, path } of PAGES) {
   test(`capture ${name} screenshot`, async ({ page }, testInfo) => {
     await page.goto(path);
-    // let the blob animations settle into a representative frame
-    await page.waitForTimeout(800);
+    // Freeze all animation so the capture is deterministic: scroll-driven reveals
+    // would otherwise leave below-the-fold content at their opacity:0 entry state
+    // in a fullPage shot. With animations off, every element sits at its resting
+    // (fully revealed) state. Also settles the drifting blobs to a static frame.
+    await page.addStyleTag({
+      content: "*, *::before, *::after { animation: none !important; transition: none !important; }",
+    });
+    await page.waitForTimeout(200);
     await page.screenshot({
       path: join(OUT_DIR, `${testInfo.project.name}-${name}.png`),
       fullPage: true,

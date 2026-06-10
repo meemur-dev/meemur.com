@@ -1,0 +1,125 @@
+/* Motion layer: scroll-driven reveal + cross-document page transitions. Pure
+   CSS, progressive enhancement only — no JS. Everything is gated on
+   prefers-reduced-motion (and reveals additionally on @supports), so browsers
+   without support (e.g. Firefox) and motion-averse users get static, fully
+   visible content with instant navigation. The blob background in base.css is
+   independent and left untouched. */
+
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+/* ---------- Scroll reveal ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    /* Standalone blocks — each tracks its own entry into the viewport and
+       reveals once, early in its entry so it's settled by the time it's read. */
+    .section__head,
+    .service,
+    .cta,
+    .about-founder__inner,
+    .contact__inner {
+      animation: reveal-rise auto linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+
+    /* Grid groups — children share one timeline on their container and reveal
+       over staggered sub-ranges, so each row cascades left-to-right as it
+       scrolls in. Offsets cap at the 6th child (the largest grid is 6 cards). */
+    .cards,
+    .steps,
+    .stats,
+    .work-grid {
+      view-timeline: --group block;
+    }
+
+    .cards > *,
+    .steps > *,
+    .stats > *,
+    .work-grid > * {
+      animation: reveal-rise auto linear both;
+      animation-timeline: --group;
+      animation-range: entry 0% entry 60%;
+    }
+
+    .cards > :nth-child(2),
+    .steps > :nth-child(2),
+    .stats > :nth-child(2),
+    .work-grid > :nth-child(2) {
+      animation-range: entry 8% entry 68%;
+    }
+    .cards > :nth-child(3),
+    .steps > :nth-child(3),
+    .stats > :nth-child(3),
+    .work-grid > :nth-child(3) {
+      animation-range: entry 16% entry 76%;
+    }
+    .cards > :nth-child(4),
+    .steps > :nth-child(4),
+    .work-grid > :nth-child(4) {
+      animation-range: entry 24% entry 84%;
+    }
+    .cards > :nth-child(5),
+    .work-grid > :nth-child(5) {
+      animation-range: entry 32% entry 92%;
+    }
+    .cards > :nth-child(6),
+    .work-grid > :nth-child(6) {
+      animation-range: entry 40% entry 100%;
+    }
+  }
+
+  /* Hero is above the fold, so it animates in on load (time-based) rather than
+     on scroll. Plain keyframes — no scroll-timeline support needed. */
+  .hero__inner > * {
+    animation: reveal-rise 0.6s var(--ease) both;
+  }
+  .hero__inner > :nth-child(2) {
+    animation-delay: 0.08s;
+  }
+  .hero__inner > :nth-child(3) {
+    animation-delay: 0.16s;
+  }
+  .hero__inner > :nth-child(4) {
+    animation-delay: 0.24s;
+  }
+}
+
+/* ---------- Cross-document page transitions ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  ::view-transition-old(root) {
+    animation: 0.35s var(--ease) both vt-fade-out;
+  }
+  ::view-transition-new(root) {
+    animation: 0.35s var(--ease) both vt-fade-in;
+  }
+
+  @keyframes vt-fade-out {
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes vt-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+
+  /* Keep the header and footer anchored across navigations instead of letting
+     them cross-fade with the page body. Each name is unique per document. */
+  .site-header {
+    view-transition-name: site-header;
+  }
+  .site-footer {
+    view-transition-name: site-footer;
+  }
+}
