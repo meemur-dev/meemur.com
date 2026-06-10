@@ -37,6 +37,7 @@ test.describe("seo metadata", () => {
   test("each page has its own canonical URL", async ({ page }) => {
     for (const [path, canonical] of [
       ["/services", "https://meemur.com/services"],
+      ["/work", "https://meemur.com/work"],
       ["/about", "https://meemur.com/about"],
     ]) {
       await page.goto(path);

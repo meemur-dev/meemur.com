@@ -1,7 +1,8 @@
-// Shared page bootstrap: loads the global stylesheet, wires the mobile nav
-// toggle, and fills in the copyright year. Loaded as a module on every page.
-import "../styles/main.css";
+// Shared page behaviour: wires the mobile nav toggle, fills in the copyright
+// year, and enhances the contact and newsletter forms. Loaded as a module on
+// every page. Stylesheets are linked directly in each page's <head>, not here.
 import { initContactForm } from "./contact";
+import { initSubscribeForm } from "./subscribe";
 
 // ---- Mobile nav toggle ----
 const header = document.querySelector<HTMLElement>(".site-header");
@@ -35,5 +36,6 @@ if (yearEl) {
   yearEl.textContent = now > founded ? `${founded}–${now}` : String(founded);
 }
 
-// ---- Contact form (no-op on pages without one) ----
+// ---- Forms (each no-ops on pages without its form) ----
 initContactForm();
+initSubscribeForm();

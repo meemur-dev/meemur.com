@@ -1,0 +1,7 @@
+/* Global stylesheet linked in every page's <head>: design tokens, base
+   elements, site chrome, and cross-page components. Page-specific styles live
+   in src/styles/pages/*.css and load only on their own page. */
+@import "./tokens.css";
+@import "./base.css";
+@import "./layout.css";
+@import "./components.css";

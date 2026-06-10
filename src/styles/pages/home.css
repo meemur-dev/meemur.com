@@ -114,41 +114,6 @@
   content: " →";
 }
 
-/* Approach steps */
-.steps {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 1.25rem;
-  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-  counter-reset: step;
-}
-
-.step {
-  display: grid;
-  gap: 0.5rem;
-  align-content: start;
-  padding-block-start: 1rem;
-  border-block-start: 2px solid color-mix(in srgb, var(--brand) 35%, var(--border));
-}
-
-.step__num {
-  font-weight: 700;
-  color: var(--brand-strong);
-  font-size: 0.95rem;
-  letter-spacing: 0.1em;
-}
-
-.step__title {
-  font-size: 1.15rem;
-}
-
-.step__text {
-  margin: 0;
-  color: var(--muted);
-}
-
 /* Why + stats */
 .why__inner {
   display: grid;
@@ -209,34 +174,4 @@
 
 .stat__label {
   color: var(--muted);
-}
-
-/* CTA band */
-.cta {
-  text-align: center;
-  /* On-brand teal gradient, kept dark enough for AA-contrast white text
-     (the purple accent only belongs in the faint background blobs). */
-  background: linear-gradient(135deg, var(--brand-strong), #015c6a);
-  color: #fff;
-  border-radius: calc(var(--radius) + 6px);
-  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 3rem);
-  display: grid;
-  gap: 1rem;
-  justify-items: center;
-  box-shadow: var(--shadow-md);
-}
-
-.cta__title {
-  font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.6rem);
-}
-
-.cta__text {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.9);
-  max-inline-size: 36rem;
-}
-
-.cta .btn--primary {
-  --btn-bg: #fff;
-  --btn-fg: var(--brand-strong);
 }

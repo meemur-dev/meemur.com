@@ -1,11 +1,12 @@
 // Shared site header, inlined into every page at build time by the partials
 // plugin in vite.config.ts. `active` is the current page key so the matching
 // nav link gets aria-current="page".
-type NavKey = "home" | "services" | "about";
+type NavKey = "home" | "services" | "work" | "about";
 
 const LINKS: { key: NavKey; href: string; label: string }[] = [
   { key: "home", href: "/", label: "Home" },
   { key: "services", href: "/services", label: "Services" },
+  { key: "work", href: "/work", label: "Work" },
   { key: "about", href: "/about", label: "About" },
 ];
 
@@ -19,7 +20,7 @@ export function header(active = ""): string {
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="site-header__logo" href="/" aria-label="meemur — home page">
-      <img src="/logo.svg" alt="meemur" width="700" height="400" />
+      <img src="/logo-wordmark.svg" alt="meemur" width="590" height="165" />
     </a>
     <button
       class="nav-toggle"

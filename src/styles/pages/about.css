@@ -135,31 +135,6 @@
   border-color: transparent;
 }
 
-/* Honeypot — kept out of view and out of the tab order. */
-.hp {
-  position: absolute;
-  inset-inline-start: -9999px;
-  inline-size: 1px;
-  block-size: 1px;
-  overflow: hidden;
-}
-
 .contact-form .btn {
   justify-self: start;
-}
-
-.form-status {
-  margin: 0;
-  font-size: 0.95rem;
-  min-block-size: 1.2em;
-}
-
-.form-status--ok {
-  color: var(--brand-strong);
-  font-weight: 600;
-}
-
-.form-status--error {
-  color: #c0392b;
-  font-weight: 600;
 }

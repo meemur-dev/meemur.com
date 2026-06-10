@@ -10,6 +10,7 @@ const OUT_DIR = join(dirname(fileURLToPath(import.meta.url)), "screenshots");
 const PAGES = [
   { name: "home", path: "/" },
   { name: "services", path: "/services" },
+  { name: "work", path: "/work" },
   { name: "about", path: "/about" },
 ];
 

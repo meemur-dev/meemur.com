@@ -1,0 +1,145 @@
+/* Work / portfolio page (body.page-work) — a case-study card grid. */
+
+.page-work .page-hero h1 span {
+  color: var(--brand-strong);
+}
+
+.work-grid {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 760px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: color-mix(in srgb, var(--brand) 40%, var(--border));
+}
+
+.work-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--surface-2);
+  border-block-end: 1px solid var(--border);
+}
+
+.work-card__media img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s var(--ease);
+}
+
+.work-card:hover .work-card__media img {
+  transform: scale(1.04);
+}
+
+.work-card__badge {
+  position: absolute;
+  inset-block-start: 0.85rem;
+  inset-inline-start: 0.85rem;
+  padding: 0.32rem 0.7rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid color-mix(in srgb, var(--brand) 28%, transparent);
+  color: var(--brand-strong);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.work-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.4rem;
+}
+
+.work-card__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.work-card__desc {
+  margin: 0;
+  color: var(--muted);
+  flex: 1;
+}
+
+.work-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block-start: 0.7rem;
+}
+
+.work-card__metric {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-strong);
+}
+
+.work-card__view {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.work-card:hover .work-card__view {
+  color: var(--brand-strong);
+}
+
+.work-card__view svg {
+  inline-size: 1rem;
+  block-size: 1rem;
+  transition: transform 0.2s var(--ease);
+}
+
+.work-card:hover .work-card__view svg {
+  transform: translateX(3px);
+}
+
+/* Invitation card — no image, dashed, fills the grid honestly. */
+.work-card--invite {
+  justify-content: center;
+  gap: 0.6rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: color-mix(in srgb, var(--brand) 7%, var(--surface));
+  border-style: dashed;
+  border-color: color-mix(in srgb, var(--brand) 35%, var(--border));
+}
+
+.work-card--invite .work-card__view {
+  margin-block-start: 0.4rem;
+}

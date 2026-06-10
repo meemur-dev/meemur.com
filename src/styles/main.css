@@ -1,8 +1,0 @@
-/* Single CSS entry, imported by src/scripts/main.ts and bundled per page by
-   Vite. Page-specific rules are scoped under body.page-* classes. */
-@import "./tokens.css";
-@import "./base.css";
-@import "./layout.css";
-@import "./pages/home.css";
-@import "./pages/services.css";
-@import "./pages/about.css";

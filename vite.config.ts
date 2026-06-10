@@ -30,6 +30,7 @@ export default defineConfig({
       input: {
         home: resolve(root, "index.html"),
         services: resolve(root, "services/index.html"),
+        work: resolve(root, "work/index.html"),
         about: resolve(root, "about/index.html"),
       },
     },

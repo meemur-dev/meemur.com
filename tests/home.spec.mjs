@@ -37,7 +37,7 @@ test.describe("home page", () => {
 
   test("has a primary call to action", async ({ page }) => {
     await expect(
-      page.getByRole("link", { name: /start a project/i }),
+      page.getByRole("link", { name: /start a project/i }).first(),
     ).toHaveAttribute("href", "/about#contact");
   });
 
