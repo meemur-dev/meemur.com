@@ -45,9 +45,9 @@
 }
 
 /* Cards (services overview) */
-/* Flex + center so the 5 cards balance as 3 + 2 (centered) instead of
-   leaving a lone card stranded on a second row. The max width caps card
-   size so both rows match. */
+/* Flex + center so card rows stay balanced at any count (six cards wrap as
+   3 + 3, a leftover pair sits centered) instead of stranding a lone card.
+   The max width caps card size so all rows match. */
 .cards {
   list-style: none;
   margin: 0;

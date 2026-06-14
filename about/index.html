@@ -19,6 +19,10 @@
 
     <link rel="stylesheet" href="/src/styles/global.css" />
     <link rel="stylesheet" href="/src/styles/pages/about.css" />
+    <!-- Hold the first paint (and any cross-document view transition from
+         motion.css) until the page content is parsed, so navigations never
+         animate to a half-built page. -->
+    <link rel="expect" href="#main" blocking="render" />
 
     <meta property="og:title" content="About &amp; Contact — meemur" />
     <meta

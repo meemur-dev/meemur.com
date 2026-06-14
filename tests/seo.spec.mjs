@@ -39,6 +39,7 @@ test.describe("seo metadata", () => {
       ["/services", "https://meemur.com/services"],
       ["/work", "https://meemur.com/work"],
       ["/about", "https://meemur.com/about"],
+      ["/privacy", "https://meemur.com/privacy"],
     ]) {
       await page.goto(path);
       await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", canonical);
@@ -61,6 +62,19 @@ test.describe("seo metadata", () => {
     const res = await request.get(`${baseURL}/robots.txt`);
     expect(res.status()).toBe(200);
     expect(await res.text()).toContain("User-agent:");
+  });
+
+  test("serves a sitemap.xml that robots.txt points at", async ({ request, baseURL }) => {
+    const robots = await (await request.get(`${baseURL}/robots.txt`)).text();
+    expect(robots).toContain("Sitemap: https://meemur.com/sitemap.xml");
+
+    const res = await request.get(`${baseURL}/sitemap.xml`);
+    expect(res.status()).toBe(200);
+    const xml = await res.text();
+    expect(xml).toContain("<urlset");
+    for (const path of ["/", "/services", "/work", "/about", "/privacy"]) {
+      expect(xml).toContain(`<loc>https://meemur.com${path}</loc>`);
+    }
   });
 
   test("version marker matches package.json (no drift)", async ({ page, request, baseURL }) => {

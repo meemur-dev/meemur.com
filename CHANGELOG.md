@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Privacy policy page (`/privacy`) in plain English, covering the contact form,
+  newsletter, GA4 analytics, and the processors behind them (Cloudflare, Google,
+  Resend), linked from the footer copyright bar.
+- Custom 404 page (`404.html`) in the brand look ("off the grid"), served with a
+  real 404 status — previously unknown URLs soft-404ed to the home page with
+  HTTP 200.
+- `sitemap.xml` (all five indexable pages) and a `Sitemap:` pointer in
+  `robots.txt`.
+- `<link rel="expect" href="#main" blocking="render">` on every page so
+  cross-document view transitions never animate to a half-parsed page.
+- Playwright specs for the privacy and 404 pages, sitemap coverage in the SEO
+  spec, and both new pages in the screenshot run.
+
 - Multi-page marketing site replacing the coming-soon page: Home (`/`),
   Services (`/services`), and About + Contact (`/about`), built with Vite
   (multi-page) + TypeScript + vanilla CSS.
@@ -26,6 +39,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Playwright suite rewritten for the multi-page site (home, services, about,
   and the contact form, with a mobile-nav check) and restructured so functional
   specs run once on desktop — keeping the run fast on a static site.
+
+### Fixed
+
+- The six "Learn more" card links on the home page now tell screen readers
+  which service they lead to (visually-hidden suffix), and the decorative ✓
+  list markers on the services page are no longer announced.
 
 ### Changed
 

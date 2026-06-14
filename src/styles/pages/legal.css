@@ -1,0 +1,42 @@
+/* Legal / long-form prose pages (body.page-legal) — a narrow reading column
+   under the shared page-hero, sized for comfortable line lengths. */
+
+.legal {
+  max-inline-size: var(--maxw-narrow);
+  display: grid;
+  gap: clamp(1.9rem, 4vw, 2.6rem);
+  /* Long email addresses and URLs must never overflow the column. */
+  overflow-wrap: break-word;
+}
+
+.legal__updated {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.legal section {
+  display: grid;
+  gap: 0.7rem;
+  /* Anchor jumps (#your-rights etc.) clear the sticky header. */
+  scroll-margin-top: 6rem;
+}
+
+.legal h2 {
+  font-size: clamp(1.25rem, 1.1rem + 0.8vw, 1.6rem);
+}
+
+.legal p,
+.legal ul {
+  margin: 0;
+}
+
+.legal ul {
+  padding-inline-start: 1.25rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.legal li::marker {
+  color: var(--brand-strong);
+}

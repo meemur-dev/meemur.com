@@ -12,6 +12,9 @@ const PAGES = [
   { name: "services", path: "/services" },
   { name: "work", path: "/work" },
   { name: "about", path: "/about" },
+  { name: "privacy", path: "/privacy" },
+  // Any unknown URL renders the custom 404 page.
+  { name: "notfound", path: "/no-such-page" },
 ];
 
 for (const { name, path } of PAGES) {

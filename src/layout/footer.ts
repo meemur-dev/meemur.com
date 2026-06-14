@@ -70,7 +70,7 @@ export function footer(): string {
 
   <div class="site-footer__base">
     <div class="container site-footer__base-inner">
-      <small>&copy; <span id="year">2026</span> meemur. All rights reserved.</small>
+      <small>&copy; <span id="year">2026</span> meemur. All rights reserved. &middot; <a href="/privacy">Privacy</a></small>
       <a class="site-footer__home-link" href="/about#contact">Start a project →</a>
     </div>
   </div>

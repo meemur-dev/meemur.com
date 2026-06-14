@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found — meemur</title>
+    <meta
+      name="description"
+      content="That page doesn't exist on meemur.com. Head back to the home page or explore our services."
+    />
+    <meta name="author" content="Onur Yanar" />
+    <!-- Error page: never index, and no canonical — there is no canonical URL for a miss. -->
+    <meta name="robots" content="noindex" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <link rel="preload" href="/fonts/montserrat-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/montserrat-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/montserrat-600.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <link rel="stylesheet" href="/src/styles/pages/notfound.css" />
+    <!-- Hold the first paint (and any cross-document view transition from
+         motion.css) until the page content is parsed, so navigations never
+         animate to a half-built page. -->
+    <link rel="expect" href="#main" blocking="render" />
+
+    <meta name="theme-color" content="#00a9b8" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-ND4VP7H4");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script type="module" src="/src/scripts/main.ts"></script>
+  </head>
+  <body class="page-notfound">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-ND4VP7H4"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="bg" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+    </div>
+
+    <!--#header-->
+
+    <main id="main">
+      <section class="section notfound">
+        <div class="container notfound__inner">
+          <p class="eyebrow">Error 404</p>
+          <span class="notfound__code" aria-hidden="true">404</span>
+          <h1>This page is off the grid.</h1>
+          <p class="lead">
+            There's nothing at this address — it may have moved, or it never existed. Let's get
+            you back to familiar coordinates.
+          </p>
+          <div class="notfound__actions">
+            <a class="btn btn--primary" href="/">Back to home</a>
+            <a class="btn btn--ghost" href="/services">Explore services</a>
+          </div>
+          <p class="notfound__hint">
+            Think something should be here? Tell us at
+            <a href="mailto:onur@meemur.com">onur@meemur.com</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!--#footer-->
+  </body>
+</html>

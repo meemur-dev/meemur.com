@@ -74,6 +74,9 @@
 
 .ticks li::before {
   content: "✓";
+  /* Alt-text syntax silences the decorative check for screen readers; older
+     browsers ignore this line and keep the plain declaration above. */
+  content: "✓" / "";
   position: absolute;
   inset-inline-start: 0;
   color: var(--brand-strong);

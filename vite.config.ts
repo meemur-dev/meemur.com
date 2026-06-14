@@ -32,6 +32,10 @@ export default defineConfig({
         services: resolve(root, "services/index.html"),
         work: resolve(root, "work/index.html"),
         about: resolve(root, "about/index.html"),
+        privacy: resolve(root, "privacy/index.html"),
+        // Emitted as dist/404.html — Cloudflare Pages serves it (with a real
+        // 404 status) for any unknown URL instead of soft-404ing to home.
+        notfound: resolve(root, "404.html"),
       },
     },
   },

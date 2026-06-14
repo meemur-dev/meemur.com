@@ -21,6 +21,10 @@
 
     <link rel="stylesheet" href="/src/styles/global.css" />
     <link rel="stylesheet" href="/src/styles/pages/home.css" />
+    <!-- Hold the first paint (and any cross-document view transition from
+         motion.css) until the page content is parsed, so navigations never
+         animate to a half-built page. -->
+    <link rel="expect" href="#main" blocking="render" />
 
     <!-- Open Graph / social preview -->
     <meta property="og:title" content="meemur — Digital agency for web, e-commerce &amp; analytics" />
@@ -177,7 +181,7 @@
                 Beautiful, lightning-fast websites and online stores that turn browsers into buyers
                 — effortless on every screen.
               </p>
-              <a class="card__link" href="/services#ecommerce">Learn more</a>
+              <a class="card__link" href="/services#ecommerce">Learn more<span class="visually-hidden"> about Web &amp; E-commerce</span></a>
             </li>
             <li class="card">
               <span class="card__icon" aria-hidden="true">
@@ -191,7 +195,7 @@
                 Put your brand in your customers' pocket with sleek apps for iPhone and Android —
                 built once, launched everywhere.
               </p>
-              <a class="card__link" href="/services#apps">Learn more</a>
+              <a class="card__link" href="/services#apps">Learn more<span class="visually-hidden"> about Cross-platform Apps</span></a>
             </li>
             <li class="card">
               <span class="card__icon" aria-hidden="true">
@@ -206,7 +210,7 @@
                 Finally know what's working. We turn your data into clear answers and reports you
                 can actually trust.
               </p>
-              <a class="card__link" href="/services#analytics">Learn more</a>
+              <a class="card__link" href="/services#analytics">Learn more<span class="visually-hidden"> about Analytics &amp; Measurement</span></a>
             </li>
             <li class="card">
               <span class="card__icon" aria-hidden="true">
@@ -220,7 +224,7 @@
                 Get more sales from the visitors you already have. We test, learn, and fine-tune
                 until the numbers climb.
               </p>
-              <a class="card__link" href="/services#cro">Learn more</a>
+              <a class="card__link" href="/services#cro">Learn more<span class="visually-hidden"> about CRO &amp; Experimentation</span></a>
             </li>
             <li class="card">
               <span class="card__icon" aria-hidden="true">
@@ -234,7 +238,7 @@
                 Faster pages, happier visitors, higher rankings — experiences that load in a blink
                 and welcome everyone.
               </p>
-              <a class="card__link" href="/services#performance">Learn more</a>
+              <a class="card__link" href="/services#performance">Learn more<span class="visually-hidden"> about Accessibility &amp; Performance</span></a>
             </li>
             <li class="card">
               <span class="card__icon" aria-hidden="true">
@@ -248,7 +252,7 @@
                 Reach the right people and watch it pay off — scroll-stopping campaigns with every
                 dollar accounted for.
               </p>
-              <a class="card__link" href="/services#ads">Learn more</a>
+              <a class="card__link" href="/services#ads">Learn more<span class="visually-hidden"> about Social Media Ads</span></a>
             </li>
           </ul>
         </div>
