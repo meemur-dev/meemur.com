@@ -175,26 +175,28 @@
 
 .site-footer__top {
   display: grid;
-  gap: clamp(2rem, 5vw, 3.5rem);
+  gap: clamp(1.75rem, 3.5vw, 2.75rem);
   padding-block: clamp(2.5rem, 5vw, 4rem);
   grid-template-columns: 1fr;
 }
 
 @media (min-width: 720px) {
   .site-footer__top {
-    grid-template-columns: 1.2fr 1.4fr;
+    grid-template-columns: 1fr 1.6fr;
     align-items: start;
   }
 }
 
 @media (min-width: 980px) {
+  /* Four even columns: brand · services · company · subscribe (the Services/
+     Company wrapper is flattened into this grid below via display:contents). */
   .site-footer__top {
-    grid-template-columns: 1.2fr 1.4fr 1.6fr;
+    grid-template-columns: 1.1fr 1.2fr 0.7fr 1.5fr;
   }
 }
 
 .site-footer__logo {
-  block-size: 5rem;
+  block-size: 3.5rem;
   inline-size: auto;
 }
 
@@ -209,6 +211,26 @@
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+}
+
+/* Responsive link layout — declared after the base rule above so these win
+   regardless of media-query source order. */
+@media (min-width: 720px) {
+  /* Wider Services column (+ nowrap) so each item stays on one line. */
+  .site-footer__links {
+    grid-template-columns: minmax(14.5rem, auto) 1fr;
+  }
+
+  .site-footer__col a {
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 980px) {
+  /* Promote Services & Company into the footer's four-column grid. */
+  .site-footer__links {
+    display: contents;
+  }
 }
 
 .site-footer__heading {
