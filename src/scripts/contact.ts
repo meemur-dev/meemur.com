@@ -49,10 +49,10 @@ export function initContactForm(): void {
         form.reset();
         setStatus("ok", "Thanks — your message is on its way. I’ll get back to you shortly.");
       } else {
-        setStatus("error", body.error || "Something went wrong. Please email onur@meemur.com directly.");
+        setStatus("error", body.error || "Something went wrong. Please email contact@meemur.com directly.");
       }
     } catch {
-      setStatus("error", "Network error. Please email onur@meemur.com directly.");
+      setStatus("error", "Network error. Please email contact@meemur.com directly.");
     } finally {
       submit.disabled = false;
       submit.textContent = label;

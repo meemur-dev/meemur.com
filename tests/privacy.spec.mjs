@@ -25,7 +25,7 @@ test.describe("privacy page", () => {
     await expect(legal).toContainText(/contact form/i);
     await expect(legal).toContainText(/google analytics/i);
     await expect(legal).toContainText(/newsletter/i);
-    await expect(legal).toContainText("onur@meemur.com");
+    await expect(legal).toContainText("contact@meemur.com");
   });
 
   test("is reachable from the footer on every page", async ({ page }) => {

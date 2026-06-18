@@ -5,7 +5,7 @@
 //   RESEND_API_KEY        Resend API key (secret)
 //   TURNSTILE_SECRET_KEY  Cloudflare Turnstile secret (secret)
 // Optional:
-//   CONTACT_TO            recipient (default: onur@meemur.com)
+//   CONTACT_TO            recipient (default: contact@meemur.com)
 //   CONTACT_FROM          verified sender (default: meemur <contact@send.meemur.com>)
 
 interface Env {
@@ -89,10 +89,10 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   }
 
   if (!env.RESEND_API_KEY) {
-    return json({ ok: false, error: "Email is not configured yet. Please email onur@meemur.com." }, 503);
+    return json({ ok: false, error: "Email is not configured yet. Please email contact@meemur.com." }, 503);
   }
 
-  const to = env.CONTACT_TO ?? "onur@meemur.com";
+  const to = env.CONTACT_TO ?? "contact@meemur.com";
   const from = env.CONTACT_FROM ?? "meemur <contact@send.meemur.com>";
 
   const res = await fetch("https://api.resend.com/emails", {
@@ -111,7 +111,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   });
 
   if (!res.ok) {
-    return json({ ok: false, error: "Couldn't send right now. Please email onur@meemur.com." }, 502);
+    return json({ ok: false, error: "Couldn't send right now. Please email contact@meemur.com." }, 502);
   }
 
   return json({ ok: true });

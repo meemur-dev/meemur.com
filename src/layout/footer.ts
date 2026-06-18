@@ -2,9 +2,12 @@
 // brand + link columns on the left, a newsletter subscribe form and social
 // links on the right, and a copyright bar below. The copyright year is filled
 // in by src/scripts/main.ts so the markup stays static and cacheable.
-const EMAIL = "onur@meemur.com";
+const EMAIL = "contact@meemur.com";
 const LINKEDIN = "https://www.linkedin.com/in/oyanar";
 const GITHUB = "https://github.com/meemur-dev";
+// Cloudflare Turnstile site key (public). The subscribe widget is lazy-rendered
+// on first interaction by src/scripts/subscribe.ts to keep every page light.
+const TURNSTILE_SITEKEY = "0x4AAAAAADnJOBZSLMjA6cof";
 
 export function footer(): string {
   return `<footer class="site-footer">
@@ -44,6 +47,8 @@ export function footer(): string {
         <input id="sub-email" name="email" type="email" autocomplete="email" placeholder="Your email address" required />
         <!-- Honeypot: must stay empty. -->
         <input class="hp" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <!-- Turnstile: lazy-rendered on first interaction by subscribe.ts. -->
+        <div class="subscribe-turnstile" data-sitekey="${TURNSTILE_SITEKEY}"></div>
         <button class="btn btn--primary" type="submit">Subscribe</button>
       </form>
       <p id="subscribe-status" class="form-status" role="status" aria-live="polite"></p>

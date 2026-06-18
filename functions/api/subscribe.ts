@@ -4,11 +4,14 @@
 // Required env vars / secrets (set in the Cloudflare Pages dashboard):
 //   RESEND_API_KEY        Resend API key (secret)
 // Optional:
-//   SUBSCRIBE_TO          recipient (default: onur@meemur.com)
+//   TURNSTILE_SECRET_KEY  Cloudflare Turnstile secret (secret) — spam check is
+//                         skipped when unset
+//   SUBSCRIBE_TO          recipient (default: contact@meemur.com)
 //   CONTACT_FROM          verified sender (default: meemur <contact@send.meemur.com>)
 
 interface Env {
   RESEND_API_KEY: string;
+  TURNSTILE_SECRET_KEY?: string;
   SUBSCRIBE_TO?: string;
   CONTACT_FROM?: string;
 }
@@ -16,6 +19,7 @@ interface Env {
 interface SubscribePayload {
   email?: string;
   company?: string; // honeypot
+  token?: string; // Turnstile response
 }
 
 const json = (data: unknown, status = 200): Response =>
@@ -25,6 +29,24 @@ const json = (data: unknown, status = 200): Response =>
   });
 
 const isEmail = (v: string): boolean => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
+
+async function verifyTurnstile(secret: string, token: string, ip: string | null): Promise<boolean> {
+  const form = new FormData();
+  form.append("secret", secret);
+  form.append("response", token);
+  if (ip) form.append("remoteip", ip);
+
+  try {
+    const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      body: form,
+    });
+    const data = (await res.json()) as { success?: boolean };
+    return data.success === true;
+  } catch {
+    return false;
+  }
+}
 
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   let body: SubscribePayload;
@@ -48,11 +70,23 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     return json({ ok: false, error: "Please enter a valid email address." }, 422);
   }
 
+  // Spam protection (skipped when no secret is configured)
+  if (env.TURNSTILE_SECRET_KEY) {
+    const ok = await verifyTurnstile(
+      env.TURNSTILE_SECRET_KEY,
+      body.token ?? "",
+      request.headers.get("CF-Connecting-IP"),
+    );
+    if (!ok) {
+      return json({ ok: false, error: "Spam check failed. Please try again." }, 403);
+    }
+  }
+
   if (!env.RESEND_API_KEY) {
     return json({ ok: false, error: "Subscriptions aren’t configured yet. Please try again later." }, 503);
   }
 
-  const to = env.SUBSCRIBE_TO ?? "onur@meemur.com";
+  const to = env.SUBSCRIBE_TO ?? "contact@meemur.com";
   const from = env.CONTACT_FROM ?? "meemur <contact@send.meemur.com>";
 
   const res = await fetch("https://api.resend.com/emails", {

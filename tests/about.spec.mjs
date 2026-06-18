@@ -19,7 +19,7 @@ test.describe("about page", () => {
 
   test("offers a direct mailto fallback", async ({ page }) => {
     await expect(
-      page.locator('#contact a[href="mailto:onur@meemur.com"]'),
+      page.locator('#contact a[href="mailto:contact@meemur.com"]'),
     ).toBeVisible();
   });
 

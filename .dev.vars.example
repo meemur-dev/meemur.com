@@ -1,0 +1,20 @@
+# Local secrets for `wrangler pages dev` — copy to `.dev.vars` and fill in.
+# `.dev.vars` is gitignored; never commit real keys. In production these are
+# set as encrypted secrets in the Cloudflare Pages dashboard, not from here.
+
+# Resend API key — the contact & subscribe forms email through Resend.
+# Leave blank to exercise the "email not configured" (503) path locally.
+RESEND_API_KEY=
+
+# Cloudflare Turnstile secret key (pairs with the site key in the HTML).
+# Leave blank locally to SKIP the spam check (forms still work in dev).
+# If you set it, it must be the secret that pairs with the site key in use,
+# or every submission will 403. Cloudflare's always-passes test pair:
+#   site key:   1x00000000000000000000AA
+#   secret key: 1x0000000000000000000000000000000AA
+TURNSTILE_SECRET_KEY=
+
+# Optional overrides (defaults shown):
+# CONTACT_TO=contact@meemur.com
+# SUBSCRIBE_TO=contact@meemur.com
+# CONTACT_FROM=meemur <contact@send.meemur.com>
