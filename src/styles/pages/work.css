@@ -59,6 +59,9 @@
   position: absolute;
   inset-block-start: 0.85rem;
   inset-inline-start: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
   padding: 0.32rem 0.7rem;
   border-radius: 999px;
   background: color-mix(in srgb, var(--surface) 88%, transparent);
@@ -69,6 +72,11 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.work-card__badge svg {
+  inline-size: 0.9em;
+  block-size: 0.9em;
 }
 
 .work-card__body {

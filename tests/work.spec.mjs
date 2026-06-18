@@ -12,6 +12,7 @@ test.describe("work page", () => {
   });
 
   test("shows the case-study cards", async ({ page }) => {
+    // meemur.com case study, two in-development client cards, and the invite card.
     await expect(page.locator(".work-grid .work-card")).toHaveCount(4);
   });
 
