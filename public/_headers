@@ -1,5 +1,18 @@
 # Cloudflare Pages custom headers — https://developers.cloudflare.com/pages/configuration/headers/
 
+# Security headers for every response.
+# Note on CSP: the site loads Google Tag Manager, which injects analytics tags
+# dynamically, so we deliberately do NOT restrict script-src (it would break
+# tags as they're added in GTM). Instead we harden the non-script vectors —
+# clickjacking, plugin/object injection, <base> hijacking, and form hijacking.
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
+  Content-Security-Policy: object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
 # Hidden press kit: keep it out of search indexes even if the URL leaks.
 /brand
   X-Robots-Tag: noindex, nofollow
