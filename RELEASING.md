@@ -41,14 +41,21 @@ production:
 
 | Setting | Value |
 | --- | --- |
-| Build command | `bun run build` |
+| Build command | `bun install --frozen-lockfile && bun run build` |
 | Build output directory | `dist` (also set as `pages_build_output_dir` in `wrangler.jsonc`) |
 
-⚠️ The build is **two steps** — `node scripts/build-version.mjs && vite build`.
-The build command must be the full `bun run build`. If it's set to only
-`node scripts/build-version.mjs`, that stamps `version.json` but never runs
-`vite build`, so `dist/` is never produced and every git build fails with
-`Error: Output directory "dist" not found`.
+⚠️ Two gotchas, both learned the hard way:
+
+- **Install first.** Cloudflare's git build does not reliably install
+  dependencies on its own, and the build tools (`vite`, `typescript`, …) live
+  in `devDependencies`. Without an explicit install the build dies on
+  `vite: command not found` (exit 127). `bun install --frozen-lockfile` is the
+  `npm ci` equivalent — deterministic from `bun.lock`, never mutates it.
+- **Run the full build.** `bun run build` is **two steps**
+  (`node scripts/build-version.mjs && vite build`). If the build command is set
+  to only `node scripts/build-version.mjs`, it stamps `version.json` but never
+  runs `vite build`, so `dist/` is never produced and the build fails with
+  `Error: Output directory "dist" not found`.
 
 Note: **retrying** a failed deployment replays the build config captured when it
 was created — it does *not* pick up changed build settings. After editing the
