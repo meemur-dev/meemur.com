@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- WebMCP support for the contact form: where the browser exposes it, an
+  in-browser AI agent can call a `fill_contact_message` tool to draft a
+  visitor's name, email, and message into the form. It fills only — the visitor
+  reviews and presses "Send message" themselves, so the Turnstile token and spam
+  honeypot stay valid and no message is sent without a human in the loop.
+  Feature-detected, so browsers without WebMCP are unaffected.
+
 ## [0.3.1] - 2026-06-19
 
 ### Fixed

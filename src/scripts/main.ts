@@ -2,6 +2,7 @@
 // year, and enhances the contact and newsletter forms. Loaded as a module on
 // every page. Stylesheets are linked directly in each page's <head>, not here.
 import { initContactForm } from "./contact";
+import { initContactMcp } from "./contact-mcp";
 import { initSubscribeForm } from "./subscribe";
 
 // ---- Mobile nav toggle ----
@@ -38,4 +39,5 @@ if (yearEl) {
 
 // ---- Forms (each no-ops on pages without its form) ----
 initContactForm();
+initContactMcp(); // WebMCP tool for the contact form, where supported
 initSubscribeForm();
