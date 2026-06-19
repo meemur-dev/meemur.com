@@ -111,6 +111,8 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   });
 
   if (!res.ok) {
+    const detail = await res.text().catch(() => "");
+    console.error(`Resend send failed: ${res.status} ${detail}`);
     return json({ ok: false, error: "Couldn't send right now. Please email contact@meemur.com." }, 502);
   }
 
