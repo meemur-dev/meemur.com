@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-06-19
+
 ### Fixed
 
 - The contact API now logs Resend's error status and body when a send fails,
@@ -127,7 +129,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fit-to-viewport layout and responsive polish (slogan wrap, headline scaling,
   off-canvas blob to avoid a hard corner arc).
 
-[Unreleased]: https://github.com/meemur-dev/meemur.com/compare/0.3.0...HEAD
+[Unreleased]: https://github.com/meemur-dev/meemur.com/compare/0.3.1...HEAD
+[0.3.1]: https://github.com/meemur-dev/meemur.com/compare/0.3.0...0.3.1
 [0.3.0]: https://github.com/meemur-dev/meemur.com/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/meemur-dev/meemur.com/compare/0.1.1...0.2.0
 [0.1.1]: https://github.com/meemur-dev/meemur.com/compare/0.1.0...0.1.1
