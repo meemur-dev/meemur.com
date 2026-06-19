@@ -25,6 +25,35 @@ bun run release -- --dry-run # show the bump without writing
 
 Hotfixes work the same way with `git flow hotfix start <x.y.z>`.
 
+## Deploying
+
+The site runs on **Cloudflare Pages** (project `meemur-com`). Two paths reach
+production:
+
+1. **Git integration** — pushing to `main` triggers an automatic Cloudflare
+   build + production deploy; other branches (e.g. `develop`) build as
+   previews. This is the normal path after `git push origin main develop --tags`.
+2. **Direct upload** — `bun run deploy` builds locally and uploads `./dist`
+   straight to Pages, bypassing Cloudflare's build. Handy when the git build is
+   unavailable.
+
+### Pages build settings (must match the repo)
+
+| Setting | Value |
+| --- | --- |
+| Build command | `bun run build` |
+| Build output directory | `dist` (also set as `pages_build_output_dir` in `wrangler.jsonc`) |
+
+⚠️ The build is **two steps** — `node scripts/build-version.mjs && vite build`.
+The build command must be the full `bun run build`. If it's set to only
+`node scripts/build-version.mjs`, that stamps `version.json` but never runs
+`vite build`, so `dist/` is never produced and every git build fails with
+`Error: Output directory "dist" not found`.
+
+Note: **retrying** a failed deployment replays the build config captured when it
+was created — it does *not* pick up changed build settings. After editing the
+build command, trigger a **new** deployment (push a commit) to apply it.
+
 ## What keeps it honest
 
 - **`bun run check:version`** (and `tests/version.spec.mjs`, run by `bun run test`)
