@@ -18,6 +18,26 @@ export default defineConfig({
     trace: "on-first-retry",
   },
 
+  // Visual-regression baselines (tests/visual.spec.mjs). Stored per project,
+  // WITHOUT the default `-{platform}` suffix, so a baseline captured from
+  // production on one OS compares cleanly against a build on another. Capture/
+  // refresh them from the live site with `bun run baseline:meemur`.
+  snapshotPathTemplate: "tests/visual/{projectName}/{arg}{ext}",
+  expect: {
+    toHaveScreenshot: {
+      // Render at CSS pixels so device scale factor never skews the compare.
+      scale: "css",
+      // `threshold` is per-pixel colour sensitivity (0–1, lower = stricter).
+      // `maxDiffPixels` is an ABSOLUTE budget, not a ratio: a ratio is useless
+      // on these tall full-page shots — 1% of millions of pixels hides a whole
+      // changed paragraph. Baseline and candidate render on the same Chrome, so
+      // unchanged content diffs to ~zero; this small budget only soaks up
+      // antialiasing noise while still catching a few words of changed text.
+      threshold: 0.2,
+      maxDiffPixels: 120,
+    },
+  },
+
   // Auto-start the static site unless BASE_URL targets something external.
   webServer: process.env.BASE_URL
     ? undefined
@@ -35,7 +55,7 @@ export default defineConfig({
     {
       name: "desktop",
       use: { viewport: { width: 1280, height: 800 } },
-      testIgnore: ["**/responsive.spec.mjs", "**/screenshots.spec.mjs"],
+      testIgnore: ["**/responsive.spec.mjs", "**/screenshots.spec.mjs", "**/sections.spec.mjs", "**/visual.spec.mjs"],
     },
     {
       name: "mobile",
@@ -63,6 +83,19 @@ export default defineConfig({
       name: "section-desktop",
       use: { viewport: { width: 1440, height: 900 } },
       testMatch: "**/sections.spec.mjs",
+    },
+    // Visual regression vs. the committed baseline (see visual.spec.mjs). Same
+    // two viewports as the screenshot review aid; baselines are captured from
+    // meemur.com via `bun run baseline:meemur`.
+    {
+      name: "visual-mobile",
+      use: { viewport: { width: 390, height: 844 } },
+      testMatch: "**/visual.spec.mjs",
+    },
+    {
+      name: "visual-desktop",
+      use: { viewport: { width: 1440, height: 900 } },
+      testMatch: "**/visual.spec.mjs",
     },
   ],
 });

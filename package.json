@@ -17,7 +17,10 @@
     "check:version": "node scripts/check-version.mjs",
     "design:lint": "designmd lint DESIGN.md",
     "pretest": "bun run build",
-    "test": "playwright test"
+    "test": "playwright test",
+    "pretest:visual": "bun run build",
+    "test:visual": "playwright test --project=visual-mobile --project=visual-desktop",
+    "baseline:meemur": "BASE_URL=https://meemur.com playwright test --project=visual-mobile --project=visual-desktop --update-snapshots"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250303.0",
