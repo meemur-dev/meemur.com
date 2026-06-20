@@ -1,55 +1,53 @@
-// Shared site footer, inlined at build time (see vite.config.ts). Layout:
-// brand + link columns on the left, a newsletter subscribe form and social
-// links on the right, and a copyright bar below. The copyright year is filled
-// in by src/scripts/main.ts so the markup stays static and cacheable.
+import { trF, trN, localePath } from "../i18n/translations";
+import type { Locale } from "../i18n/translations";
+
 const EMAIL = "contact@meemur.com";
 const LINKEDIN = "https://www.linkedin.com/company/meemur/";
 const GITHUB = "https://github.com/meemur-dev";
-// Cloudflare Turnstile site key (public). The subscribe widget is lazy-rendered
-// on first interaction by src/scripts/subscribe.ts to keep every page light.
-const TURNSTILE_SITEKEY = "0x4AAAAAADnJOBZSLMjA6cof";
+const TURNSTILE_SITEKEY =
+  import.meta.env?.PUBLIC_TURNSTILE_SITEKEY ?? "";
 
-export function footer(): string {
+export function footer(locale: Locale = "en"): string {
+  const p = (path: string) => localePath(path, locale);
+
   return `<footer class="site-footer">
   <div class="container site-footer__top">
     <div class="site-footer__brand">
       <img class="site-footer__logo" src="/logo-wordmark.svg" alt="meemur" width="590" height="165" />
-      <p class="site-footer__tagline">We make the web work for you.</p>
+      <p class="site-footer__tagline">${trF("tagline", locale)}</p>
     </div>
 
-    <nav class="site-footer__links" aria-label="Footer">
+    <nav class="site-footer__links" aria-label="${trN("primaryNav", locale)}">
       <div class="site-footer__col">
-        <h2 class="site-footer__heading">Services</h2>
+        <h2 class="site-footer__heading">${trF("servicesHeading", locale)}</h2>
         <ul>
-          <li><a href="/services#ecommerce">Web &amp; E-commerce</a></li>
-          <li><a href="/services#apps">Cross-platform Apps</a></li>
-          <li><a href="/services#analytics">Analytics &amp; Measurement</a></li>
-          <li><a href="/services#cro">CRO &amp; Experimentation</a></li>
-          <li><a href="/services#performance">Accessibility &amp; Performance</a></li>
-          <li><a href="/services#ads">Social Media Ads</a></li>
+          <li><a href="${p("/services#ecommerce")}">${trF("ecommerce", locale)}</a></li>
+          <li><a href="${p("/services#apps")}">${trF("apps", locale)}</a></li>
+          <li><a href="${p("/services#analytics")}">${trF("analytics", locale)}</a></li>
+          <li><a href="${p("/services#cro")}">${trF("cro", locale)}</a></li>
+          <li><a href="${p("/services#performance")}">${trF("performance", locale)}</a></li>
+          <li><a href="${p("/services#ads")}">${trF("ads", locale)}</a></li>
         </ul>
       </div>
       <div class="site-footer__col">
-        <h2 class="site-footer__heading">Company</h2>
+        <h2 class="site-footer__heading">${trF("companyHeading", locale)}</h2>
         <ul>
-          <li><a href="/work">Work</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/about#contact">Contact</a></li>
+          <li><a href="${p("/work")}">${trF("work", locale)}</a></li>
+          <li><a href="${p("/about")}">${trF("about", locale)}</a></li>
+          <li><a href="${p("/about#contact")}">${trF("contact", locale)}</a></li>
         </ul>
       </div>
     </nav>
 
     <div class="site-footer__subscribe">
-      <h2 class="site-footer__heading">Stay in the loop</h2>
-      <p class="site-footer__subscribe-text">Occasional web &amp; growth tips. No spam.</p>
+      <h2 class="site-footer__heading">${trF("stayInLoop", locale)}</h2>
+      <p class="site-footer__subscribe-text">${trF("subscribeText", locale)}</p>
       <form class="subscribe-form" id="subscribe-form" novalidate>
-        <label class="visually-hidden" for="sub-email">Email address</label>
-        <input id="sub-email" name="email" type="email" autocomplete="email" placeholder="Your email address" required />
-        <!-- Honeypot: must stay empty. -->
+        <label class="visually-hidden" for="sub-email">${trF("emailLabel", locale)}</label>
+        <input id="sub-email" name="email" type="email" autocomplete="email" placeholder="${trF("emailPlaceholder", locale)}" required />
         <input class="hp" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <!-- Turnstile: lazy-rendered on first interaction by subscribe.ts. -->
         <div class="subscribe-turnstile" data-sitekey="${TURNSTILE_SITEKEY}"></div>
-        <button class="btn btn--primary" type="submit">Subscribe</button>
+        <button class="btn btn--primary" type="submit">${trF("subscribe", locale)}</button>
       </form>
       <p id="subscribe-status" class="form-status" role="status" aria-live="polite"></p>
 
@@ -75,8 +73,8 @@ export function footer(): string {
 
   <div class="site-footer__base">
     <div class="container site-footer__base-inner">
-      <small>&copy; <span id="year">2026</span> meemur. All rights reserved. &middot; <a href="/privacy">Privacy</a></small>
-      <a class="site-footer__home-link" href="/about#contact">Start a project →</a>
+      <small>&copy; <span id="year">2026</span> meemur. ${trF("allRights", locale)} &middot; <a href="${p("/privacy")}">${trF("privacy", locale)}</a></small>
+      <a class="site-footer__home-link" href="${p("/about#contact")}">${trF("startProject", locale)}</a>
     </div>
   </div>
 </footer>`;

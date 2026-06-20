@@ -36,14 +36,6 @@ writeFileSync(
   ) + "\n",
 );
 
-// Keep the home page's <meta name="version"> aligned with the semver (no-op
-// when unchanged, so it never creates spurious git diffs). This is the Vite
-// entry at the repo root, copied into dist/ during the build.
-const indexPath = join(ROOT, "index.html");
-const html = readFileSync(indexPath, "utf8");
-writeFileSync(
-  indexPath,
-  html.replace(/(<meta name="version" content=")[^"]*(")/, `$1${pkg.version}$2`),
-);
-
+// Previously stamped <meta name="version"> into the Vite entry HTML;
+// with Astro the version is read from package.json at build time instead.
 console.log(`version.json → ${pkg.version} @ ${commit} (${branch})`);

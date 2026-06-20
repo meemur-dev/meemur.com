@@ -100,7 +100,7 @@ writeFileSync(clPath, rollChangelog(readFileSync(clPath, "utf8"), next, cur, dat
 execSync("node scripts/build-version.mjs", { cwd: ROOT, stdio: "inherit" });
 
 // 4. Commit the bump (the tag is created by `git flow release finish`)
-execSync("git add package.json CHANGELOG.md index.html", { cwd: ROOT });
+execSync("git add package.json CHANGELOG.md", { cwd: ROOT });
 execSync(`git commit -m "Release ${next}"`, { cwd: ROOT });
 
 console.log(`\n✓ Committed "Release ${next}". Next:`);

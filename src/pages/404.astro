@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/pages/notfound.css";
+---
+
+<BaseLayout
+  title="Page not found · meemur"
+  description="That page doesn't exist on meemur.com. Head back to the home page or explore our services."
+  canonical=""
+  pageClass="page-notfound"
+  noindex={true}
+  locale="en"
+>
+  <section class="section notfound">
+    <div class="container notfound__inner">
+      <p class="eyebrow" data-tr="Hata 404">Error 404</p>
+      <span class="notfound__code" aria-hidden="true">404</span>
+      <h1 data-tr="Bu sayfa çevrimdışı.">This page is off the grid.</h1>
+      <p class="lead" data-tr="Bu adreste hiçbir şey yok. Taşınmış olabilir ya da hiç var olmamış olabilir. Sizi bilindik koordinatlara geri götürelim.">
+        There's nothing at this address. It may have moved, or it never existed. Let's get
+        you back to familiar coordinates.
+      </p>
+      <div class="notfound__actions">
+        <a class="btn btn--primary" href="/" data-tr-href="/tr/">Back to home</a>
+        <a class="btn btn--ghost" href="/services" data-tr-href="/tr/services">Explore services</a>
+      </div>
+      <p class="notfound__hint" data-tr="Burada bir şey olması gerektiğini mi düşünüyorsunuz? contact@meemur.com adresinden bize bildirin.">
+        Think something should be here? Tell us at
+        <a href="mailto:contact@meemur.com">contact@meemur.com</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  if (window.location.pathname.startsWith("/tr")) {
+    document.querySelectorAll("[data-tr]").forEach((el) => {
+      el.textContent = el.getAttribute("data-tr");
+    });
+    document.querySelectorAll("[data-tr-href]").forEach((el) => {
+      el.setAttribute("href", el.getAttribute("data-tr-href"));
+    });
+    document.title = "Sayfa bulunamadı · meemur";
+    document.documentElement.lang = "tr";
+  }
+</script>

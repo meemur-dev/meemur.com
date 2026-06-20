@@ -1,0 +1,121 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/pages/about.css";
+---
+
+<BaseLayout
+  title="Hakkımızda · meemur"
+  description="meemur, Onur Yanar tarafından kurulmuş butik bir dijital stüdyo. Web geliştirme, e-ticaret ve analitik alanında 10 yılı aşkın deneyim."
+  canonical="https://meemur.com/tr/about"
+  pageClass="page-about"
+  active="about"
+  ogTitle="Hakkımızda · meemur"
+  ogDescription="Onur Yanar liderliğinde butik dijital stüdyo. Web, e-ticaret ve analitik."
+  locale="tr"
+>
+  <section class="section page-hero">
+    <div class="container">
+      <p class="eyebrow">Hakkımızda</p>
+      <h1>Küçük ekip, büyük sonuçlar</h1>
+      <p class="lead">
+        meemur, Onur Yanar liderliğinde butik bir dijital stüdyo. Kıdemli front-end
+        mühendisliğini veri odaklı bir yaklaşımla birleştiriyor, yaptığımız her işi
+        ölçülebilir sonuçlarla teslim ediyoruz.
+      </p>
+    </div>
+  </section>
+
+  <section class="section about-founder">
+    <div class="container">
+      <div class="about-founder__inner">
+        <div class="about-founder__text">
+          <p class="eyebrow">Kurucu</p>
+          <div class="about-founder__name">
+            <img
+              class="about-founder__avatar"
+              src="/about/onur.webp"
+              alt="Onur Yanar portresi"
+              width="320"
+              height="320"
+              loading="lazy"
+            />
+            <h2>Onur Yanar</h2>
+          </div>
+          <p>
+            Ben Onur. 10 yılı aşkın süredir web ve analitik alanında çalışıyorum.
+            60'tan fazla marka için online mağazalar ve büyüme takip sistemleri kurdum.
+            meemur'u, bu işi aracısız, doğrudan yapmak için kurdum.
+          </p>
+          <p>
+            Mühendislik ve istatistik geçmişim var. Sitenizin hızı ve kullanıcı
+            deneyimi kadar, her kararın arkasındaki veriye de önem veriyorum.
+            meemur'la çalıştığınızda, doğrudan benimle çalışırsınız.
+          </p>
+          <ul class="about-links" role="list">
+            <li><a href="https://onuryanar.com/" rel="me noopener" target="_blank">onuryanar.com</a></li>
+            <li><a href="https://www.linkedin.com/in/oyanar" rel="me noopener" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/onurstats" rel="me noopener" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+        <figure class="about-founder__photo">
+          <img
+            src="/about/office.webp"
+            alt="Ankara'daki meemur stüdyosu"
+            width="1424"
+            height="1440"
+            loading="lazy"
+          />
+          <figcaption>Ankara'daki stüdyomuz</figcaption>
+        </figure>
+      </div>
+      <ul class="values" role="list">
+        <li class="value"><h3>Aracısız çalışma</h3><p>İşi yapan kişiyle doğrudan iletişim kurarsınız. Katman yok, e-poda zinciri yok.</p></li>
+        <li class="value"><h3>Veriyle karar</h3><p>Kararlarımızı içgüdülere değil, temiz veriye ve test sonuçlarına dayandırıyoruz.</p></li>
+        <li class="value"><h3>Uzun soluklu çözümler</h3><p>Erişilebilir, hızlı ve sürdürülebilir kod. Köşe dönmeyiz, sağlam temel atarız.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container contact__inner">
+      <div class="contact__intro">
+        <p class="eyebrow">İletişim</p>
+        <h2>Haydi projenizi konuşalım</h2>
+        <p>
+          Bize ne üzerinde çalıştığınızı anlatın, bir iş günü içinde dönüş yapalım.
+          E-posta'yı mı tercih edersiniz?
+          <a href="mailto:contact@meemur.com">contact@meemur.com</a> adresine
+          doğrudan yazabilirsiniz.
+        </p>
+        <ul class="about-links" role="list">
+          <li><a href="https://www.linkedin.com/company/meemur/" rel="me noopener" target="_blank">LinkedIn</a></li>
+          <li><a href="https://github.com/meemur-dev" rel="me noopener" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="field">
+          <label for="cf-name">Adınız</label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="cf-email">E-posta</label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="cf-message">Mesajınız</label>
+          <textarea id="cf-message" name="message" rows="5" required></textarea>
+        </div>
+
+        <div class="hp" aria-hidden="true">
+          <label>Şirket<input name="company" type="text" tabindex="-1" autocomplete="off" /></label>
+        </div>
+
+        <div class="cf-turnstile" data-sitekey={import.meta.env.PUBLIC_TURNSTILE_SITEKEY || ""}></div>
+
+        <button class="btn btn--primary" type="submit">Mesaj gönder</button>
+        <p id="contact-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</BaseLayout>

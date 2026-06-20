@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/pages/notfound.css";
+---
+
+<BaseLayout
+  title="Sayfa bulunamadı · meemur"
+  description="Aradığınız sayfa meemur.com'da bulunamadı. Ana sayfaya dönün veya hizmetlerimizi keşfedin."
+  canonical=""
+  pageClass="page-notfound"
+  noindex={true}
+  locale="tr"
+>
+  <section class="section notfound">
+    <div class="container notfound__inner">
+      <p class="eyebrow">Hata 404</p>
+      <span class="notfound__code" aria-hidden="true">404</span>
+      <h1>Bu sayfa artık yok.</h1>
+      <p class="lead">
+        Aradığınız adreste bir şey bulamadık. Taşınmış, kaldırılmış ya da hiç
+        var olmamış olabilir. Sizi bilindik rotalara geri götürelim.
+      </p>
+      <div class="notfound__actions">
+        <a class="btn btn--primary" href="/tr/">Ana sayfaya dön</a>
+        <a class="btn btn--ghost" href="/tr/services">Hizmetleri keşfet</a>
+      </div>
+      <p class="notfound__hint">
+        Burada bir şey olması gerektiğini mi düşünüyorsunuz?
+        <a href="mailto:contact@meemur.com">contact@meemur.com</a> adresinden
+        bize bildirin.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

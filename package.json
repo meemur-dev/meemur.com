@@ -7,25 +7,23 @@
   "license": "UNLICENSED",
   "description": "meemur.com, digital agency website",
   "scripts": {
-    "dev": "vite",
+    "dev": "astro dev",
     "predev": "node scripts/build-version.mjs",
-    "build": "node scripts/build-version.mjs && vite build",
+    "build": "node scripts/build-version.mjs && astro build && cp -R functions/ dist/functions/",
     "preview": "bun run build && wrangler pages dev ./dist",
     "deploy": "bun run build && wrangler pages deploy ./dist --project-name meemur-com",
     "stamp": "node scripts/build-version.mjs",
     "release": "node scripts/release.mjs",
     "check:version": "node scripts/check-version.mjs",
-    "design:lint": "designmd lint DESIGN.md",
-    "pretest": "bun run build",
-    "test": "playwright test",
-    "pretest:visual": "bun run build",
-    "test:visual": "playwright test --project=visual-mobile --project=visual-desktop",
-    "baseline:meemur": "BASE_URL=https://meemur.com playwright test --project=visual-mobile --project=visual-desktop --update-snapshots"
+    "design:lint": "designmd lint DESIGN.md"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^13.7.0",
+    "astro": "^6.4.8"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250303.0",
     "@google/design.md": "^0.2.0",
-    "@playwright/test": "^1.60.0",
     "typescript": "^5.7.0",
     "vite": "^6.0.0",
     "wrangler": "^4.96.0"
