@@ -1,8 +1,8 @@
 ---
-import { header } from "../layout/header";
-import { footer } from "../layout/footer";
-import { trO, localePath } from "../i18n/translations";
-import type { Locale } from "../i18n/translations";
+import Header from "../layout/Header.astro";
+import Footer from "../layout/Footer.astro";
+import { useTranslations, localePath } from "../i18n/utils";
+import type { Locale } from "../i18n/utils";
 import "../styles/global.css";
 
 export interface Props {
@@ -38,8 +38,9 @@ const {
 const ogTitleFinal = ogTitle || title;
 const ogDescFinal = ogDescription || description;
 const ogImageFinal = ogImage || "https://meemur.com/og-image.png";
+const t = useTranslations(locale);
 const langAttr = locale === "tr" ? "tr" : "en";
-const ogLocale = trO("locale", locale);
+const ogLocale = t("og.locale");
 
 const alternateLocales: Locale[] = locale === "en" ? ["tr"] : ["en"];
 
@@ -54,15 +55,21 @@ const canonicalPath = canonical ? new URL(canonical, "https://meemur.com").pathn
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Onur Yanar" />
-    <link rel="canonical" href={canonical} />
+    {canonical && <link rel="canonical" href={canonical} />}
     {noindex && <meta name="robots" content="noindex" />}
     {version && <meta name="version" content={version} />}
 
-    <link rel="alternate" hreflang={locale} href={canonical} />
-    {alternateLocales.map((alt) => (
-      <link rel="alternate" hreflang={alt} href={`https://meemur.com${localePath(canonicalPath, alt)}`} />
-    ))}
-    <link rel="alternate" hreflang="x-default" href={`https://meemur.com${canonicalPath}`} />
+    {
+      canonical && (
+        <>
+          <link rel="alternate" hreflang={locale} href={canonical} />
+          {alternateLocales.map((alt) => (
+            <link rel="alternate" hreflang={alt} href={`https://meemur.com${localePath(canonicalPath, alt)}`} />
+          ))}
+          <link rel="alternate" hreflang="x-default" href={`https://meemur.com${canonicalPath}`} />
+        </>
+      )
+    }
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
@@ -113,6 +120,7 @@ const canonicalPath = canonical ? new URL(canonical, "https://meemur.com").pathn
   <body class={pageClass}>
     <noscript
       ><iframe
+        title="Google Tag Manager"
         src="https://www.googletagmanager.com/ns.html?id=GTM-ND4VP7H4"
         height="0"
         width="0"
@@ -126,12 +134,12 @@ const canonicalPath = canonical ? new URL(canonical, "https://meemur.com").pathn
       <span class="blob blob--3"></span>
     </div>
 
-    <Fragment set:html={header(active, locale)} />
+    <Header active={active} locale={locale} />
 
     <main id="main">
       <slot />
     </main>
 
-    <Fragment set:html={footer(locale)} />
+    <Footer locale={locale} />
   </body>
 </html>

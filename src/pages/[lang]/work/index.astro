@@ -1,0 +1,11 @@
+---
+import WorkPage from "../../../components/pages/WorkPage.astro";
+import { langStaticPaths } from "../../../i18n/utils";
+import type { Locale } from "../../../i18n/utils";
+
+export const getStaticPaths = langStaticPaths;
+
+const { lang } = Astro.params as { lang: Locale };
+---
+
+<WorkPage locale={lang} />

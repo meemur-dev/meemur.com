@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getDictionary, localePath } from "../../i18n/utils";
+import type { Locale } from "../../i18n/utils";
+import "../../styles/pages/work.css";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = getDictionary(locale).pages.work;
+const p = (path: string) => localePath(path, locale);
+
+const canonical = `https://meemur.com${p("/work")}`;
+---
+
+<BaseLayout
+  title={c.meta.title}
+  description={c.meta.description}
+  canonical={canonical}
+  pageClass="page-work"
+  active="work"
+  ogTitle={c.meta.ogTitle}
+  ogDescription={c.meta.ogDescription}
+  locale={locale}
+>
+  <section class="section page-hero">
+    <div class="container">
+      <p class="eyebrow">{c.hero.eyebrow}</p>
+      <h1>{c.hero.titleLead}{c.hero.titleEmphasis && <span>{c.hero.titleEmphasis}</span>}</h1>
+      <p class="lead">{c.hero.lead}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">{c.section.eyebrow}</p>
+        <h2>{c.section.heading}</h2>
+        <p class="lead">{c.section.lead}</p>
+      </div>
+
+      <div class="work-grid">
+        <a class="work-card" href={p("/")}>
+          <div class="work-card__media">
+            <span class="work-card__badge">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="5" /></svg>
+              {c.badges.active}
+            </span>
+            <img src="/work/shot-home.png" alt={c.cards.self.alt} width="880" height="550" loading="lazy" />
+          </div>
+          <div class="work-card__body">
+            <h3 class="work-card__title">meemur.com</h3>
+            <p class="work-card__desc">{c.cards.self.desc}</p>
+            <div class="work-card__foot">
+              <span class="work-card__metric">{c.cards.self.metric}</span>
+              <span class="work-card__view">
+                {c.cards.self.view}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <article class="work-card">
+          <div class="work-card__media">
+            <span class="work-card__badge">
+              <svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M756-120 537-339l84-84 219 219-84 84Zm-552 0-84-84 276-276-68-68-28 28-51-51v82l-28 28-121-121 28-28h82l-50-50 142-142q20-20 43-29t47-9q24 0 47 9t43 29l-92 92 50 50-28 28 68 68 90-90q-4-11-6.5-23t-2.5-24q0-59 40.5-99.5T701-841q15 0 28.5 3t27.5 9l-99 99 72 72 99-99q7 14 9.5 27.5T841-701q0 59-40.5 99.5T701-561q-12 0-24-2t-23-7L204-120Z" /></svg>
+              {c.badges.inDev}
+            </span>
+            <img src="/work/shot-magcafe.png" alt={c.cards.magcafe.alt} width="880" height="550" loading="lazy" />
+          </div>
+          <div class="work-card__body">
+            <h3 class="work-card__title">MAG Cafe Study Hub</h3>
+            <p class="work-card__desc">{c.cards.magcafe.desc}</p>
+            <div class="work-card__foot">
+              <span class="work-card__metric">{c.cards.magcafe.metric}</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-card__media">
+            <span class="work-card__badge">
+              <svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M756-120 537-339l84-84 219 219-84 84Zm-552 0-84-84 276-276-68-68-28 28-51-51v82l-28 28-121-121 28-28h82l-50-50 142-142q20-20 43-29t47-9q24 0 47 9t43 29l-92 92 50 50-28 28 68 68 90-90q-4-11-6.5-23t-2.5-24q0-59 40.5-99.5T701-841q15 0 28.5 3t27.5 9l-99 99 72 72 99-99q7 14 9.5 27.5T841-701q0 59-40.5 99.5T701-561q-12 0-24-2t-23-7L204-120Z" /></svg>
+              {c.badges.inDev}
+            </span>
+            <img src="/work/shot-isiktas.png" alt={c.cards.isiktas.alt} width="880" height="550" loading="lazy" />
+          </div>
+          <div class="work-card__body">
+            <h3 class="work-card__title">Işıktaş Eğitim Kurumları</h3>
+            <p class="work-card__desc">{c.cards.isiktas.desc}</p>
+            <div class="work-card__foot">
+              <span class="work-card__metric">{c.cards.isiktas.metric}</span>
+            </div>
+          </div>
+        </article>
+
+        <a class="work-card work-card--invite" href={p("/about#contact")}>
+          <p class="eyebrow">{c.cards.invite.eyebrow}</p>
+          <h3 class="work-card__title">{c.cards.invite.title}</h3>
+          <p class="work-card__desc">{c.cards.invite.desc}</p>
+          <span class="work-card__view">
+            {c.cards.invite.cta}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cta">
+      <h2 class="cta__title">{c.cta.title}</h2>
+      <p class="cta__text">{c.cta.text}</p>
+      <div class="cta__actions">
+        <a class="btn btn--primary" href={p("/about#contact")}>{c.cta.primary}</a>
+        <a class="btn btn--outline-light" href={p("/services")}>{c.cta.secondary}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

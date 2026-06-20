@@ -1,0 +1,124 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getDictionary, localePath } from "../../i18n/utils";
+import type { Locale } from "../../i18n/utils";
+import "../../styles/pages/about.css";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = getDictionary(locale).pages.about;
+const p = (path: string) => localePath(path, locale);
+
+const canonical = `https://meemur.com${p("/about")}`;
+const turnstileSitekey = import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "";
+---
+
+<BaseLayout
+  title={c.meta.title}
+  description={c.meta.description}
+  canonical={canonical}
+  pageClass="page-about"
+  active="about"
+  ogTitle={c.meta.ogTitle}
+  ogDescription={c.meta.ogDescription}
+  includeTurnstile={true}
+  locale={locale}
+>
+  <section class="section page-hero">
+    <div class="container">
+      <p class="eyebrow">{c.hero.eyebrow}</p>
+      <h1>{c.hero.title}</h1>
+      <p class="lead">{c.hero.lead}</p>
+    </div>
+  </section>
+
+  <section class="section about-founder">
+    <div class="container">
+      <div class="about-founder__inner">
+        <div class="about-founder__text">
+          <p class="eyebrow">{c.founder.eyebrow}</p>
+          <div class="about-founder__name">
+            <img
+              class="about-founder__avatar"
+              src="/about/onur.webp"
+              alt={c.founder.avatarAlt}
+              width="320"
+              height="320"
+              loading="lazy"
+            />
+            <h2>{c.founder.name}</h2>
+          </div>
+          {c.founder.bio.map((paragraph) => <p>{paragraph}</p>)}
+          <ul class="about-links" role="list">
+            <li><a href="https://onuryanar.com/" rel="me noopener" target="_blank">onuryanar.com</a></li>
+            <li><a href="https://www.linkedin.com/in/oyanar" rel="me noopener" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/onurstats" rel="me noopener" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+        <figure class="about-founder__photo">
+          <img
+            src="/about/office.webp"
+            alt={c.founder.photoAlt}
+            width="1424"
+            height="1440"
+            loading="lazy"
+          />
+          <figcaption>{c.founder.photoCaption}</figcaption>
+        </figure>
+      </div>
+      <ul class="values" role="list">
+        {
+          c.values.map((value) => (
+            <li class="value">
+              <h3>{value.title}</h3>
+              <p>{value.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container contact__inner">
+      <div class="contact__intro">
+        <p class="eyebrow">{c.contact.eyebrow}</p>
+        <h2>{c.contact.heading}</h2>
+        <p>
+          {c.contact.introBefore}<a href="mailto:contact@meemur.com">contact@meemur.com</a>{c.contact.introAfter}
+        </p>
+        <ul class="about-links" role="list">
+          <li><a href="https://www.linkedin.com/company/meemur/" rel="me noopener" target="_blank">LinkedIn</a></li>
+          <li><a href="https://github.com/meemur-dev" rel="me noopener" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="field">
+          <label for="cf-name">{c.contact.formName}</label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="cf-email">{c.contact.formEmail}</label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="cf-message">{c.contact.formMessage}</label>
+          <textarea id="cf-message" name="message" rows="5" required></textarea>
+        </div>
+
+        <div class="hp" aria-hidden="true">
+          <label>{c.contact.formCompany}<input name="company" type="text" tabindex="-1" autocomplete="off" /></label>
+        </div>
+
+        <div class="cf-turnstile" data-sitekey={turnstileSitekey}></div>
+
+        <button class="btn btn--primary" type="submit">{c.contact.formSubmit}</button>
+        <p id="contact-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,189 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getDictionary, localePath } from "../../i18n/utils";
+import type { Locale } from "../../i18n/utils";
+import pkg from "../../../package.json";
+import "../../styles/pages/home.css";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = getDictionary(locale).pages.home;
+const p = (path: string) => localePath(path, locale);
+
+// Locale-independent presentation: card icons/anchors, step numbers, stat values.
+const cardIcons = [
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" /><path d="M3 6h18" /><path d="M16 10a4 4 0 0 1-8 0" /></svg>',
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5" /><path d="M11 18h2" /></svg>',
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16" /><rect x="7" y="11" width="3" height="6" rx="1" /><rect x="13" y="7" width="3" height="10" rx="1" /></svg>',
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></svg>',
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14 16 10" /><path d="M3.34 19a10 10 0 1 1 17.32 0" /></svg>',
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z" /><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" /></svg>',
+];
+const cardAnchors = [
+  "/services#ecommerce",
+  "/services#apps",
+  "/services#analytics",
+  "/services#cro",
+  "/services#performance",
+  "/services#ads",
+];
+const stepNums = ["01", "02", "03", "04"];
+const statValues = ["10+", "60+", "100%"];
+
+const canonical = `https://meemur.com${p("/")}`;
+
+const jsonld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://meemur.com/#organization",
+      name: "meemur",
+      alternateName: c.jsonld.alternateName,
+      url: "https://meemur.com/",
+      logo: "https://meemur.com/logo.svg",
+      description: c.jsonld.description,
+      slogan: c.jsonld.slogan,
+      email: "contact@meemur.com",
+      foundingDate: "2026",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: c.jsonld.contactType,
+        email: "contact@meemur.com",
+        availableLanguage: ["en", "tr"],
+      },
+      sameAs: ["https://github.com/meemur-dev"],
+      founder: { "@id": "https://meemur.com/#onur" },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://meemur.com/#onur",
+      name: "Onur Yanar",
+      url: "https://onuryanar.com/",
+      jobTitle: c.jsonld.jobTitle,
+      email: "contact@meemur.com",
+      worksFor: { "@id": "https://meemur.com/#organization" },
+      sameAs: [
+        "https://onuryanar.com/",
+        "https://www.linkedin.com/in/oyanar",
+        "https://github.com/onurstats",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://meemur.com/#website",
+      url: "https://meemur.com/",
+      name: "meemur",
+      description: c.jsonld.description,
+      inLanguage: locale,
+      publisher: { "@id": "https://meemur.com/#organization" },
+      creator: { "@id": "https://meemur.com/#onur" },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={c.meta.title}
+  description={c.meta.description}
+  canonical={canonical}
+  pageClass="page-home"
+  active="home"
+  ogTitle={c.meta.ogTitle}
+  ogDescription={c.meta.ogDescription}
+  version={pkg.version}
+  locale={locale}
+>
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="hero__eyebrow">{c.hero.eyebrow}</p>
+      <h1 class="hero__title">{c.hero.titleLead}<span>{c.hero.titleEmphasis}</span></h1>
+      <p class="hero__lead">{c.hero.lead}</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href={p("/about#contact")}>{c.hero.ctaPrimary}</a>
+        <a class="btn btn--ghost" href={p("/services")}>{c.hero.ctaSecondary}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services-overview">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">{c.servicesOverview.eyebrow}</p>
+        <h2>{c.servicesOverview.heading}</h2>
+        <p class="lead">{c.servicesOverview.lead}</p>
+      </div>
+
+      <ul class="cards" role="list">
+        {
+          c.servicesOverview.cards.map((card, i) => (
+            <li class="card">
+              <span class="card__icon" aria-hidden="true" set:html={cardIcons[i]} />
+              <h3 class="card__title">{card.title}</h3>
+              <p class="card__text">{card.text}</p>
+              <a class="card__link" href={p(cardAnchors[i])}>{c.servicesOverview.learnMore}<span class="visually-hidden"> {card.hidden}</span></a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section approach">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">{c.approach.eyebrow}</p>
+        <h2>{c.approach.heading}</h2>
+        <p class="lead">{c.approach.lead}</p>
+      </div>
+      <ol class="steps" role="list">
+        {
+          c.approach.steps.map((step, i) => (
+            <li class="step">
+              <span class="step__num">{stepNums[i]}</span>
+              <h3 class="step__title">{step.title}</h3>
+              <p class="step__text">{step.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section why">
+    <div class="container why__inner">
+      <div class="why__text">
+        <p class="eyebrow">{c.why.eyebrow}</p>
+        <h2>{c.why.heading}</h2>
+        <p>{c.why.body}</p>
+        <a class="btn btn--ghost" href={p("/about")}>{c.why.cta}</a>
+      </div>
+      <ul class="stats" role="list">
+        {
+          c.why.stats.map((label, i) => (
+            <li class="stat">
+              <span class="stat__num">{statValues[i]}</span>
+              <span class="stat__label">{label}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cta">
+      <h2 class="cta__title">{c.cta.title}</h2>
+      <p class="cta__text">{c.cta.text}</p>
+      <div class="cta__actions">
+        <a class="btn btn--primary" href={p("/about#contact")}>{c.cta.primary}</a>
+        <a class="btn btn--outline-light" href={p("/work")}>{c.cta.secondary}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonld)} is:inline />

@@ -1,11 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getDictionary } from "../i18n/utils";
 import "../styles/pages/notfound.css";
+
+// Cloudflare Pages serves this single 404 for every not-found route, including
+// ones under /tr (the directory build format means there is no /tr/404.html).
+// So we render English and swap to Turkish at runtime when the path is /tr/*.
+const en = getDictionary("en").pages.notfound;
+const tr = getDictionary("tr").pages.notfound;
 ---
 
 <BaseLayout
-  title="Page not found · meemur"
-  description="That page doesn't exist on meemur.com. Head back to the home page or explore our services."
+  title={en.metaTitle}
+  description={en.metaDescription}
   canonical=""
   pageClass="page-notfound"
   noindex={true}
@@ -13,26 +20,24 @@ import "../styles/pages/notfound.css";
 >
   <section class="section notfound">
     <div class="container notfound__inner">
-      <p class="eyebrow" data-tr="Hata 404">Error 404</p>
+      <p class="eyebrow" data-tr={tr.eyebrow}>{en.eyebrow}</p>
       <span class="notfound__code" aria-hidden="true">404</span>
-      <h1 data-tr="Bu sayfa çevrimdışı.">This page is off the grid.</h1>
-      <p class="lead" data-tr="Bu adreste hiçbir şey yok. Taşınmış olabilir ya da hiç var olmamış olabilir. Sizi bilindik koordinatlara geri götürelim.">
-        There's nothing at this address. It may have moved, or it never existed. Let's get
-        you back to familiar coordinates.
-      </p>
+      <h1 data-tr={tr.title}>{en.title}</h1>
+      <p class="lead" data-tr={tr.lead}>{en.lead}</p>
       <div class="notfound__actions">
-        <a class="btn btn--primary" href="/" data-tr-href="/tr/">Back to home</a>
-        <a class="btn btn--ghost" href="/services" data-tr-href="/tr/services">Explore services</a>
+        <a class="btn btn--primary" href="/" data-tr-href="/tr/" data-tr={tr.backHome}>{en.backHome}</a>
+        <a class="btn btn--ghost" href="/services" data-tr-href="/tr/services" data-tr={tr.exploreServices}>
+          {en.exploreServices}
+        </a>
       </div>
-      <p class="notfound__hint" data-tr="Burada bir şey olması gerektiğini mi düşünüyorsunuz? contact@meemur.com adresinden bize bildirin.">
-        Think something should be here? Tell us at
-        <a href="mailto:contact@meemur.com">contact@meemur.com</a>.
+      <p class="notfound__hint" data-tr={tr.hintPlain}>
+        {en.hintBefore}<a href="mailto:contact@meemur.com">contact@meemur.com</a>{en.hintAfter}
       </p>
     </div>
   </section>
 </BaseLayout>
 
-<script>
+<script is:inline define:vars={{ trTitle: tr.metaTitle }}>
   if (window.location.pathname.startsWith("/tr")) {
     document.querySelectorAll("[data-tr]").forEach((el) => {
       el.textContent = el.getAttribute("data-tr");
@@ -40,7 +45,7 @@ import "../styles/pages/notfound.css";
     document.querySelectorAll("[data-tr-href]").forEach((el) => {
       el.setAttribute("href", el.getAttribute("data-tr-href"));
     });
-    document.title = "Sayfa bulunamadı · meemur";
+    document.title = trTitle;
     document.documentElement.lang = "tr";
   }
 </script>

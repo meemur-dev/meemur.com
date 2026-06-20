@@ -15,7 +15,8 @@
     "stamp": "node scripts/build-version.mjs",
     "release": "node scripts/release.mjs",
     "check:version": "node scripts/check-version.mjs",
-    "design:lint": "designmd lint DESIGN.md"
+    "design:lint": "designmd lint DESIGN.md",
+    "lint:html": "html-validate \"dist/**/*.html\""
   },
   "dependencies": {
     "@astrojs/cloudflare": "^13.7.0",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250303.0",
     "@google/design.md": "^0.2.0",
+    "html-validate": "^11.5.3",
     "typescript": "^5.7.0",
     "wrangler": "^4.96.0"
   }

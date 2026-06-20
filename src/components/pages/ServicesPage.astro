@@ -1,0 +1,95 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getDictionary, localePath } from "../../i18n/utils";
+import type { Locale } from "../../i18n/utils";
+import "../../styles/pages/services.css";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = getDictionary(locale).pages.services;
+const p = (path: string) => localePath(path, locale);
+
+const serviceIds = ["ecommerce", "apps", "analytics", "cro", "performance", "ads"];
+const serviceNums = ["01", "02", "03", "04", "05", "06"];
+const stepNums = ["01", "02", "03", "04"];
+
+const canonical = `https://meemur.com${p("/services")}`;
+---
+
+<BaseLayout
+  title={c.meta.title}
+  description={c.meta.description}
+  canonical={canonical}
+  pageClass="page-services"
+  active="services"
+  ogTitle={c.meta.ogTitle}
+  ogDescription={c.meta.ogDescription}
+  locale={locale}
+>
+  <section class="section page-hero">
+    <div class="container">
+      <p class="eyebrow">{c.hero.eyebrow}</p>
+      <h1>{c.hero.title}</h1>
+      <p class="lead">{c.hero.lead}</p>
+    </div>
+  </section>
+
+  <div class="container service-list">
+    {
+      c.services.map((service, i) => (
+        <section class="service" id={serviceIds[i]}>
+          <div class="service__head">
+            <span class="service__num">{serviceNums[i]}</span>
+            <h2 class="service__title">{service.title}</h2>
+          </div>
+          <p class="service__intro">{service.intro}</p>
+          <div class="service__cols">
+            <div>
+              <h3 class="service__subhead">{c.subheadWhat}</h3>
+              <ul class="ticks" role="list">
+                {service.ticks.map((tick) => <li>{tick}</li>)}
+              </ul>
+            </div>
+            <div>
+              <h3 class="service__subhead">{c.subheadTools}</h3>
+              <ul class="tags" role="list">
+                {service.tools.map((tool) => <li>{tool}</li>)}
+              </ul>
+            </div>
+          </div>
+        </section>
+      ))
+    }
+  </div>
+
+  <section class="section approach">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">{c.approach.eyebrow}</p>
+        <h2>{c.approach.heading}</h2>
+      </div>
+      <ol class="steps" role="list">
+        {
+          c.approach.steps.map((step, i) => (
+            <li class="step">
+              <span class="step__num">{stepNums[i]}</span>
+              <h3 class="step__title">{step.title}</h3>
+              <p class="step__text">{step.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cta">
+      <h2 class="cta__title">{c.cta.title}</h2>
+      <p class="cta__text">{c.cta.text}</p>
+      <a class="btn btn--primary" href={p("/about#contact")}>{c.cta.button}</a>
+    </div>
+  </section>
+</BaseLayout>

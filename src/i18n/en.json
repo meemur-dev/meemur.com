@@ -1,0 +1,321 @@
+{
+  "nav.home": "Home",
+  "nav.services": "Services",
+  "nav.work": "Work",
+  "nav.about": "About",
+  "nav.getInTouch": "Get in touch",
+  "nav.skipToContent": "Skip to content",
+  "nav.menuLabel": "Menu",
+  "nav.primaryNav": "Primary",
+  "footer.navLabel": "Footer",
+  "footer.tagline": "We make the web work for you.",
+  "footer.servicesHeading": "Services",
+  "footer.companyHeading": "Company",
+  "footer.work": "Work",
+  "footer.about": "About",
+  "footer.contact": "Contact",
+  "footer.stayInLoop": "Stay in the loop",
+  "footer.subscribeText": "Occasional web & growth tips. No spam.",
+  "footer.emailPlaceholder": "Your email address",
+  "footer.subscribe": "Subscribe",
+  "footer.emailLabel": "Email address",
+  "footer.allRights": "All rights reserved.",
+  "footer.privacy": "Privacy",
+  "footer.startProject": "Start a project →",
+  "footer.ecommerce": "Web & E-commerce",
+  "footer.apps": "Cross-platform Apps",
+  "footer.analytics": "Analytics & Measurement",
+  "footer.cro": "CRO & Experimentation",
+  "footer.performance": "Accessibility & Performance",
+  "footer.ads": "Social Media Ads",
+  "og.siteName": "meemur",
+  "og.locale": "en_US",
+  "pages": {
+    "home": {
+      "meta": {
+        "title": "meemur · Digital agency for web, e-commerce & analytics",
+        "description": "meemur is a boutique digital agency that designs, builds, and measures high-performing web and e-commerce experiences, then grows them with analytics, CRO, and paid social.",
+        "ogTitle": "meemur · Digital agency for web, e-commerce & analytics",
+        "ogDescription": "A boutique digital agency that builds high-performing web & e-commerce, then grows it with data."
+      },
+      "hero": {
+        "eyebrow": "Digital agency · e-commerce & analytics",
+        "titleLead": "We make the web ",
+        "titleEmphasis": "work for you.",
+        "lead": "We design, build, and grow the websites, online stores, and apps that win customers, and keep them coming back.",
+        "ctaPrimary": "Start a project",
+        "ctaSecondary": "Explore services"
+      },
+      "servicesOverview": {
+        "eyebrow": "What we do",
+        "heading": "Everything your brand needs to win online",
+        "lead": "Six capabilities that take a site from launch to measurable results.",
+        "learnMore": "Learn more",
+        "cards": [
+          { "title": "Web & E-commerce", "text": "Beautiful, lightning-fast websites and online stores that turn browsers into buyers, effortless on every screen.", "hidden": "about Web & E-commerce" },
+          { "title": "Cross-platform Apps", "text": "Put your brand in your customers' pocket with sleek apps for iPhone and Android, built once, launched everywhere.", "hidden": "about Cross-platform Apps" },
+          { "title": "Analytics & Measurement", "text": "Finally know what's working. We turn your data into clear answers and reports you can actually trust.", "hidden": "about Analytics & Measurement" },
+          { "title": "CRO & Experimentation", "text": "Get more sales from the visitors you already have. We test, learn, and fine-tune until the numbers climb.", "hidden": "about CRO & Experimentation" },
+          { "title": "Accessibility & Performance", "text": "Faster pages, happier visitors, higher rankings, experiences that load in a blink and welcome everyone.", "hidden": "about Accessibility & Performance" },
+          { "title": "Social Media Ads", "text": "Reach the right people and watch it pay off, scroll-stopping campaigns with every dollar accounted for.", "hidden": "about Social Media Ads" }
+        ]
+      },
+      "approach": {
+        "eyebrow": "How we work",
+        "heading": "Design, build, measure, optimize",
+        "lead": "A simple, proven way of working, and we don't stop at launch.",
+        "steps": [
+          { "title": "Discover", "text": "We get to know your goals, your customers, and what winning really looks like." },
+          { "title": "Build", "text": "We craft a fast, beautiful experience your audience will love to use." },
+          { "title": "Measure", "text": "We track the right things, so you always know what's working." },
+          { "title": "Optimize", "text": "We keep refining, turning good results into great ones, month after month." }
+        ]
+      },
+      "why": {
+        "eyebrow": "Why meemur",
+        "heading": "Boutique focus, senior hands on every project",
+        "body": "meemur is founder-led by Onur Yanar. With 10+ years and 60+ brands behind him, you get senior expertise on every project, and you work directly with the person doing the work, never an account manager.",
+        "cta": "Meet the founder",
+        "stats": [
+          "Years of experience",
+          "Storefronts shipped",
+          "Founder-led delivery"
+        ]
+      },
+      "cta": {
+        "title": "Ready to engineer your growth?",
+        "text": "Whether you're looking for a full-scale digital transformation or a specific optimization sprint, let's talk about how we can help.",
+        "primary": "Start a project",
+        "secondary": "View case studies"
+      },
+      "jsonld": {
+        "alternateName": "meemur Digital Agency",
+        "description": "A digital agency that elevates your entire web presence, from design and performance to analytics and growth.",
+        "slogan": "We make the web work for you.",
+        "contactType": "customer support",
+        "jobTitle": "Founder"
+      }
+    },
+    "about": {
+      "meta": {
+        "title": "About & Contact · meemur",
+        "description": "meemur is a founder-led boutique digital agency by Onur Yanar, with 10+ years in front-end, e-commerce and analytics. Get in touch about your project.",
+        "ogTitle": "About & Contact · meemur",
+        "ogDescription": "Founder-led boutique digital agency by Onur Yanar. Get in touch about your project."
+      },
+      "hero": {
+        "eyebrow": "About",
+        "title": "A boutique studio, built on craft and data",
+        "lead": "meemur is a small, founder-led digital agency. We pair senior front-end engineering with a measurement mindset, so what we build is both beautiful and accountable."
+      },
+      "founder": {
+        "eyebrow": "The founder",
+        "avatarAlt": "Portrait of Onur Yanar",
+        "name": "Onur Yanar",
+        "bio": [
+          "I'm Onur, a web and analytics specialist with 10+ years of experience. I've built online stores and growth-tracking systems for 60+ brands, and I started meemur to do that work directly, without layers in between.",
+          "My background blends engineering and statistics, so I care as much about how fast and welcoming your site feels as I do about the data behind every decision. When you work with meemur, you work with me."
+        ],
+        "photoAlt": "The meemur studio storefront in Ankara, a glass-door entrance with signage reading “We make the web work for you.”",
+        "photoCaption": "Our studio in Ankara"
+      },
+      "values": [
+        { "title": "Senior, hands-on", "text": "You always work directly with the person doing the work." },
+        { "title": "Data over opinions", "text": "Decisions are backed by clean analytics and testing." },
+        { "title": "Built to last", "text": "Accessible, fast, maintainable code, no shortcuts." }
+      ],
+      "contact": {
+        "eyebrow": "Contact",
+        "heading": "Let's talk about your project",
+        "introBefore": "Tell us a little about what you're building and we'll reply within one business day. Prefer email? Reach us directly at ",
+        "introAfter": ".",
+        "formName": "Name",
+        "formEmail": "Email",
+        "formMessage": "Message",
+        "formCompany": "Company",
+        "formSubmit": "Send message"
+      }
+    },
+    "services": {
+      "meta": {
+        "title": "Services · meemur",
+        "description": "meemur's services: web & e-commerce builds, analytics & measurement, CRO & experimentation, accessibility & performance, and social media ads.",
+        "ogTitle": "Services · meemur",
+        "ogDescription": "Web & e-commerce, analytics, CRO, accessibility & performance, and social media ads."
+      },
+      "hero": {
+        "eyebrow": "Services",
+        "title": "What we do",
+        "lead": "Six ways we help your brand grow. Take a project from start to finish, or bring us in for exactly the part you need."
+      },
+      "subheadWhat": "What you get",
+      "subheadTools": "Tools",
+      "services": [
+        {
+          "title": "Web & E-commerce builds",
+          "intro": "Your website is your hardest-working salesperson. We craft beautiful, lightning-fast sites and online stores that turn visitors into customers, and make buying a breeze.",
+          "ticks": ["Custom online stores on Shopify & BigCommerce", "Modern, made-to-measure websites", "A polished, consistent look on every page", "Easy content editing you control yourself"],
+          "tools": ["React", "Next.js", "TypeScript", "Shopify", "BigCommerce", "Node.js"]
+        },
+        {
+          "title": "Cross-platform App Development",
+          "intro": "Be where your customers are: on their phones. We build polished apps for iPhone and Android that feel native, launch fast, and keep people coming back.",
+          "ticks": ["One app for both iPhone and Android", "Fast, smooth, native-feeling experience", "Launch on the App Store & Google Play", "Consistent with your website, end to end"],
+          "tools": ["React Native", "Ionic", "iOS", "Android", "TypeScript"]
+        },
+        {
+          "title": "Analytics & Measurement",
+          "intro": "Stop guessing. We set up measurement you can rely on, then turn the numbers into plain-English insights that guide every decision.",
+          "ticks": ["Accurate tracking set up and health-checked", "Know exactly how visitors shop and convert", "Clear dashboards and reports made for you", "See how real people use your site"],
+          "tools": ["GA4", "Google Tag Manager", "Clarity", "Looker Studio", "BigQuery"]
+        },
+        {
+          "title": "CRO & Experimentation",
+          "intro": "More revenue without more traffic. We find what's holding your visitors back, fix it, and prove the lift with real experiments.",
+          "ticks": ["A clear picture of where you're losing sales", "Smart experiments that prove what works", "Trustworthy results, backed by the numbers", "A prioritised plan to lift conversions"],
+          "tools": ["A/B testing", "GA4", "Statistics", "Heatmaps"]
+        },
+        {
+          "title": "Accessibility & Performance",
+          "intro": "Slow sites lose customers. We make yours load in a blink and work beautifully for everyone, lifting both your sales and your search rankings.",
+          "ticks": ["A site that works for every visitor", "Pages that load in a blink", "Speed tuned for real-world devices", "Better search rankings from a healthier site"],
+          "tools": ["WCAG 2.2", "Lighthouse", "Core Web Vitals", "axe"]
+        },
+        {
+          "title": "Social Media Ads",
+          "intro": "Reach the right people at the right moment. We run scroll-stopping social campaigns and tie every click to real results, so you always know what your budget brings back.",
+          "ticks": ["Campaigns across Meta and beyond", "Sharp targeting and scroll-stopping creative", "Every conversion accurately tracked", "Clear ROI reporting you can trust"],
+          "tools": ["Meta Ads", "Conversions API", "GA4", "GTM"]
+        }
+      ],
+      "approach": {
+        "eyebrow": "How we work",
+        "heading": "Design, build, measure, optimize",
+        "steps": [
+          { "title": "Discover", "text": "Goals, audience, and data: defining what success looks like." },
+          { "title": "Build", "text": "Design and engineer fast, accessible experiences." },
+          { "title": "Measure", "text": "Instrument analytics correctly from day one." },
+          { "title": "Optimize", "text": "Test, refine, and grow conversion over time." }
+        ]
+      },
+      "cta": {
+        "title": "Not sure where to start?",
+        "text": "Tell us about your project and we'll point you to the right mix.",
+        "button": "Get in touch"
+      }
+    },
+    "work": {
+      "meta": {
+        "title": "Work & case studies · meemur",
+        "description": "Selected work from meemur. Our first case study is this very site: a fast, accessible, fully measurable marketing site we designed and built end to end.",
+        "ogTitle": "Work & case studies · meemur",
+        "ogDescription": "Our first case study is this very site, designed and built by meemur, end to end."
+      },
+      "hero": {
+        "eyebrow": "Portfolio",
+        "titleLead": "Our ",
+        "titleEmphasis": "work",
+        "lead": "Our first case study is this very site, designed, built, and measured end to end, and backed by 10+ years and 60+ brands of experience. Yours could be next."
+      },
+      "section": {
+        "eyebrow": "Selected work",
+        "heading": "Recent work",
+        "lead": "meemur.com is our own studio site, designed, built, and measured end to end."
+      },
+      "badges": { "active": "Active", "inDev": "In development" },
+      "cards": {
+        "self": {
+          "alt": "The meemur.com home page",
+          "desc": "Our own studio site, built end to end: marketing pages, a spam-protected contact form wired to email, and analytics from day one. Fast, accessible, and fully measurable.",
+          "metric": "Fast · Accessible · Measured",
+          "view": "View site"
+        },
+        "magcafe": {
+          "alt": "The MAG Cafe Study Hub website",
+          "desc": "A bold, type-led site for a Sincan café and study space: menu, services, and gallery, with light and dark themes.",
+          "metric": "Branding · Astro · Cloudflare"
+        },
+        "isiktas": {
+          "alt": "The Işıktaş Eğitim Kurumları website",
+          "desc": "A conversion-focused site for an Ankara education centre: courses, a trial-exam club, and direct WhatsApp contact.",
+          "metric": "React · Vite · Lead gen"
+        },
+        "invite": {
+          "eyebrow": "Next",
+          "title": "Your project here",
+          "desc": "We're partnering with a small number of early clients. Let's make your site the next case study.",
+          "cta": "Start a project"
+        }
+      },
+      "cta": {
+        "title": "Want to be our next case study?",
+        "text": "We're partnering with a small number of early clients. If that sounds like you, let's build something worth writing about.",
+        "primary": "Start a project",
+        "secondary": "Explore services"
+      }
+    },
+    "privacy": {
+      "meta": {
+        "title": "Privacy policy · meemur",
+        "description": "How meemur handles your data: what the contact form, newsletter, and analytics collect, who processes it, and how to reach us about your rights.",
+        "ogTitle": "Privacy policy · meemur",
+        "ogDescription": "How meemur handles your data, in plain English."
+      },
+      "hero": {
+        "eyebrow": "Legal",
+        "title": "Privacy policy",
+        "lead": "The short version: we collect as little as we can, we never sell your data, and you can email us anytime to see or delete what we hold."
+      },
+      "updated": "Last updated: June 10, 2026",
+      "sections": [
+        {
+          "id": "who-we-are",
+          "heading": "Who we are",
+          "body": "<p>meemur is a boutique digital agency founded and run by Onur Yanar. This policy covers <a href=\"/\">meemur.com</a>, which is hosted on Cloudflare Pages. For anything privacy-related, write to <a href=\"mailto:contact@meemur.com\">contact@meemur.com</a>.</p>"
+        },
+        {
+          "id": "what-we-collect",
+          "heading": "What we collect, and why",
+          "body": "<ul><li><strong>Contact form.</strong> Your name, email address, and message are delivered straight to our inbox as an email, and we don't store them in a database. Submissions pass through a Cloudflare Turnstile spam check before they're sent.</li><li><strong>Newsletter.</strong> If you subscribe in the footer, we receive your email address and keep it only to send you occasional tips. Unsubscribe anytime by emailing us or replying to any newsletter.</li><li><strong>Analytics.</strong> We use Google Analytics 4 (loaded via Google Tag Manager) to understand how the site is used: pages visited, approximate location, and device type. We look at this data in aggregate; it doesn't tell us who you are.</li><li><strong>Hosting and security.</strong> Cloudflare processes technical data such as IP addresses in server logs to serve the site and protect it from abuse.</li></ul>"
+        },
+        {
+          "id": "cookies",
+          "heading": "Cookies",
+          "body": "<p>The only cookies we set ourselves come from Google Analytics, which uses them to recognize repeat visits. You can block or delete cookies in your browser settings, or opt out of Google Analytics entirely with Google's <a href=\"https://tools.google.com/dlpage/gaoptout\" rel=\"noopener\" target=\"_blank\">browser add-on</a>. The site works fine without cookies.</p>"
+        },
+        {
+          "id": "sharing",
+          "heading": "Who we share data with",
+          "body": "<p>Nobody, beyond the services that run the site on our behalf: Cloudflare (hosting and spam protection), Google (analytics), and Resend (delivers form submissions to our inbox as email). We never sell your data, and this site runs no advertising trackers.</p>"
+        },
+        {
+          "id": "retention",
+          "heading": "How long we keep it",
+          "body": "<p>Messages you send us are kept in our inbox like any business correspondence. Newsletter addresses are kept until you unsubscribe. Analytics data is retained by Google Analytics for up to 14 months, then deleted automatically.</p>"
+        },
+        {
+          "id": "your-rights",
+          "heading": "Your rights",
+          "body": "<p>Wherever you are (including under the EU's GDPR and Türkiye's KVKK), you can ask us what data we hold about you, have it corrected or deleted, or object to how it's used. Email <a href=\"mailto:contact@meemur.com\">contact@meemur.com</a> and we'll sort it out within a few days, no forms required.</p>"
+        },
+        {
+          "id": "changes",
+          "heading": "Changes to this policy",
+          "body": "<p>If we change how the site handles data (say, a new analytics tool or a real mailing-list provider), we'll update this page and the date at the top.</p>"
+        }
+      ]
+    },
+    "notfound": {
+      "metaTitle": "Page not found · meemur",
+      "metaDescription": "That page doesn't exist on meemur.com. Head back to the home page or explore our services.",
+      "eyebrow": "Error 404",
+      "title": "This page is off the grid.",
+      "lead": "There's nothing at this address. It may have moved, or it never existed. Let's get you back to familiar coordinates.",
+      "backHome": "Back to home",
+      "exploreServices": "Explore services",
+      "hintBefore": "Think something should be here? Tell us at ",
+      "hintAfter": ".",
+      "hintPlain": "Think something should be here? Tell us at contact@meemur.com."
+    }
+  }
+}

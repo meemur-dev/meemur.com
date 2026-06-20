@@ -1,0 +1,58 @@
+---
+import { useTranslations, localePath } from "../i18n/utils";
+import type { Locale } from "../i18n/utils";
+
+interface Props {
+  active?: string;
+  locale?: Locale;
+}
+
+const { active = "", locale = "en" } = Astro.props;
+const t = useTranslations(locale);
+
+const links = [
+  { key: "home", href: "/" },
+  { key: "services", href: "/services" },
+  { key: "work", href: "/work" },
+  { key: "about", href: "/about" },
+] as const;
+---
+
+<a class="skip-link" href="#main">{t("nav.skipToContent")}</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a
+      class="site-header__logo"
+      href={localePath("/", locale)}
+      aria-label={`meemur, ${t("nav.home").toLowerCase()}`}
+    >
+      <img src="/logo-wordmark.svg" alt="meemur" width="590" height="165" fetchpriority="high" />
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle__box"><span class="nav-toggle__bars"></span></span>
+      <span class="nav-toggle__label visually-hidden">{t("nav.menuLabel")}</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label={t("nav.primaryNav")}>
+      <ul class="site-nav__list">
+        {
+          links.map(({ key, href }) => (
+            <li>
+              <a
+                class="site-nav__link"
+                href={localePath(href, locale)}
+                aria-current={key === active ? "page" : undefined}
+              >
+                {t(`nav.${key}`)}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a class="btn btn--primary btn--sm" href={localePath("/about#contact", locale)}>
+            {t("nav.getInTouch")}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

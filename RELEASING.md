@@ -47,15 +47,17 @@ production:
 ⚠️ Two gotchas, both learned the hard way:
 
 - **Install first.** Cloudflare's git build does not reliably install
-  dependencies on its own, and the build tools (`vite`, `typescript`, …) live
-  in `devDependencies`. Without an explicit install the build dies on
-  `vite: command not found` (exit 127). `bun install --frozen-lockfile` is the
-  `npm ci` equivalent, deterministic from `bun.lock`, never mutates it.
-- **Run the full build.** `bun run build` is **two steps**
-  (`node scripts/build-version.mjs && vite build`). If the build command is set
-  to only `node scripts/build-version.mjs`, it stamps `version.json` but never
-  runs `vite build`, so `dist/` is never produced and the build fails with
-  `Error: Output directory "dist" not found`.
+  dependencies on its own, and the build tools (`astro`, `typescript`, …) live
+  in dependencies/`devDependencies`. Without an explicit install the build dies
+  on `astro: command not found` (exit 127). `bun install --frozen-lockfile` is
+  the `npm ci` equivalent, deterministic from `bun.lock`, never mutates it.
+- **Run the full build.** `bun run build` is **multiple steps**
+  (`node scripts/build-version.mjs && astro build && cp -R functions/ dist/functions/`).
+  If the build command is set to only `node scripts/build-version.mjs`, it stamps
+  `version.json` but never runs `astro build`, so `dist/` is never produced and
+  the build fails with `Error: Output directory "dist" not found`. The final
+  copy step stages the Cloudflare Pages Functions (`functions/`) alongside the
+  static output so they deploy with the site.
 
 Note: **retrying** a failed deployment replays the build config captured when it
 was created; it does *not* pick up changed build settings. After editing the
@@ -63,10 +65,10 @@ build command, trigger a **new** deployment (push a commit) to apply it.
 
 ## What keeps it honest
 
-- **`bun run check:version`** (and `tests/version.spec.mjs`, run by `bun run test`)
-  fail if `package.json` is behind the latest git tag, or if the CHANGELOG has no
-  section for that tag. This is the check that would have caught `0.1.1`
-  shipping while `package.json` still said `0.1.0`.
+- **`bun run check:version`** fails if `package.json` is behind the latest git
+  tag, or if the CHANGELOG has no section for that tag. Run it manually or in
+  CI. This is the check that would have caught `0.1.1` shipping while
+  `package.json` still said `0.1.0`.
 - **`scripts/build-version.mjs`** keeps `/version.json` and the page's
   `<meta name="version">` in sync with `package.json` on every build/deploy.
 

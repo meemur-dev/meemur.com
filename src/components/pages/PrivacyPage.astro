@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getDictionary, localePath } from "../../i18n/utils";
+import type { Locale } from "../../i18n/utils";
+import "../../styles/pages/legal.css";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = getDictionary(locale).pages.privacy;
+const p = (path: string) => localePath(path, locale);
+
+const canonical = `https://meemur.com${p("/privacy")}`;
+---
+
+<BaseLayout
+  title={c.meta.title}
+  description={c.meta.description}
+  canonical={canonical}
+  pageClass="page-legal"
+  ogTitle={c.meta.ogTitle}
+  ogDescription={c.meta.ogDescription}
+  locale={locale}
+>
+  <section class="section page-hero">
+    <div class="container">
+      <p class="eyebrow">{c.hero.eyebrow}</p>
+      <h1>{c.hero.title}</h1>
+      <p class="lead">{c.hero.lead}</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <article class="legal">
+      <p class="legal__updated">{c.updated}</p>
+      {
+        c.sections.map((s) => (
+          <section id={s.id}>
+            <h2>{s.heading}</h2>
+            <Fragment set:html={s.body} />
+          </section>
+        ))
+      }
+    </article>
+  </div>
+</BaseLayout>

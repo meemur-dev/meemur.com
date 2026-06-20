@@ -1,0 +1,321 @@
+{
+  "nav.home": "Ana Sayfa",
+  "nav.services": "Hizmetler",
+  "nav.work": "İşlerimiz",
+  "nav.about": "Hakkımızda",
+  "nav.getInTouch": "İletişime geç",
+  "nav.skipToContent": "İçeriğe geç",
+  "nav.menuLabel": "Menü",
+  "nav.primaryNav": "Ana menü",
+  "footer.navLabel": "Alt menü",
+  "footer.tagline": "Web'in gücünü markanıza taşıyoruz.",
+  "footer.servicesHeading": "Hizmetler",
+  "footer.companyHeading": "Şirket",
+  "footer.work": "İşlerimiz",
+  "footer.about": "Hakkımızda",
+  "footer.contact": "İletişim",
+  "footer.stayInLoop": "Haberdar olun",
+  "footer.subscribeText": "Ara sıra web ve büyüme ipuçları. Spam yok.",
+  "footer.emailPlaceholder": "E-posta adresiniz",
+  "footer.subscribe": "Abone ol",
+  "footer.emailLabel": "E-posta adresi",
+  "footer.allRights": "Tüm hakları saklıdır.",
+  "footer.privacy": "Gizlilik",
+  "footer.startProject": "Proje başlat →",
+  "footer.ecommerce": "Web & E-ticaret",
+  "footer.apps": "Çapraz platform Uygulamalar",
+  "footer.analytics": "Analitik & Ölçümleme",
+  "footer.cro": "Dönüşüm & Deneyler",
+  "footer.performance": "Erişilebilirlik & Performans",
+  "footer.ads": "Sosyal Medya Reklamları",
+  "og.siteName": "meemur",
+  "og.locale": "tr_TR",
+  "pages": {
+    "home": {
+      "meta": {
+        "title": "meemur · Dijital ajans, web & e-ticaret ve analitik",
+        "description": "meemur, yüksek performanslı web sitesi ve e-ticaret deneyimleri tasarlayan, bunları analitik, CRO ve sosyal medya reklamlarıyla büyüten butik bir dijital ajans.",
+        "ogTitle": "meemur · Dijital ajans, web & e-ticaret ve analitik",
+        "ogDescription": "Yüksek performanslı web ve e-ticaret deneyimleri tasarlayıp veriyle büyüten butik bir dijital ajans."
+      },
+      "hero": {
+        "eyebrow": "Dijital ajans · e-ticaret ve analitik",
+        "titleLead": "Web'in gücünü ",
+        "titleEmphasis": "markanıza taşıyoruz.",
+        "lead": "Dijital ürünlerinizi sadece inşa etmiyor, sürekli büyüten stratejilerle destekliyoruz.",
+        "ctaPrimary": "Beraber planlayalım",
+        "ctaSecondary": "Hizmetleri keşfet"
+      },
+      "servicesOverview": {
+        "eyebrow": "Ne yapıyoruz",
+        "heading": "Markanız için ihtiyacınız olan her şey",
+        "lead": "Altı farklı alanda, lansmandan ölçülebilir sonuçlara kadar yanınızdayız.",
+        "learnMore": "Detaylı bilgi",
+        "cards": [
+          { "title": "Web & E-ticaret", "text": "Markanızı dijitalde en iyi şekilde temsil eden, kullanıcı dostu websiteleri kuruyoruz.", "hidden": "Web & E-ticaret hakkında" },
+          { "title": "Mobil Uygulamalar", "text": "Markanızı cebe sığdırın: iOS ve Android'de kusursuz çalışan uygulamalar tasarlıyor, geliştiriyoruz.", "hidden": "Mobil Uygulamalar hakkında" },
+          { "title": "Veri Analitiği & Raporlama", "text": "Dijital pazarlamanızın her kanalını takip ediyor, veriye dayalı kararlarla büyümenizi sağlıyoruz.", "hidden": "Veri Analitiği & Raporlama hakkında" },
+          { "title": "Dönüşüm & A/B Testleri", "text": "Dönüşüm oranlarınızı artırmak için sistematik testler yapıyor, her sürümle biraz daha iyileştiriyoruz.", "hidden": "Dönüşüm & A/B Testleri hakkında" },
+          { "title": "Performans & Erişilebilirlik", "text": "Her saniyenin satışa etkisini biliyoruz. Sitenizi optimize ediyor, dönüşüm odaklı bir deneyime dönüştürüyoruz.", "hidden": "Performans & Erişilebilirlik hakkında" },
+          { "title": "Sosyal Medya Reklamları", "text": "Facebook, Instagram, LinkedIn ve TikTok'ta hedef kitlenize ulaşacak kampanyalar planlıyor ve yönetiyoruz.", "hidden": "Sosyal Medya Reklamları hakkında" }
+        ]
+      },
+      "approach": {
+        "eyebrow": "Çalışma şeklimiz",
+        "heading": "Tasarla, geliştir, ölç, optimize et",
+        "lead": "Tasarlıyoruz, geliştiriyoruz, ölçüyoruz ve öğrendiklerimizle tekrar başa dönüyoruz.",
+        "steps": [
+          { "title": "Keşfet", "text": "Hedeflerinizi, müşterilerinizi ve başarının sizin için ne ifade ettiğini anlıyoruz." },
+          { "title": "Geliştir", "text": "Kullanıcıların seveceği hızlı, erişilebilir ve etkileyici deneyimler üretiyoruz." },
+          { "title": "Ölç", "text": "Doğru metrikleri takip ediyor, neyin işe yaradığını veriyle görüyoruz." },
+          { "title": "Optimize Et", "text": "Sürekli iyileştiriyor, iyi sonuçları daha da iyiye taşıyoruz." }
+        ]
+      },
+      "why": {
+        "eyebrow": "Neden meemur",
+        "heading": "Küçük yapı, sarsılmaz odak",
+        "body": "10 yılı aşkın tecrübe, 60'tan fazla marka. meemur'da kurucu ortak her projede aktif rol alır; danışanlarımız doğrudan kıdemli ekibimizle çalışır.",
+        "cta": "Kurucuyla tanışın",
+        "stats": [
+          "Yıllık deneyim",
+          "Tamamlanan proje",
+          "Kurucu liderliği"
+        ]
+      },
+      "cta": {
+        "title": "Büyümeye hazır mısınız?",
+        "text": "Kapsamlı bir dijital dönüşüm ya da küçük bir dokunuş, fark etmez. Sizi dinleyelim, en doğru çözümü birlikte bulalım.",
+        "primary": "Beraber planlayalım",
+        "secondary": "Referansları gör"
+      },
+      "jsonld": {
+        "alternateName": "meemur Dijital Ajans",
+        "description": "Web sitenizi tasarım ve performanstan analitik ve büyümeye kadar her alanda yükselten bir dijital ajans.",
+        "slogan": "Web'i sizin için çalışır hale getiriyoruz.",
+        "contactType": "müşteri desteği",
+        "jobTitle": "Kurucu"
+      }
+    },
+    "about": {
+      "meta": {
+        "title": "Hakkımızda · meemur",
+        "description": "meemur, Onur Yanar tarafından kurulmuş butik bir dijital stüdyo. Web geliştirme, e-ticaret ve analitik alanında 10 yılı aşkın deneyim.",
+        "ogTitle": "Hakkımızda · meemur",
+        "ogDescription": "Onur Yanar liderliğinde butik dijital stüdyo. Web, e-ticaret ve analitik."
+      },
+      "hero": {
+        "eyebrow": "Hakkımızda",
+        "title": "Küçük ekip, büyük sonuçlar",
+        "lead": "meemur, Onur Yanar liderliğinde butik bir dijital stüdyo. Kıdemli front-end mühendisliğini veri odaklı bir yaklaşımla birleştiriyor, yaptığımız her işi ölçülebilir sonuçlarla teslim ediyoruz."
+      },
+      "founder": {
+        "eyebrow": "Kurucu",
+        "avatarAlt": "Onur Yanar portresi",
+        "name": "Onur Yanar",
+        "bio": [
+          "Ben Onur. 10 yılı aşkın süredir web ve analitik alanında çalışıyorum. 60'tan fazla marka için online mağazalar ve büyüme takip sistemleri kurdum. meemur'u, bu işi aracısız, doğrudan yapmak için kurdum.",
+          "Mühendislik ve istatistik geçmişim var. Sitenizin hızı ve kullanıcı deneyimi kadar, her kararın arkasındaki veriye de önem veriyorum. meemur'la çalıştığınızda, doğrudan benimle çalışırsınız."
+        ],
+        "photoAlt": "Ankara'daki meemur stüdyosu",
+        "photoCaption": "Ankara'daki stüdyomuz"
+      },
+      "values": [
+        { "title": "Aracısız çalışma", "text": "İşi yapan kişiyle doğrudan iletişim kurarsınız. Katman yok, e-poda zinciri yok." },
+        { "title": "Veriyle karar", "text": "Kararlarımızı içgüdülere değil, temiz veriye ve test sonuçlarına dayandırıyoruz." },
+        { "title": "Uzun soluklu çözümler", "text": "Erişilebilir, hızlı ve sürdürülebilir kod. Köşe dönmeyiz, sağlam temel atarız." }
+      ],
+      "contact": {
+        "eyebrow": "İletişim",
+        "heading": "Haydi projenizi konuşalım",
+        "introBefore": "Bize ne üzerinde çalıştığınızı anlatın, bir iş günü içinde dönüş yapalım. E-posta'yı mı tercih edersiniz? ",
+        "introAfter": " adresine doğrudan yazabilirsiniz.",
+        "formName": "Adınız",
+        "formEmail": "E-posta",
+        "formMessage": "Mesajınız",
+        "formCompany": "Şirket",
+        "formSubmit": "Mesaj gönder"
+      }
+    },
+    "services": {
+      "meta": {
+        "title": "Hizmetler · meemur",
+        "description": "meemur'un sunduğu hizmetler: web geliştirme, mobil uygulamalar, veri analitiği, dönüşüm optimizasyonu, performans ve sosyal medya reklamları.",
+        "ogTitle": "Hizmetler · meemur",
+        "ogDescription": "Web geliştirme, analitik, dönüşüm ve sosyal medya reklamları — altı farklı alanda hizmet."
+      },
+      "hero": {
+        "eyebrow": "Hizmetler",
+        "title": "Ne yapıyoruz",
+        "lead": "Altı farklı alanda, markanızı büyütmek için buradayız. İster komple bir dönüşüm, ister sadece bir iyileştirme, sizin ihtiyacınız neyse oradayız."
+      },
+      "subheadWhat": "Size özel",
+      "subheadTools": "Araçlar",
+      "services": [
+        {
+          "title": "Web & E-ticaret",
+          "intro": "Markanızı dijitalde en iyi şekilde temsil eden, kullanıcı dostu websiteleri ve online mağazalar kuruyoruz.",
+          "ticks": ["Sıfırdan tasarlanmış Shopify mağazaları", "WooCommerce & WordPress çözümleri", "Modern, markanızı yansıtan websiteleri", "Siz kolayca güncelleyin diye kurulmuş altyapı", "Her sayfada tutarlı, profesyonel bir marka hissi"],
+          "tools": ["React", "Next.js", "TypeScript", "Shopify", "WooCommerce", "WordPress"]
+        },
+        {
+          "title": "Mobil Uygulamalar",
+          "intro": "Markanızı cebe sığdırın: iOS ve Android'de kusursuz çalışan uygulamalar tasarlıyor, geliştiriyoruz.",
+          "ticks": ["Tek kod tabanıyla hem iOS hem Android", "Hızlı açılan, doğal hisseden uygulamalar", "App Store ve Google Play'de yayına hazır", "Web sitenizle aynı dilde, tutarlı bir marka deneyimi"],
+          "tools": ["React Native", "Ionic", "iOS", "Android", "TypeScript"]
+        },
+        {
+          "title": "Veri Analitiği & Raporlama",
+          "intro": "Dijital pazarlamanızın her kanalını takip ediyor, veriye dayalı kararlarla büyümenizi sağlıyoruz.",
+          "ticks": ["En baştan doğru kurulmuş, test edilmiş takip altyapısı", "Müşterilerinizin sitenizde nasıl davrandığını görün", "İhtiyacınıza göre hazırlanmış panolar ve raporlar", "Isı haritaları ve oturum kayıtlarıyla davranış analizi"],
+          "tools": ["GA4", "Google Tag Manager", "Clarity", "Looker Studio", "BigQuery", "Meta"]
+        },
+        {
+          "title": "Dönüşüm Optimizasyonu",
+          "intro": "Dönüşüm oranlarınızı artırmak için sistematik testler yapıyor, her sürümle biraz daha iyileştiriyoruz.",
+          "ticks": ["Müşterilerin nerede takıldığını tespit ediyoruz", "Bilimsel yöntemle A/B testleri tasarlıyoruz", "Varsayım değil, veriyle kanıtlanmış sonuçlar", "Önce en yüksek etkiyi verecek iyileştirmeler"],
+          "tools": ["A/B testi", "GA4", "İstatistik", "Heatmap"]
+        },
+        {
+          "title": "Performans & Erişilebilirlik",
+          "intro": "Her saniyenin satışa etkisini biliyoruz. Sitenizi optimize ediyor, dönüşüm odaklı bir deneyime dönüştürüyoruz.",
+          "ticks": ["Her ziyaretçi için kusursuz çalışan bir site hedefliyoruz", "Hız optimizasyonuyla daha iyi kullanıcı deneyimi ve sıralama", "Mobil ve yavaş bağlantılı cihazlarda ince ayar", "WCAG standartlarına uygun, herkes için erişilebilir tasarım"],
+          "tools": ["WCAG 2.2", "Lighthouse", "Core Web Vitals", "axe"]
+        },
+        {
+          "title": "Sosyal Medya Reklamları",
+          "intro": "Facebook, Instagram, LinkedIn ve TikTok'ta hedef kitlenize ulaşacak kampanyalar planlıyor ve yönetiyoruz.",
+          "ticks": ["Meta, LinkedIn ve diğer platformlarda reklam yönetimi", "Doğru kitleye ulaşmak için hedef kitle analizi", "Her dönüşümü uçtan uca takip eden altyapı", "Net ROI raporları, pazarlama bütçenizin hesap verebilirliği"],
+          "tools": ["Meta Ads", "Conversions API", "GA4", "GTM"]
+        }
+      ],
+      "approach": {
+        "eyebrow": "Çalışma şeklimiz",
+        "heading": "Tasarla, geliştir, ölç, optimize et",
+        "steps": [
+          { "title": "Keşfet", "text": "Hedeflerinizi dinliyor, veriye dayalı bir yol haritası çıkarıyoruz." },
+          { "title": "Geliştir", "text": "Hızlı, erişilebilir ve dönüşüm odaklı deneyimler tasarlıyor, kodluyoruz." },
+          { "title": "Ölç", "text": "Analitik altyapısını ilk günden kuruyor, neyin işe yaradığını veriyle görüyoruz." },
+          { "title": "Optimize Et", "text": "Testlerle sürekli iyileştiriyor, sonuçları zamanla büyütüyoruz." }
+        ]
+      },
+      "cta": {
+        "title": "Nereden başlayacağınızı mı düşünüyorsunuz?",
+        "text": "Projenizden bahsedin, size en uygun hizmet kombinasyonunu birlikte belirleyelim.",
+        "button": "Beraber planlayalım"
+      }
+    },
+    "work": {
+      "meta": {
+        "title": "Referanslar · meemur",
+        "description": "meemur'un seçkin işleri. İlk vaka çalışmamız bu site: hızlı, erişilebilir ve tamamen ölçümlenebilir bir pazarlama sitesi.",
+        "ogTitle": "Referanslar · meemur",
+        "ogDescription": "meemur'un seçkin işleri. İlk vaka çalışmamız bu site."
+      },
+      "hero": {
+        "eyebrow": "Portföy",
+        "titleLead": "Referanslar",
+        "titleEmphasis": "",
+        "lead": "Uzun vadeli düşünüyoruz. Projeniz yayına girdikten sonra da destek, analiz ve iyileştirme hizmetlerimizle yanınızdayız."
+      },
+      "section": {
+        "eyebrow": "Seçkin işler",
+        "heading": "Son çalışmalarımız",
+        "lead": "Birlikte çalıştığımız markalar ve devam eden projelerimiz."
+      },
+      "badges": { "active": "Aktif", "inDev": "Geliştirme aşamasında" },
+      "cards": {
+        "self": {
+          "alt": "meemur.com ana sayfası",
+          "desc": "Kendi stüdyo sitemiz. Pazarlama sayfaları, spam korumalı iletişim formu ve ilk günden itibaren analitik. Hızlı, erişilebilir ve ölçümlenebilir.",
+          "metric": "Hızlı · Erişilebilir · Ölçümlü",
+          "view": "Siteyi gör"
+        },
+        "magcafe": {
+          "alt": "MAG Cafe Study Hub web sitesi",
+          "desc": "Sincan'da bir kafe ve çalışma alanı için tipografi odaklı, cesur bir site. Menü, hizmetler ve galeri, açık ve koyu temalarla.",
+          "metric": "Marka · Astro · Cloudflare"
+        },
+        "isiktas": {
+          "alt": "Işıktaş Eğitim Kurumları web sitesi",
+          "desc": "Ankara'da bir eğitim kurumu için dönüşüm odaklı web sitesi. Kurs tanıtımları, deneme kulübü ve WhatsApp iletişimi.",
+          "metric": "React · Vite · Lead gen"
+        },
+        "invite": {
+          "eyebrow": "Sıradaki",
+          "title": "Projeniz burada olabilir",
+          "desc": "Sıradaki başarı hikayesi sizin projeniz olsun.",
+          "cta": "Beraber planlayalım"
+        }
+      },
+      "cta": {
+        "title": "Şimdi sıra sizde. Projenizi konuşalım.",
+        "text": "Haydi başlayalım. Size nasıl değer katabileceğimizi konuşalım.",
+        "primary": "Beraber planlayalım",
+        "secondary": "Hizmetleri keşfet"
+      }
+    },
+    "privacy": {
+      "meta": {
+        "title": "Gizlilik politikası · meemur",
+        "description": "meemur'un veri işleme politikası: hangi verileri topladığımız, neden topladığımız ve haklarınız.",
+        "ogTitle": "Gizlilik politikası · meemur",
+        "ogDescription": "meemur'un veri işleme politikası, sade Türkçe."
+      },
+      "hero": {
+        "eyebrow": "Yasal",
+        "title": "Gizlilik politikası",
+        "lead": "Kısaca: mümkün olduğunca az veri toplarız, verilerinizi kimseyle paylaşmayız ve istediğiniz zaman bize yazarak verilerinizi görebilir veya sildirebilirsiniz."
+      },
+      "updated": "Son güncelleme: 10 Haziran 2026",
+      "sections": [
+        {
+          "id": "who-we-are",
+          "heading": "Biz kimiz",
+          "body": "<p>meemur, Onur Yanar tarafından kurulmuş ve yönetilen butik bir dijital ajansdır. Bu politika <a href=\"/\">meemur.com</a> sitesini kapsar. Site Cloudflare Pages üzerinde barınmaktadır. Gizlilikle ilgili her konuda <a href=\"mailto:contact@meemur.com\">contact@meemur.com</a> adresinden bize ulaşabilirsiniz.</p>"
+        },
+        {
+          "id": "what-we-collect",
+          "heading": "Hangi verileri, neden topluyoruz",
+          "body": "<ul><li><strong>İletişim formu.</strong> Adınız, e-posta adresiniz ve mesajınız doğrudan gelen kutumuza e-posta olarak iletilir. Bir veritabanında saklanmaz. Gönderimler, Cloudflare Turnstile ile spam kontrolünden geçer.</li><li><strong>E-posta bülteni.</strong> Abone olursanız, e-posta adresinizi yalnızca size zaman zaman ipuçları ve güncellemeler göndermek için saklarız. İstediğiniz an e-posta yanıtlayarak veya bize yazarak abonelikten çıkabilirsiniz.</li><li><strong>Analitik.</strong> Site kullanımını anlamak için Google Analytics 4 kullanıyoruz (Google Tag Manager üzerinden yüklenir). Hangi sayfaların ziyaret edildiği, yaklaşık konum ve cihaz türü gibi verileri toplu halde inceleriz; bu veriler sizi kişisel olarak tanımlamaz.</li><li><strong>Barındırma ve güvenlik.</strong> Cloudflare, siteyi sunmak ve kötüye kullanımı engellemek için IP adresleri gibi teknik verileri işler.</li></ul>"
+        },
+        {
+          "id": "cookies",
+          "heading": "Çerezler",
+          "body": "<p>Sitemizde kullanılan tek çerezler Google Analytics tarafından, tekrar ziyaretleri tanımak için kullanılır. Çerezleri tarayıcı ayarlarınızdan engelleyebilir veya silebilirsiniz. Google Analytics'i tamamen devre dışı bırakmak için Google'ın <a href=\"https://tools.google.com/dlpage/gaoptout\" rel=\"noopener\" target=\"_blank\">tarayıcı eklentisini</a> kullanabilirsiniz. Site çerezler olmadan da sorunsuz çalışır.</p>"
+        },
+        {
+          "id": "sharing",
+          "heading": "Verilerinizi kimlerle paylaşıyoruz",
+          "body": "<p>Siteyi çalıştıran hizmet sağlayıcılar dışında kimseyle: Cloudflare (barındırma ve spam koruması), Google (analitik) ve Resend (form gönderimlerini e-posta olarak iletir). Verilerinizi asla satmayız ve sitemizde reklam takipçisi çalışmaz.</p>"
+        },
+        {
+          "id": "retention",
+          "heading": "Saklama süresi",
+          "body": "<p>İletişim mesajları, herhangi bir iş yazışması gibi gelen kutumuzda saklanır. Bülten adresleri, abonelik iptal edilene kadar tutulur. Analitik verileri Google Analytics'te en fazla 14 ay kalır, sonra otomatik silinir.</p>"
+        },
+        {
+          "id": "your-rights",
+          "heading": "Haklarınız",
+          "body": "<p>Nerede olursanız olun (AB GDPR ve Türkiye KVKK kapsamında), sizinle ilgili hangi verilere sahip olduğumuzu sorabilir, düzeltilmesini veya silinmesini talep edebilir, kullanımına itiraz edebilirsiniz. <a href=\"mailto:contact@meemur.com\">contact@meemur.com</a> adresine e-posta göndermeniz yeterli; birkaç gün içinde dönüş yaparız.</p>"
+        },
+        {
+          "id": "changes",
+          "heading": "Politika değişiklikleri",
+          "body": "<p>Veri işleme yöntemlerimizde bir değişiklik olursa (örneğin yeni bir analitik aracı veya e-posta sağlayıcısı), bu sayfayı ve üstteki tarihi güncelleriz.</p>"
+        }
+      ]
+    },
+    "notfound": {
+      "metaTitle": "Sayfa bulunamadı · meemur",
+      "metaDescription": "Aradığınız sayfa meemur.com'da bulunamadı. Ana sayfaya dönün veya hizmetlerimizi keşfedin.",
+      "eyebrow": "Hata 404",
+      "title": "Bu sayfa artık yok.",
+      "lead": "Aradığınız adreste bir şey bulamadık. Taşınmış, kaldırılmış ya da hiç var olmamış olabilir. Sizi bilindik rotalara geri götürelim.",
+      "backHome": "Ana sayfaya dön",
+      "exploreServices": "Hizmetleri keşfet",
+      "hintBefore": "Burada bir şey olması gerektiğini mi düşünüyorsunuz? ",
+      "hintAfter": " adresinden bize bildirin.",
+      "hintPlain": "Burada bir şey olması gerektiğini mi düşünüyorsunuz? contact@meemur.com adresinden bize bildirin."
+    }
+  }
+}
