@@ -52,5 +52,17 @@ export default defineConfig({
       use: { viewport: { width: 1440, height: 900 } },
       testMatch: "**/screenshots.spec.mjs",
     },
+    // Per-section element shots at full 1x resolution (see sections.spec.mjs)
+    // for legible, one-section-at-a-time visual review.
+    {
+      name: "section-mobile",
+      use: { viewport: { width: 390, height: 844 } },
+      testMatch: "**/sections.spec.mjs",
+    },
+    {
+      name: "section-desktop",
+      use: { viewport: { width: 1440, height: 900 } },
+      testMatch: "**/sections.spec.mjs",
+    },
   ],
 });

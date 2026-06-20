@@ -137,7 +137,7 @@
   font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem);
 }
 
-.why__text p {
+.why__text p:not(.eyebrow) {
   color: var(--muted);
   margin: 0;
 }

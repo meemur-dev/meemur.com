@@ -29,7 +29,7 @@ export function header(active = ""): string {
       aria-controls="site-nav"
     >
       <span class="nav-toggle__box"><span class="nav-toggle__bars"></span></span>
-      <span class="nav-toggle__label">Menu</span>
+      <span class="nav-toggle__label visually-hidden">Menu</span>
     </button>
     <nav class="site-nav" id="site-nav" aria-label="Primary">
       <ul class="site-nav__list">

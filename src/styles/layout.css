@@ -210,7 +210,10 @@
 .site-footer__links {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  /* Single column on phones: the Services labels are too long to share a row,
+     so two columns here just wrap every item onto two ragged lines. The
+     side-by-side layout kicks back in at >=720px below, where there's room. */
+  grid-template-columns: 1fr;
 }
 
 /* Responsive link layout — declared after the base rule above so these win

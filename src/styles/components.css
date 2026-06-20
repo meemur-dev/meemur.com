@@ -105,6 +105,19 @@
   gap: 0.85rem;
 }
 
+/* Shared mobile pattern for every two-button action pair (hero, CTA, 404):
+   on narrow screens they stack and stretch to one shared full-column width so
+   the pair always reads as tidy, equal-width buttons instead of two mismatched
+   sizes. Defined once here for all three so the behaviour can't drift apart. */
+@media (max-width: 540px) {
+  .hero__actions,
+  .cta__actions,
+  .notfound__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
 .cta .btn--primary {
   --btn-bg: #fff;
   --btn-fg: var(--brand-strong);
