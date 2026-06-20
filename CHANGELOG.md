@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.2] - 2026-06-20
+
+### Added
+
+- Visual regression testing: `bun run test:visual` compares each page (mobile +
+  desktop, full-page) against a committed baseline, failing on pixel drift.
+  `bun run baseline:meemur` captures/refreshes that baseline from the live site.
+  Animations, drifting background blobs, and view transitions are frozen for
+  deterministic shots; this replaces the capture-only screenshot specs, which
+  had no pass/fail.
+
 ## [0.4.1] - 2026-06-20
 
 ### Fixed
@@ -155,7 +166,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fit-to-viewport layout and responsive polish (slogan wrap, headline scaling,
   off-canvas blob to avoid a hard corner arc).
 
-[Unreleased]: https://github.com/meemur-dev/meemur.com/compare/0.4.1...HEAD
+[Unreleased]: https://github.com/meemur-dev/meemur.com/compare/0.4.2...HEAD
+[0.4.2]: https://github.com/meemur-dev/meemur.com/compare/0.4.1...0.4.2
 [0.4.1]: https://github.com/meemur-dev/meemur.com/compare/0.4.0...0.4.1
 [0.4.0]: https://github.com/meemur-dev/meemur.com/compare/0.3.1...0.4.0
 [0.3.1]: https://github.com/meemur-dev/meemur.com/compare/0.3.0...0.3.1
