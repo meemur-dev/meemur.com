@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 // The custom 404 page. With dist/404.html present, Cloudflare Pages (and
-// wrangler dev) serve it with a real 404 status for unknown URLs — without it,
+// wrangler dev) serve it with a real 404 status for unknown URLs; without it,
 // Pages falls back to the home page with HTTP 200 (a soft 404).
 test.describe("404 page", () => {
   test("unknown URLs get the branded 404 page with a 404 status", async ({ page }) => {

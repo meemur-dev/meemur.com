@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- About page now shows a founder portrait next to Onur's name and a photo of the
+  studio storefront in Ankara, with the values cards moved below the bio.
+- The header logo is fetched with `fetchpriority="high"` so the LCP image starts
+  loading sooner.
+
+### Changed
+
+- LinkedIn links in the footer and contact section now point to the company page
+  (`linkedin.com/company/meemur`) instead of a personal profile.
+- Removed em dashes across site copy, docs, and code comments in favor of plain
+  punctuation; page-title separators now use a middot (`·`).
+
 ## [0.4.2] - 2026-06-20
 
 ### Added
@@ -39,7 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - WebMCP support for the contact form: where the browser exposes it, an
   in-browser AI agent can call a `fill_contact_message` tool to draft a
-  visitor's name, email, and message into the form. It fills only — the visitor
+  visitor's name, email, and message into the form. It fills only, and the visitor
   reviews and presses "Send message" themselves, so the Turnstile token and spam
   honeypot stay valid and no message is sent without a human in the loop.
   Feature-detected, so browsers without WebMCP are unaffected.
@@ -49,7 +63,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - The contact API now logs Resend's error status and body when a send fails,
-  instead of swallowing it — failures were previously invisible in the function
+  instead of swallowing it, since failures were previously invisible in the function
   logs, making delivery issues hard to diagnose.
 
 ## [0.3.0] - 2026-06-18
@@ -60,7 +74,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   newsletter, GA4 analytics, and the processors behind them (Cloudflare, Google,
   Resend), linked from the footer copyright bar.
 - Custom 404 page (`404.html`) in the brand look ("off the grid"), served with a
-  real 404 status — previously unknown URLs soft-404ed to the home page with
+  real 404 status: previously unknown URLs soft-404ed to the home page with
   HTTP 200.
 - `sitemap.xml` (all five indexable pages) and a `Sitemap:` pointer in
   `robots.txt`.
@@ -74,9 +88,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   (multi-page) + TypeScript + vanilla CSS.
 - Shared header (sticky, with a mobile nav toggle) and footer, inlined at build
   time via a Vite partials plugin from `src/layout/*.ts`.
-- Six service offerings — Web & E-commerce, Cross-platform Apps, Analytics &
+- Six service offerings: Web & E-commerce, Cross-platform Apps, Analytics &
   Measurement, CRO & Experimentation, Accessibility & Performance, and Social
-  Media Ads — with line (SVG) icons and benefit-led copy.
+  Media Ads, with line (SVG) icons and benefit-led copy.
 - Contact form posting to a Cloudflare Pages Function (`functions/api/contact.ts`)
   with a honeypot + Cloudflare Turnstile spam check and Resend email delivery.
 - Per-page SEO (titles, descriptions, canonical, Open Graph / Twitter) with a
@@ -85,7 +99,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `bun run design:lint` script backed by the `@google/design.md` linter.
 - Playwright suite rewritten for the multi-page site (home, services, about,
   and the contact form, with a mobile-nav check) and restructured so functional
-  specs run once on desktop — keeping the run fast on a static site.
+  specs run once on desktop, keeping the run fast on a static site.
 
 ### Fixed
 

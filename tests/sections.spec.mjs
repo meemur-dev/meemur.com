@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 // Per-section screenshots, captured at full (1x) resolution straight from the
-// element box — NOT a downscaled full-page shot. Each page's header, every
+// element box, NOT a downscaled full-page shot. Each page's header, every
 // <main> section, and the footer land in tests/screenshots/sections/ as
 // <viewport>-<page>-<NN-label>.png for crisp visual review.
 //

@@ -1,7 +1,7 @@
 // Shared versioning helpers used by the release script and the drift guard.
 // Single source of truth = package.json "version"; git tags are derived from it
 // (created by `git flow release/hotfix finish`). These helpers detect when those
-// fall out of sync — the failure mode that let 0.1.1 ship with package.json
+// fall out of sync, the failure mode that let 0.1.1 ship with package.json
 // still at 0.1.0.
 import { readFileSync } from "node:fs";
 import { execSync } from "node:child_process";

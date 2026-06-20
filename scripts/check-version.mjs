@@ -6,7 +6,7 @@ import { checkDrift } from "./version-utils.mjs";
 const { pkg, tag, errors, skipped } = checkDrift();
 
 if (skipped) {
-  console.log(`version check skipped — ${skipped}`);
+  console.log(`version check skipped: ${skipped}`);
   process.exit(0);
 }
 
@@ -16,4 +16,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`✓ version ok — package.json ${pkg} is in sync with latest tag ${tag}`);
+console.log(`✓ version ok: package.json ${pkg} is in sync with latest tag ${tag}`);

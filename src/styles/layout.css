@@ -68,7 +68,7 @@
   color: var(--brand-strong);
 }
 
-/* Mobile toggle — hidden on wider screens */
+/* Mobile toggle, hidden on wider screens */
 .nav-toggle {
   display: none;
   align-items: center;
@@ -216,7 +216,7 @@
   grid-template-columns: 1fr;
 }
 
-/* Responsive link layout — declared after the base rule above so these win
+/* Responsive link layout, declared after the base rule above so these win
    regardless of media-query source order. */
 @media (min-width: 720px) {
   /* Wider Services column (+ nowrap) so each item stays on one line. */

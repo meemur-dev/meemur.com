@@ -1,10 +1,10 @@
-// POST /api/subscribe — validates a newsletter signup, checks the honeypot,
+// POST /api/subscribe: validates a newsletter signup, checks the honeypot,
 // then notifies the team of the new subscriber via Resend.
 //
 // Required env vars / secrets (set in the Cloudflare Pages dashboard):
 //   RESEND_API_KEY        Resend API key (secret)
 // Optional:
-//   TURNSTILE_SECRET_KEY  Cloudflare Turnstile secret (secret) — spam check is
+//   TURNSTILE_SECRET_KEY  Cloudflare Turnstile secret (secret); spam check is
 //                         skipped when unset
 //   SUBSCRIBE_TO          recipient (default: contact@meemur.com)
 //   CONTACT_FROM          verified sender (default: meemur <contact@send.meemur.com>)

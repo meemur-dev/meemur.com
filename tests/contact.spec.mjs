@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 // Contact form behaviour. The /api/contact Pages Function is mocked so these
-// tests are hermetic — no real email is sent and Turnstile/Resend aren't hit.
+// tests are hermetic, no real email is sent and Turnstile/Resend aren't hit.
 test.describe("contact form", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/about");

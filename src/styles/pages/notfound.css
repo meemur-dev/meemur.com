@@ -1,4 +1,4 @@
-/* 404 page (body.page-notfound) — a single hero centered in the leftover
+/* 404 page (body.page-notfound): a single hero centered in the leftover
    viewport space, with a large decorative "404" in the brand teal. */
 
 .page-notfound main {
@@ -12,7 +12,7 @@
   max-inline-size: 40rem;
 }
 
-/* Decorative — the eyebrow + h1 carry the meaning, so this is aria-hidden. */
+/* Decorative; the eyebrow + h1 carry the meaning, so this is aria-hidden. */
 .notfound__code {
   font-size: clamp(5.5rem, 3rem + 14vw, 10rem);
   font-weight: 700;

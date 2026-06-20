@@ -1,7 +1,7 @@
 // WebMCP (Web Model Context Protocol) integration for the contact form.
 //
 // Exposes one client-side tool so an in-browser AI agent can fill in a
-// visitor's contact details for them. The tool *fills* the form — it does not
+// visitor's contact details for them. The tool *fills* the form; it does not
 // send it. The visitor still reviews the draft and presses "Send message"
 // themselves. That's deliberate:
 //   * Sending a message to a real person is a high-impact action; the WebMCP
@@ -12,7 +12,7 @@
 // We use the imperative API (document.modelContext.registerTool) rather than
 // annotating the <form> declaratively: the form carries a honeypot field
 // ("company") that must stay empty, and a synthesized declarative schema would
-// expose it to the agent — every agent-assisted message would then be dropped
+// expose it to the agent, since every agent-assisted message would then be dropped
 // as spam. The imperative schema lists only name, email, and message.
 //
 // Progressive enhancement: the whole thing is feature-detected, so browsers
@@ -59,7 +59,7 @@ export function initContactMcp(): void {
   const messageInput = form.querySelector<HTMLTextAreaElement>('textarea[name="message"]');
   if (!nameInput || !emailInput || !messageInput) return;
 
-  // No unregisterTool() exists — abort the signal to tear the tool down when
+  // No unregisterTool() exists, so abort the signal to tear the tool down when
   // the page goes away, so it can't leak or collide on a back/forward restore.
   const controller = new AbortController();
   window.addEventListener("pagehide", () => controller.abort(), { once: true });
@@ -75,7 +75,7 @@ export function initContactMcp(): void {
     {
       name: "fill_contact_message",
       description:
-        "Fill the meemur contact form with a visitor's name, email, and message so they can review and send it. This does NOT send the message — the visitor submits it themselves after reviewing.",
+        "Fill the meemur contact form with a visitor's name, email, and message so they can review and send it. This does NOT send the message; the visitor submits it themselves after reviewing.",
       inputSchema: {
         type: "object",
         properties: {
@@ -110,7 +110,7 @@ export function initContactMcp(): void {
         setField(messageInput, message);
         form.scrollIntoView({ behavior: "smooth", block: "center" });
 
-        return "Filled the contact form with the provided name, email, and message. Ask the visitor to review the details and press the “Send message” button — meemur only sends the message once the visitor confirms.";
+        return "Filled the contact form with the provided name, email, and message. Ask the visitor to review the details and press the “Send message” button; meemur only sends the message once the visitor confirms.";
       },
     },
     { signal: controller.signal },

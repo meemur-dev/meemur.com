@@ -1,7 +1,7 @@
-/* meemur.com — coming soon
+/* meemur.com, coming soon
    Brand: teal #00a9b8 + charcoal #3c3c3d, Montserrat */
 
-/* Self-hosted Montserrat (Latin subset) — see /fonts, preloaded in <head>. */
+/* Self-hosted Montserrat (Latin subset); see /fonts, preloaded in <head>. */
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
@@ -24,7 +24,7 @@
   src: url("/fonts/montserrat-700.woff2") format("woff2");
 }
 /* Metric-matched fallback (Arial, adjusted to Montserrat's metrics) so text
-   occupies identical space before the webfont loads — prevents layout shift.
+   occupies identical space before the webfont loads, preventing layout shift.
    Overrides computed from the actual font metrics. */
 @font-face {
   font-family: "Montserrat Fallback";
@@ -38,7 +38,7 @@
 :root {
   --brand: #00a9b8;
   --brand-bright: #1fd6c4;
-  /* Darker teal for text on light backgrounds — meets WCAG AA (~4.8:1).
+  /* Darker teal for text on light backgrounds, meets WCAG AA (~4.8:1).
      Plain --brand is reserved for graphics/focus rings (contrast-exempt). */
   --brand-strong: #00798a;
   --accent: #6c5ce7;

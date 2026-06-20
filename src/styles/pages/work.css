@@ -1,4 +1,4 @@
-/* Work / portfolio page (body.page-work) — a case-study card grid. */
+/* Work / portfolio page (body.page-work): a case-study card grid. */
 
 .page-work .page-hero h1 span {
   color: var(--brand-strong);
@@ -138,7 +138,7 @@
   transform: translateX(3px);
 }
 
-/* Invitation card — no image, dashed, fills the grid honestly. */
+/* Invitation card, no image, dashed, fills the grid honestly. */
 .work-card--invite {
   justify-content: center;
   gap: 0.6rem;

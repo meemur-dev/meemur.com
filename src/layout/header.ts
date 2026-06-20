@@ -19,8 +19,8 @@ export function header(active = ""): string {
   return `<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="site-header__logo" href="/" aria-label="meemur — home page">
-      <img src="/logo-wordmark.svg" alt="meemur" width="590" height="165" />
+    <a class="site-header__logo" href="/" aria-label="meemur, home page">
+      <img src="/logo-wordmark.svg" alt="meemur" width="590" height="165" fetchpriority="high" />
     </a>
     <button
       class="nav-toggle"

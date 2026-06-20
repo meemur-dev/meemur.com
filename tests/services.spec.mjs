@@ -10,7 +10,7 @@ test.describe("services page", () => {
   });
 
   test("has the services title and heading", async ({ page }) => {
-    await expect(page).toHaveTitle(/services — meemur/i);
+    await expect(page).toHaveTitle(/services · meemur/i);
     await expect(page.getByRole("heading", { level: 1, name: /what we do/i })).toBeVisible();
   });
 

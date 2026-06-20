@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 // Mobile-only: the collapsed nav and hamburger toggle. Runs solely in the
-// "mobile" project (see playwright.config.mjs) — the rest of the suite is
+// "mobile" project (see playwright.config.mjs); the rest of the suite is
 // viewport-agnostic and runs once on desktop.
 test.describe("mobile navigation", () => {
   test.beforeEach(async ({ page }) => {

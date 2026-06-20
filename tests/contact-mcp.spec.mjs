@@ -46,7 +46,7 @@ test.describe("contact form WebMCP tool", () => {
     await expect(form.getByLabel("Name")).toHaveValue("Test Person");
     await expect(form.getByLabel("Email")).toHaveValue("test@example.com");
     await expect(form.getByLabel("Message")).toHaveValue("Hello from the agent.");
-    // The honeypot stays empty — agent-assisted fills must not look like spam.
+    // The honeypot stays empty, so agent-assisted fills must not look like spam.
     await expect(page.locator('#contact-form input[name="company"]')).toHaveValue("");
     expect(result).toMatch(/review/i);
     expect(result).toMatch(/send message/i);

@@ -18,6 +18,22 @@
   max-inline-size: 42rem;
 }
 
+.about-founder__name {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-founder__avatar {
+  flex: none;
+  inline-size: clamp(3.5rem, 9vw, 4.75rem);
+  block-size: clamp(3.5rem, 9vw, 4.75rem);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
 .about-founder__text h2 {
   font-size: clamp(1.7rem, 1.3rem + 1.6vw, 2.5rem);
 }
@@ -25,6 +41,26 @@
 .about-founder__text p:not(.eyebrow) {
   color: var(--muted);
   margin: 0;
+}
+
+.about-founder__photo {
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.about-founder__photo img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-founder__photo figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .about-links {
@@ -43,10 +79,16 @@
 
 .values {
   list-style: none;
-  margin: 0;
+  margin: clamp(2rem, 5vw, 3.5rem) 0 0;
   padding: 0;
   display: grid;
   gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .values {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .value {

@@ -28,7 +28,7 @@ export function initContactForm(): void {
       name: String(data.get("name") ?? "").trim(),
       email: String(data.get("email") ?? "").trim(),
       message: String(data.get("message") ?? "").trim(),
-      company: String(data.get("company") ?? ""), // honeypot — must stay empty
+      company: String(data.get("company") ?? ""), // honeypot, must stay empty
       token: String(data.get("cf-turnstile-response") ?? ""),
     };
 
@@ -47,7 +47,7 @@ export function initContactForm(): void {
 
       if (res.ok && body.ok) {
         form.reset();
-        setStatus("ok", "Thanks — your message is on its way. I’ll get back to you shortly.");
+        setStatus("ok", "Thanks, your message is on its way. I’ll get back to you shortly.");
       } else {
         setStatus("error", body.error || "Something went wrong. Please email contact@meemur.com directly.");
       }

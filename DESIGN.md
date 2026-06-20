@@ -2,7 +2,7 @@
 version: alpha
 name: meemur
 description: >-
-  Design system for meemur — a boutique digital agency. An airy, confident,
+  Design system for meemur, a boutique digital agency. An airy, confident,
   data-driven brand built on a teal accent, charcoal ink, a faint tech grid,
   and self-hosted Montserrat.
 colors:
@@ -107,13 +107,13 @@ components:
 ## Overview
 
 meemur is a boutique digital agency. The brand should feel **confident, modern,
-and quietly technical** — the studio of a senior specialist, not a faceless
+and quietly technical**, the studio of a senior specialist, not a faceless
 corporation. The mood is light and spacious, with generous whitespace and a calm
 teal accent over a near-white canvas.
 
 Two motifs carry the identity: a **faint engineering grid** and slow-drifting
 **gradient "blobs"** in teal and a single violet accent. Together they signal
-craft and measurement (the grid) with warmth and motion (the blobs) — "we make
+craft and measurement (the grid) with warmth and motion (the blobs): "we make
 the web work for you," approachable but precise. UI decisions should default to
 clarity over decoration: lead with content, keep one clear action per view, and
 let the background do the atmosphere so the foreground stays legible.
@@ -123,18 +123,18 @@ let the background do the atmosphere so the foreground stays legible.
 The palette is rooted in a near-white canvas, charcoal ink, and a single teal
 accent, with violet reserved for atmosphere only.
 
-- **Primary — Teal (#00a9b8):** The brand teal. Used for graphics, the grid,
+- **Primary · Teal (#00a9b8):** The brand teal. Used for graphics, the grid,
   focus rings, and decorative accents (contrast-exempt uses).
-- **Primary Strong — Deep Teal (#00798a):** The accessible teal for text, links,
-  and primary buttons on light backgrounds — meets WCAG AA (~4.8:1).
-- **Primary Bright — Aqua (#1fd6c4):** A lighter teal used inside gradient blobs
+- **Primary Strong · Deep Teal (#00798a):** The accessible teal for text, links,
+  and primary buttons on light backgrounds, meets WCAG AA (~4.8:1).
+- **Primary Bright · Aqua (#1fd6c4):** A lighter teal used inside gradient blobs
   and highlights, never for text.
-- **Secondary — Violet (#6c5ce7):** An accent used *only* in the background blobs
+- **Secondary · Violet (#6c5ce7):** An accent used *only* in the background blobs
   for depth and warmth. It must not appear on solid UI surfaces or buttons.
 - **Neutral / Ink (#3c3c3d):** Primary text color and the charcoal half of the
   wordmark.
-- **Muted (#6b6b6e):** Secondary text — leads, captions, and supporting copy.
-- **Background (#f5f7fa):** The page canvas — a soft, cool off-white.
+- **Muted (#6b6b6e):** Secondary text: leads, captions, and supporting copy.
+- **Background (#f5f7fa):** The page canvas, a soft, cool off-white.
 - **Surface (#ffffff)** and **Surface Subtle (#fbfcfe):** Cards and form fields
   sit on white; the subtle variant is for inset inputs.
 - **Outline (rgba(60,60,61,0.12))** and **Grid Line (rgba(60,60,61,0.05)):**
@@ -152,7 +152,7 @@ contemporary; hierarchy comes from weight and scale, not from extra fonts.
 - **Body:** Montserrat Regular (400) at 1rem / 1.6 line-height for comfortable
   long-form reading; leads step up to ~1.3rem in the muted color.
 - **Labels (caps):** Montserrat Semi-Bold (600), uppercase, with 0.16em letter
-  spacing — used for eyebrows and small section kickers in the strong teal.
+  spacing, used for eyebrows and small section kickers in the strong teal.
 
 ## Layout
 
@@ -163,18 +163,18 @@ section spacing that tops out around 112px between major blocks.
 Card grids prefer **centered flex wrapping** over rigid columns so that an odd
 number of items (e.g. six service cards laid out 3 + 3, or a leftover pair)
 stays balanced and never strands a single orphan card. Spacing follows a simple
-4 / 8 / 16 / 24 / 40px scale. The faint grid line (#0d0d0d at 5% — `grid-line`)
+4 / 8 / 16 / 24 / 40px scale. The faint grid line (#0d0d0d at 5%, `grid-line`)
 is drawn as a fixed 48px background lattice behind all content.
 
 ## Elevation & Depth
 
 Depth is **soft and tonal**, not heavy. Two devices convey hierarchy:
 
-1. **The atmospheric background** — fixed, blurred gradient blobs (teal +
+1. **The atmospheric background:** fixed, blurred gradient blobs (teal +
    violet) drifting slowly behind a faint grid, sitting on the `background`
    canvas. It is purely decorative (`aria-hidden`) and respects
    `prefers-reduced-motion`.
-2. **Subtle card shadows** — white surfaces lift off the canvas with low-spread,
+2. **Subtle card shadows:** white surfaces lift off the canvas with low-spread,
    low-opacity shadows; a slightly stronger shadow appears on hover alongside a
    1–3px lift. The single hero CTA uses a deeper teal band for emphasis.
 
@@ -182,7 +182,7 @@ Depth is **soft and tonal**, not heavy. Two devices convey hierarchy:
 
 The shape language is **soft and rounded**. Cards and inputs use a 10–16px
 radius; pills (buttons, tags, chips) use a fully rounded `full` radius. Corners
-are consistently rounded — sharp corners are avoided so the brand reads friendly
+are consistently rounded; sharp corners are avoided so the brand reads friendly
 and modern rather than rigid.
 
 ## Components
@@ -194,7 +194,7 @@ and modern rather than rigid.
   padding.
 - **Cards:** White surface, hairline `outline` border, 16px radius, ~28px
   padding, and a soft shadow that strengthens on hover. Service cards carry a
-  tinted-teal rounded icon tile (line icons only — never emoji).
+  tinted-teal rounded icon tile (line icons only, never emoji).
 - **Input fields:** Inset on the subtle surface with a 10px radius and a teal
   focus ring (2px `primary`).
 - **CTA band:** A full-width rounded block (`rounded.lg`) using a deep-teal
@@ -204,14 +204,14 @@ and modern rather than rigid.
 
 ## Do's and Don'ts
 
-- **Do** keep violet (`secondary`) strictly in the background blobs — never on
+- **Do** keep violet (`secondary`) strictly in the background blobs, never on
   buttons, text, or solid surfaces.
 - **Do** use `primary-strong` (#00798a), not `primary` (#00a9b8), for any teal
   text or links to hold WCAG AA contrast.
 - **Do** limit each screen to one clear primary action.
 - **Do** use proper line/SVG icons; **don't** use emoji as UI icons.
 - **Don't** mix sharp and rounded corners in the same view.
-- **Don't** introduce a second typeface — express hierarchy with Montserrat
+- **Don't** introduce a second typeface; express hierarchy with Montserrat
   weight and scale.
 - **Do** respect `prefers-reduced-motion` and keep the background decorative and
   `aria-hidden`.

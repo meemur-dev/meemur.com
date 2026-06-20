@@ -33,7 +33,7 @@
     U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
     U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* Turkish glyphs (Ğ ğ İ Ş ş) — subset, fetched only when such a letter appears. */
+/* Turkish glyphs (Ğ ğ İ Ş ş) , subset fetched only when such a letter appears. */
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
@@ -72,7 +72,7 @@
   /* Brand */
   --brand: #00a9b8;
   --brand-bright: #1fd6c4;
-  /* Darker teal for text on light backgrounds — meets WCAG AA (~4.8:1). */
+  /* Darker teal for text on light backgrounds, meets WCAG AA (~4.8:1). */
   --brand-strong: #00798a;
   --accent: #6c5ce7;
 

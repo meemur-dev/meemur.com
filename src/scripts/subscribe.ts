@@ -2,7 +2,7 @@
 // footer. Posts JSON to the /api/subscribe Pages Function. Without JS the form
 // does nothing useful, so it stays hidden behind this enhancement.
 //
-// The footer renders on every page, so Turnstile is NOT loaded up front —
+// The footer renders on every page, so Turnstile is NOT loaded up front;
 // its script and widget are lazy-initialised the first time the visitor
 // touches the form, keeping every page free of third-party weight until then.
 
@@ -37,7 +37,7 @@ function loadTurnstile(): Promise<void> {
       'script[src*="challenges.cloudflare.com/turnstile/v0/api.js"]',
     );
     if (existing) {
-      // Script tag present but window.turnstile not ready yet — poll for it.
+      // Script tag present but window.turnstile not ready yet, so poll for it.
       const poll = setInterval(() => {
         if (getTurnstile()) {
           clearInterval(poll);
@@ -123,7 +123,7 @@ export function initSubscribeForm(): void {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
           email,
-          company: String(data.get("company") ?? ""), // honeypot — must stay empty
+          company: String(data.get("company") ?? ""), // honeypot, must stay empty
           token,
         }),
       });
@@ -131,7 +131,7 @@ export function initSubscribeForm(): void {
 
       if (res.ok && body.ok) {
         form.reset();
-        setStatus("ok", "You’re in — thanks for subscribing!");
+        setStatus("ok", "You’re in, thanks for subscribing!");
       } else {
         setStatus("error", body.error || "Something went wrong. Please try again.");
       }

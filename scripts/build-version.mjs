@@ -1,6 +1,6 @@
 // Generate /version.json with build info, and keep <meta name="version"> in
 // sync with package.json. Runs locally (predev/pretest) and as the Cloudflare
-// Pages build command — there, CF_PAGES_* env vars provide the deployed commit,
+// Pages build command; there, CF_PAGES_* env vars provide the deployed commit,
 // so the live /version.json always reflects the exact build.
 import { readFileSync, writeFileSync } from "node:fs";
 import { execSync } from "node:child_process";

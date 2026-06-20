@@ -3,7 +3,7 @@
 // links on the right, and a copyright bar below. The copyright year is filled
 // in by src/scripts/main.ts so the markup stays static and cacheable.
 const EMAIL = "contact@meemur.com";
-const LINKEDIN = "https://www.linkedin.com/in/oyanar";
+const LINKEDIN = "https://www.linkedin.com/company/meemur/";
 const GITHUB = "https://github.com/meemur-dev";
 // Cloudflare Turnstile site key (public). The subscribe widget is lazy-rendered
 // on first interaction by src/scripts/subscribe.ts to keep every page light.

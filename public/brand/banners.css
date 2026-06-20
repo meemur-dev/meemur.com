@@ -1,4 +1,4 @@
-/* meemur.com — social banner render sheet (/brand/banners.html)
+/* meemur.com, social banner render sheet (/brand/banners.html)
    Each .banner is sized to its platform's exact pixel dimensions so it can be
    screenshotted 1:1 to a PNG. Brand tokens, fonts, focus + reduced-motion rules
    come from /styles.css. */
@@ -73,7 +73,7 @@
   color: var(--brand-bright);
 }
 
-/* The banner is the snap target — keep a hairline ring so its edges are visible
+/* The banner is the snap target, so keep a hairline ring so its edges are visible
    on the dark sheet (the ring is outside the box, so it never lands in a PNG). */
 .banner {
   position: relative;
@@ -89,7 +89,7 @@
   color: var(--ink);
 }
 
-/* Drifting gradient blobs — static (no animation) for deterministic snaps. */
+/* Drifting gradient blobs, static (no animation) for deterministic snaps. */
 .banner__blob {
   position: absolute;
   border-radius: 50%;
@@ -147,7 +147,7 @@
   color: var(--brand-strong);
 }
 
-/* Optional safe-zone guides — shown on the sheet for review, hidden before a
+/* Optional safe-zone guides, shown on the sheet for review, hidden before a
    clean snap (toggle by removing the `guides` class on <body>). */
 .banner__guide {
   position: absolute;
@@ -176,7 +176,7 @@
 /* ----- Platform sizes & placement ----- */
 
 /* LinkedIn personal: 1584×396, 4:1. Bottom-left 568×264 is hidden by the
-   profile photo (524px wide on mobile) — keep the logo center-right. */
+   profile photo (524px wide on mobile), so keep the logo center-right. */
 .banner--li-personal {
   inline-size: 1584px;
   block-size: 396px;
@@ -207,7 +207,7 @@
 .banner--li-company .banner__logo {
   block-size: 118px;
 }
-/* Shorter canvas — shrink the blobs so they don't wash out the mark. */
+/* Shorter canvas, so shrink the blobs so they don't wash out the mark. */
 .banner--li-company .banner__blob {
   filter: blur(55px);
 }
@@ -243,7 +243,7 @@
   font-size: 24px;
 }
 
-/* Open Graph share card: 1200×630. Fully visible — a centered mini hero. */
+/* Open Graph share card: 1200×630. Fully visible, a centered mini hero. */
 .banner--og {
   inline-size: 1200px;
   block-size: 630px;

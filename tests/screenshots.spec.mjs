@@ -4,7 +4,7 @@ import { dirname, join } from "node:path";
 
 // Captures a full-page screenshot of each page per viewport into
 // tests/screenshots/<viewport>-<page>.png for manual / agent visual review.
-// Not a pass/fail assertion — see *.spec.mjs for those.
+// Not a pass/fail assertion; see *.spec.mjs for those.
 const OUT_DIR = join(dirname(fileURLToPath(import.meta.url)), "screenshots");
 
 const PAGES = [

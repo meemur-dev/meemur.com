@@ -1,4 +1,4 @@
-// POST /api/contact — validates the contact form, checks the honeypot and a
+// POST /api/contact: validates the contact form, checks the honeypot and a
 // Cloudflare Turnstile token, then emails the message via Resend.
 //
 // Required env vars / secrets (set in the Cloudflare Pages dashboard):

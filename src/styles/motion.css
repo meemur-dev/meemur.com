@@ -1,12 +1,12 @@
 /* Motion layer: scroll-driven reveal + cross-document page transitions. Pure
-   CSS, progressive enhancement only — no JS. Everything is gated on
+   CSS, progressive enhancement only, no JS. Everything is gated on
    prefers-reduced-motion (and reveals additionally on @supports), so browsers
    without support (e.g. Firefox) and motion-averse users get static, fully
    visible content with instant navigation. The blob background in base.css is
    independent and left untouched. */
 
 /* Uses the independent `translate` property (not `transform`) so the reveal
-   doesn't take ownership of `transform` — that stays free for hover lifts on
+   doesn't take ownership of `transform`, so that stays free for hover lifts on
    the same cards, letting the two compose instead of overriding each other. */
 @keyframes reveal-rise {
   from {
@@ -18,7 +18,7 @@
 /* ---------- Scroll reveal ---------- */
 @media (prefers-reduced-motion: no-preference) {
   @supports ((animation-timeline: view()) and (animation-range: entry)) {
-    /* Standalone blocks — each tracks its own entry into the viewport and
+    /* Standalone blocks, each tracks its own entry into the viewport and
        reveals once, early in its entry so it's settled by the time it's read. */
     .section__head,
     .service,
@@ -32,7 +32,7 @@
       animation-range: entry 25% entry 70%;
     }
 
-    /* Grid groups — children share one timeline on their container and reveal
+    /* Grid groups, children share one timeline on their container and reveal
        over staggered sub-ranges, so each row cascades left-to-right as it
        scrolls in. */
     .cards,
@@ -45,7 +45,7 @@
     /* Start ~a quarter into view so rows reveal on screen, then each child's
        range shifts a step later for the left-to-right cascade. sibling-index()
        scales to any child count; the first (plain) declaration is the fallback
-       for browsers without it — they get a uniform, un-staggered reveal. */
+       for browsers without it, they get a uniform, un-staggered reveal. */
     .cards > *,
     .steps > *,
     .stats > *,

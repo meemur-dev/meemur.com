@@ -47,7 +47,7 @@ function rollChangelog(text, next, cur, date) {
   const body = text.slice(afterHeading, bodyEnd).trim();
   const rest = restIdx === -1 ? "" : text.slice(restIdx);
 
-  if (!body) console.warn("⚠ [Unreleased] section is empty — releasing with no notes.");
+  if (!body) console.warn("⚠ [Unreleased] section is empty; releasing with no notes.");
 
   let out =
     text.slice(0, afterHeading) +

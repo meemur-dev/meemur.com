@@ -1,8 +1,8 @@
 import { expect, test } from "@playwright/test";
 
 // Visual regression: compares the local build against a committed baseline.
-// The baseline is captured FROM production (meemur.com) — see the
-// `baseline:meemur` npm script — so a failure means the local build has drifted
+// The baseline is captured FROM production (meemur.com); see the
+// `baseline:meemur` npm script, so a failure means the local build has drifted
 // visually from the live site. Baselines live in tests/visual/ (committed); the
 // capture-only specs (screenshots/sections) remain a separate review aid.
 //

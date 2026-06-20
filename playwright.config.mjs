@@ -14,7 +14,7 @@ export default defineConfig({
 
   use: {
     baseURL: BASE_URL,
-    channel: "chrome", // use locally installed Google Chrome — no Chromium download
+    channel: "chrome", // use locally installed Google Chrome, no Chromium download
     trace: "on-first-retry",
   },
 
@@ -29,7 +29,7 @@ export default defineConfig({
       scale: "css",
       // `threshold` is per-pixel colour sensitivity (0–1, lower = stricter).
       // `maxDiffPixels` is an ABSOLUTE budget, not a ratio: a ratio is useless
-      // on these tall full-page shots — 1% of millions of pixels hides a whole
+      // on these tall full-page shots: 1% of millions of pixels hides a whole
       // changed paragraph. Baseline and candidate render on the same Chrome, so
       // unchanged content diffs to ~zero; this small budget only soaks up
       // antialiasing noise while still catching a few words of changed text.

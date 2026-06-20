@@ -30,10 +30,10 @@ Hotfixes work the same way with `git flow hotfix start <x.y.z>`.
 The site runs on **Cloudflare Pages** (project `meemur-com`). Two paths reach
 production:
 
-1. **Git integration** — pushing to `main` triggers an automatic Cloudflare
+1. **Git integration:** pushing to `main` triggers an automatic Cloudflare
    build + production deploy; other branches (e.g. `develop`) build as
    previews. This is the normal path after `git push origin main develop --tags`.
-2. **Direct upload** — `bun run deploy` builds locally and uploads `./dist`
+2. **Direct upload:** `bun run deploy` builds locally and uploads `./dist`
    straight to Pages, bypassing Cloudflare's build. Handy when the git build is
    unavailable.
 
@@ -50,7 +50,7 @@ production:
   dependencies on its own, and the build tools (`vite`, `typescript`, …) live
   in `devDependencies`. Without an explicit install the build dies on
   `vite: command not found` (exit 127). `bun install --frozen-lockfile` is the
-  `npm ci` equivalent — deterministic from `bun.lock`, never mutates it.
+  `npm ci` equivalent, deterministic from `bun.lock`, never mutates it.
 - **Run the full build.** `bun run build` is **two steps**
   (`node scripts/build-version.mjs && vite build`). If the build command is set
   to only `node scripts/build-version.mjs`, it stamps `version.json` but never
@@ -58,7 +58,7 @@ production:
   `Error: Output directory "dist" not found`.
 
 Note: **retrying** a failed deployment replays the build config captured when it
-was created — it does *not* pick up changed build settings. After editing the
+was created; it does *not* pick up changed build settings. After editing the
 build command, trigger a **new** deployment (push a commit) to apply it.
 
 ## What keeps it honest
@@ -72,7 +72,7 @@ build command, trigger a **new** deployment (push a commit) to apply it.
 
 ## Conventions
 
-- Tags are **unprefixed** semver (`0.2.0`, not `v0.2.0`) — git-flow creates them.
+- Tags are **unprefixed** semver (`0.2.0`, not `v0.2.0`), since git-flow creates them.
 - Follow [Keep a Changelog](https://keepachangelog.com): add notable changes
   under `## [Unreleased]` as you go; the release script dates and versions them.
 - [Semantic Versioning](https://semver.org): new features → minor, fixes → patch.
