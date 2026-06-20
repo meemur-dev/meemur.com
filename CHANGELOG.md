@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.1] - 2026-06-20
+
+### Fixed
+
+- Responsive QA: hero, CTA, and 404 action buttons now stack to equal full-width
+  on narrow screens instead of two mismatched sizes; footer links collapse to a
+  single column on phones (side-by-side columns return at >=720px).
+- Eyebrow labels on the about, contact, and home sections no longer inherit the
+  muted paragraph color.
+
+### Accessibility
+
+- The mobile nav toggle's "Menu" label is now visually hidden but kept for
+  screen readers, so the icon-only control still announces its purpose.
+
 ## [0.4.0] - 2026-06-19
 
 ### Added
@@ -140,7 +155,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fit-to-viewport layout and responsive polish (slogan wrap, headline scaling,
   off-canvas blob to avoid a hard corner arc).
 
-[Unreleased]: https://github.com/meemur-dev/meemur.com/compare/0.4.0...HEAD
+[Unreleased]: https://github.com/meemur-dev/meemur.com/compare/0.4.1...HEAD
+[0.4.1]: https://github.com/meemur-dev/meemur.com/compare/0.4.0...0.4.1
 [0.4.0]: https://github.com/meemur-dev/meemur.com/compare/0.3.1...0.4.0
 [0.3.1]: https://github.com/meemur-dev/meemur.com/compare/0.3.0...0.3.1
 [0.3.0]: https://github.com/meemur-dev/meemur.com/compare/0.2.0...0.3.0
