@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.1] - 2026-06-21
+
 ### Fixed
 
 - Trailing-slash redirects fought the slashless canonical URLs: Cloudflare Pages
@@ -276,7 +278,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fit-to-viewport layout and responsive polish (slogan wrap, headline scaling,
   off-canvas blob to avoid a hard corner arc).
 
-[Unreleased]: https://github.com/meemur-dev/meemur.com/compare/0.6.0...HEAD
+[Unreleased]: https://github.com/meemur-dev/meemur.com/compare/0.6.1...HEAD
+[0.6.1]: https://github.com/meemur-dev/meemur.com/compare/0.6.0...0.6.1
 [0.6.0]: https://github.com/meemur-dev/meemur.com/compare/0.5.2...0.6.0
 [0.5.2]: https://github.com/meemur-dev/meemur.com/compare/0.5.1...0.5.2
 [0.5.1]: https://github.com/meemur-dev/meemur.com/compare/0.5.0...0.5.1
