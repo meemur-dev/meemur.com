@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Turnstile widget shipped with an empty `sitekey`. The `0.5.1` build-variable
+  approach did not take (Astro's `import.meta.env` did not read Cloudflare Pages'
+  build environment), so the public site key is now inlined in
+  `src/lib/turnstile.ts` and used by the contact form and footer subscribe form.
+  Removed the `PUBLIC_TURNSTILE_SITEKEY` env var from the code, `.env.example`,
+  and the Cloudflare project.
+
 ## [0.5.1] - 2026-06-21
 
 ### Added

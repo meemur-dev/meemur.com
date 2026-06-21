@@ -1,6 +1,7 @@
 ---
 import { useTranslations, localePath } from "../i18n/utils";
 import type { Locale } from "../i18n/utils";
+import { TURNSTILE_SITEKEY } from "../lib/turnstile";
 
 interface Props {
   locale?: Locale;
@@ -13,7 +14,6 @@ const p = (path: string) => localePath(path, locale);
 const EMAIL = "contact@meemur.com";
 const LINKEDIN = "https://www.linkedin.com/company/meemur/";
 const GITHUB = "https://github.com/meemur-dev";
-const TURNSTILE_SITEKEY = import.meta.env.PUBLIC_TURNSTILE_SITEKEY ?? "";
 
 const services = [
   { href: "/services#ecommerce", key: "footer.ecommerce" },
