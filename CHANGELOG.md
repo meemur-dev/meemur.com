@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.2] - 2026-06-21
+
 ### Fixed
 
 - Turnstile widget shipped with an empty `sitekey`. The `0.5.1` build-variable
@@ -241,7 +243,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fit-to-viewport layout and responsive polish (slogan wrap, headline scaling,
   off-canvas blob to avoid a hard corner arc).
 
-[Unreleased]: https://github.com/meemur-dev/meemur.com/compare/0.5.1...HEAD
+[Unreleased]: https://github.com/meemur-dev/meemur.com/compare/0.5.2...HEAD
+[0.5.2]: https://github.com/meemur-dev/meemur.com/compare/0.5.1...0.5.2
 [0.5.1]: https://github.com/meemur-dev/meemur.com/compare/0.5.0...0.5.1
 [0.5.0]: https://github.com/meemur-dev/meemur.com/compare/0.4.3...0.5.0
 [0.4.3]: https://github.com/meemur-dev/meemur.com/compare/0.4.2...0.4.3
