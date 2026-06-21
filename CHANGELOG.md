@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `BreadcrumbList` structured data on every inner page (Services, Work, About,
+  Privacy), localized and emitted via a reusable `breadcrumb` prop on
+  `BaseLayout`.
+- `Service` structured data (an `ItemList` of the six services) on `/services`,
+  each linked to the Organization entity.
+- Organization schema enriched with a LinkedIn `sameAs`, a city-level
+  `address` (Ankara, TR), `areaServed`, and `knowsAbout` topics.
+- `og:image:alt` meta tag, site-wide and localized.
+- `/sitemap.xml` now 301-redirects to `/sitemap-index.xml` (via `public/_redirects`)
+  so the conventional URL resolves for tools that guess it.
+
+### Fixed
+
+- `hreflang` alternates on Turkish pages pointed `en` and `x-default` back at the
+  Turkish URL instead of the English equivalent, breaking reciprocity so Google
+  would discard the cluster. `BaseLayout` now derives a locale-stripped base path
+  (new `basePath` helper) so EN/TR alternates are reciprocal.
+- Home meta description trimmed to ~150 characters to avoid SERP truncation.
+
 ## [0.5.2] - 2026-06-21
 
 ### Fixed

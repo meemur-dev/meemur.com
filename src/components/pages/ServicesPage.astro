@@ -17,6 +17,25 @@ const serviceNums = ["01", "02", "03", "04", "05", "06"];
 const stepNums = ["01", "02", "03", "04"];
 
 const canonical = `https://meemur.com${p("/services")}`;
+
+// ItemList of the services offered, each provided by the Organization entity
+// defined on the home page graph.
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: c.services.map((service, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "Service",
+      name: service.title,
+      description: service.intro,
+      url: `${canonical}#${serviceIds[i]}`,
+      provider: { "@id": "https://meemur.com/#organization" },
+      areaServed: ["TR", "Worldwide"],
+    },
+  })),
+};
 ---
 
 <BaseLayout
@@ -28,6 +47,7 @@ const canonical = `https://meemur.com${p("/services")}`;
   ogTitle={c.meta.ogTitle}
   ogDescription={c.meta.ogDescription}
   locale={locale}
+  breadcrumb={[{ labelKey: "nav.services", path: "/services" }]}
 >
   <section class="section page-hero">
     <div class="container">
@@ -93,3 +113,5 @@ const canonical = `https://meemur.com${p("/services")}`;
     </div>
   </section>
 </BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonld)} is:inline />

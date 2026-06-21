@@ -1,7 +1,7 @@
 ---
 import Header from "../layout/Header.astro";
 import Footer from "../layout/Footer.astro";
-import { useTranslations, localePath } from "../i18n/utils";
+import { useTranslations, localePath, basePath } from "../i18n/utils";
 import type { Locale } from "../i18n/utils";
 import "../styles/global.css";
 
@@ -14,10 +14,13 @@ export interface Props {
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   noindex?: boolean;
   includeTurnstile?: boolean;
   version?: string;
   locale?: Locale;
+  /** Trail after Home, in order. Home is prepended automatically. */
+  breadcrumb?: { labelKey: string; path: string }[];
 }
 
 const {
@@ -29,10 +32,12 @@ const {
   ogTitle,
   ogDescription,
   ogImage,
+  ogImageAlt,
   noindex,
   includeTurnstile,
   version,
   locale = "en",
+  breadcrumb,
 } = Astro.props;
 
 const ogTitleFinal = ogTitle || title;
@@ -41,10 +46,29 @@ const ogImageFinal = ogImage || "https://meemur.com/og-image.png";
 const t = useTranslations(locale);
 const langAttr = locale === "tr" ? "tr" : "en";
 const ogLocale = t("og.locale");
+const ogImageAltFinal = ogImageAlt || `meemur — ${t("footer.tagline")}`;
 
 const alternateLocales: Locale[] = locale === "en" ? ["tr"] : ["en"];
 
 const canonicalPath = canonical ? new URL(canonical, "https://meemur.com").pathname : "/";
+// Locale-stripped base path, so every page in a cluster derives the same set of
+// reciprocal alternates regardless of which locale it is served in.
+const canonicalBase = basePath(canonicalPath);
+
+// Optional BreadcrumbList, with the localized Home crumb prepended.
+const breadcrumbJsonld =
+  breadcrumb && breadcrumb.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [{ labelKey: "nav.home", path: "/" }, ...breadcrumb].map((crumb, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: t(crumb.labelKey),
+          item: `https://meemur.com${localePath(crumb.path, locale)}`,
+        })),
+      }
+    : null;
 ---
 
 <!doctype html>
@@ -64,12 +88,16 @@ const canonicalPath = canonical ? new URL(canonical, "https://meemur.com").pathn
         <>
           <link rel="alternate" hreflang={locale} href={canonical} />
           {alternateLocales.map((alt) => (
-            <link rel="alternate" hreflang={alt} href={`https://meemur.com${localePath(canonicalPath, alt)}`} />
+            <link rel="alternate" hreflang={alt} href={`https://meemur.com${localePath(canonicalBase, alt)}`} />
           ))}
-          <link rel="alternate" hreflang="x-default" href={`https://meemur.com${canonicalPath}`} />
+          <link rel="alternate" hreflang="x-default" href={`https://meemur.com${canonicalBase}`} />
         </>
       )
     }
+
+    {breadcrumbJsonld && (
+      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonld)} is:inline />
+    )}
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -92,6 +120,7 @@ const canonicalPath = canonical ? new URL(canonical, "https://meemur.com").pathn
     <meta property="og:image" content={ogImageFinal} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAltFinal} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={ogTitleFinal} />

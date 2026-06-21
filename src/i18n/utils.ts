@@ -32,6 +32,13 @@ export function localePath(path: string, locale: Locale): string {
   return locale === defaultLocale ? path : `/${locale}${path}`;
 }
 
+// Strip a leading non-default locale segment to recover the base (default-locale)
+// path. Inverse of localePath, so "/tr/services" -> "/services" and "/tr/" -> "/".
+const localePrefix = new RegExp(`^/(?:${LOCALES.filter((l) => l !== defaultLocale).join("|")})(?=/|$)`);
+export function basePath(path: string): string {
+  return path.replace(localePrefix, "") || "/";
+}
+
 // Static paths for the [lang] routes: every locale except the default.
 export function langStaticPaths() {
   return LOCALES.filter((locale) => locale !== defaultLocale).map((lang) => ({
