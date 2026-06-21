@@ -4,8 +4,8 @@ import { getDictionary } from "../i18n/utils";
 import "../styles/pages/notfound.css";
 
 // Cloudflare Pages serves this single 404 for every not-found route, including
-// ones under /tr (the directory build format means there is no /tr/404.html).
-// So we render English and swap to Turkish at runtime when the path is /tr/*.
+// ones under /tr (there is no separate Turkish 404 page). So we render English
+// and swap to Turkish at runtime when the path is /tr/*.
 const en = getDictionary("en").pages.notfound;
 const tr = getDictionary("tr").pages.notfound;
 ---
@@ -25,7 +25,7 @@ const tr = getDictionary("tr").pages.notfound;
       <h1 data-tr={tr.title}>{en.title}</h1>
       <p class="lead" data-tr={tr.lead}>{en.lead}</p>
       <div class="notfound__actions">
-        <a class="btn btn--primary" href="/" data-tr-href="/tr/" data-tr={tr.backHome}>{en.backHome}</a>
+        <a class="btn btn--primary" href="/" data-tr-href="/tr" data-tr={tr.backHome}>{en.backHome}</a>
         <a class="btn btn--ghost" href="/services" data-tr-href="/tr/services" data-tr={tr.exploreServices}>
           {en.exploreServices}
         </a>

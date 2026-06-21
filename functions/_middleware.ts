@@ -41,7 +41,7 @@ export const onRequest: PagesFunction = async ({ request, next }) => {
   if (request.headers.get("CF-IPCountry") !== GEO_COUNTRY) return next();
 
   const target = new URL(url);
-  target.pathname = pathname === "/" ? "/tr/" : `/tr${pathname}`;
+  target.pathname = pathname === "/" ? "/tr" : `/tr${pathname}`;
 
   const response = new Response(null, {
     status: 302,

@@ -2,7 +2,7 @@
 
 > We make the web work for you. meemur is a boutique, founder-led digital agency serving clients worldwide that designs, builds, and measures high-performing web and e-commerce experiences, then grows them with analytics, CRO, and paid social.
 
-meemur is founded and run by Onur Yanar, a front-end and analytics specialist with 10+ years of experience across 60+ brands. It works remotely with clients anywhere, who deal directly with the person doing the work. The site is bilingual: English at the root and Turkish under `/tr/`. Contact: contact@meemur.com.
+meemur is founded and run by Onur Yanar, a front-end and analytics specialist with 10+ years of experience across 60+ brands. It works remotely with clients anywhere, who deal directly with the person doing the work. The site is bilingual: English at the root and Turkish under `/tr`. Contact: contact@meemur.com.
 
 ## Pages
 
@@ -14,7 +14,7 @@ meemur is founded and run by Onur Yanar, a front-end and analytics specialist wi
 
 ## Türkçe (Turkish)
 
-- [Ana Sayfa](https://meemur.com/tr/): meemur ne yapar ve nasıl çalışır.
+- [Ana Sayfa](https://meemur.com/tr): meemur ne yapar ve nasıl çalışır.
 - [Hizmetler](https://meemur.com/tr/services): Web & e-ticaret, mobil uygulamalar, analitik, dönüşüm optimizasyonu, performans ve sosyal medya reklamları.
 - [İşlerimiz](https://meemur.com/tr/work): Seçkin işler.
 - [Hakkımızda](https://meemur.com/tr/about): Kurucu hakkında ve iletişim formu.

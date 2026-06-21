@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Trailing-slash redirects fought the slashless canonical URLs: Cloudflare Pages
+  served `directory`-format output, so every canonical/sitemap/hreflang URL
+  (e.g. `/services`) 308-redirected to its trailing-slash form. Switched the
+  build to `file` format so the slashless URLs serve `200` and the trailing-slash
+  forms redirect to them instead. The Turkish home is now `/tr` (was `/tr/`),
+  updated in `localePath`, the geo-routing middleware, the 404 fallback link,
+  and `llms.txt`.
+
 ## [0.6.0] - 2026-06-21
 
 ### Added

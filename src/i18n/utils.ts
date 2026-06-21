@@ -27,13 +27,16 @@ export function useTranslations(locale: Locale) {
 }
 
 // Prefix a root-relative path with the locale, except for the default locale
-// which lives unprefixed at the site root.
+// which lives unprefixed at the site root. The locale home is slashless ("/tr",
+// not "/tr/") so it matches the file build format that serves slashless URLs.
 export function localePath(path: string, locale: Locale): string {
-  return locale === defaultLocale ? path : `/${locale}${path}`;
+  if (locale === defaultLocale) return path;
+  const prefixed = `/${locale}${path}`;
+  return prefixed === `/${locale}/` ? `/${locale}` : prefixed;
 }
 
 // Strip a leading non-default locale segment to recover the base (default-locale)
-// path. Inverse of localePath, so "/tr/services" -> "/services" and "/tr/" -> "/".
+// path. Inverse of localePath, so "/tr/services" -> "/services" and "/tr" -> "/".
 const localePrefix = new RegExp(`^/(?:${LOCALES.filter((l) => l !== defaultLocale).join("|")})(?=/|$)`);
 export function basePath(path: string): string {
   return path.replace(localePrefix, "") || "/";

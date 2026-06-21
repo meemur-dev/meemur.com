@@ -7,7 +7,10 @@ export default defineConfig({
   publicDir: "./public",
   outDir: "./dist",
   build: {
-    format: "directory",
+    // Emit slashless files (services.html, not services/index.html) so Cloudflare
+    // Pages serves /services with a 200 and 308-redirects the trailing-slash form
+    // to it, matching the slashless canonical/hreflang/sitemap URLs.
+    format: "file",
   },
   i18n: {
     defaultLocale: "en",
@@ -25,11 +28,11 @@ export default defineConfig({
       },
       // The 404 is noindex; keep it out of the sitemap.
       filter: (page) => !page.includes("/404"),
-      // Match the pages' canonical/hreflang tags: locale homes keep the trailing
-      // slash, every other URL drops it (directory build adds one by default).
+      // Match the pages' canonical/hreflang tags: every URL is slashless except
+      // the site root (kept as ".../"), so the sitemap never lists a URL that
+      // 308-redirects.
       serialize(item) {
-        const homes = new Set(["https://meemur.com/", "https://meemur.com/tr/"]);
-        const trim = (url) => (homes.has(url) ? url : url.replace(/\/$/, ""));
+        const trim = (url) => (url === "https://meemur.com/" ? url : url.replace(/\/$/, ""));
         item.url = trim(item.url);
         if (item.links) item.links = item.links.map((link) => ({ ...link, url: trim(link.url) }));
         return item;
