@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getDictionary, localePath } from "../../i18n/utils";
 import type { Locale } from "../../i18n/utils";
+import { TURNSTILE_SITEKEY } from "../../lib/turnstile";
 import "../../styles/pages/about.css";
 
 interface Props {
@@ -13,7 +14,6 @@ const c = getDictionary(locale).pages.about;
 const p = (path: string) => localePath(path, locale);
 
 const canonical = `https://meemur.com${p("/about")}`;
-const turnstileSitekey = import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "";
 ---
 
 <BaseLayout
@@ -114,7 +114,7 @@ const turnstileSitekey = import.meta.env.PUBLIC_TURNSTILE_SITEKEY || "";
           <label>{c.contact.formCompany}<input name="company" type="text" tabindex="-1" autocomplete="off" /></label>
         </div>
 
-        <div class="cf-turnstile" data-sitekey={turnstileSitekey}></div>
+        <div class="cf-turnstile" data-sitekey={TURNSTILE_SITEKEY}></div>
 
         <button class="btn btn--primary" type="submit">{c.contact.formSubmit}</button>
         <p id="contact-status" class="form-status" role="status" aria-live="polite"></p>
