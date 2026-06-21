@@ -1,0 +1,27 @@
+# meemur
+
+> We make the web work for you. meemur is a boutique, founder-led digital agency serving clients worldwide that designs, builds, and measures high-performing web and e-commerce experiences, then grows them with analytics, CRO, and paid social.
+
+meemur is founded and run by Onur Yanar, a front-end and analytics specialist with 10+ years of experience across 60+ brands. It works remotely with clients anywhere, who deal directly with the person doing the work. The site is bilingual: English at the root and Turkish under `/tr/`. Contact: contact@meemur.com.
+
+## Pages
+
+- [Home](https://meemur.com/): What meemur does and how it works.
+- [Services](https://meemur.com/services): Web & e-commerce builds, cross-platform apps, analytics & measurement, CRO & experimentation, accessibility & performance, and social media ads.
+- [Work](https://meemur.com/work): Selected case studies.
+- [About & Contact](https://meemur.com/about): Founder background and the contact form.
+- [Privacy policy](https://meemur.com/privacy): What meemur collects and how data is handled.
+
+## Türkçe (Turkish)
+
+- [Ana Sayfa](https://meemur.com/tr/): meemur ne yapar ve nasıl çalışır.
+- [Hizmetler](https://meemur.com/tr/services): Web & e-ticaret, mobil uygulamalar, analitik, dönüşüm optimizasyonu, performans ve sosyal medya reklamları.
+- [İşlerimiz](https://meemur.com/tr/work): Seçkin işler.
+- [Hakkımızda](https://meemur.com/tr/about): Kurucu hakkında ve iletişim formu.
+- [Gizlilik](https://meemur.com/tr/privacy): Veri işleme politikası.
+
+## Optional
+
+- [Email](mailto:contact@meemur.com)
+- [LinkedIn](https://www.linkedin.com/company/meemur/)
+- [GitHub](https://github.com/meemur-dev)

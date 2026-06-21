@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /brand
 
-Sitemap: https://meemur.com/sitemap.xml
+Sitemap: https://meemur.com/sitemap-index.xml

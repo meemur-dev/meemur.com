@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Auto-generated sitemap via `@astrojs/sitemap`, including `hreflang` alternates
+  for every English/Turkish page pair. Replaces the hand-maintained
+  `public/sitemap.xml` (which had drifted and listed no `/tr` pages); `robots.txt`
+  now points to `/sitemap-index.xml` and a `<link rel="sitemap">` was added.
+- Preload the header wordmark SVG (the LCP element) with `fetchpriority="high"`.
+- `llms.txt` at the site root describing meemur and linking the English and
+  Turkish pages, per the llmstxt.org convention.
+
+### Fixed
+
+- Contact form Turnstile widget rendered with an empty `sitekey` in production
+  because the `PUBLIC_TURNSTILE_SITEKEY` build variable was never configured;
+  it is now set in the Cloudflare Pages build environment (and `.env`/`.env.example`).
+
 ## [0.5.0] - 2026-06-21
 
 ### Added
