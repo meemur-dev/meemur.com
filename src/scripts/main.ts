@@ -4,6 +4,7 @@
 import { initContactForm } from "./contact";
 import { initContactMcp } from "./contact-mcp";
 import { initSubscribeForm } from "./subscribe";
+import { initSubscribeMcp } from "./subscribe-mcp";
 
 // ---- Mobile nav toggle ----
 const header = document.querySelector<HTMLElement>(".site-header");
@@ -41,3 +42,4 @@ if (yearEl) {
 initContactForm();
 initContactMcp(); // WebMCP tool for the contact form, where supported
 initSubscribeForm();
+initSubscribeMcp(); // global WebMCP tool for the footer newsletter form, where supported
