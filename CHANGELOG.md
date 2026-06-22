@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Global WebMCP tool `subscribe_to_newsletter`: an in-browser AI agent can
+  subscribe a visitor to the newsletter from any page. It fills the footer
+  email field and calls `form.requestSubmit()`, reusing the existing submit
+  handler (Turnstile token, spam honeypot, status messaging) and reports the
+  real outcome back to the agent. Feature-detected, so browsers without WebMCP
+  are unaffected. Complements the existing contact-form tool.
+
 ## [0.6.1] - 2026-06-21
 
 ### Fixed
